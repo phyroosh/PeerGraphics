@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+.npm/
+
+# Secrets & OAuth Credentials (DO NOT COMMIT SENSITIVE TOKENS OR KEYS)
+studio/token*.json
+studio/tokens/
+studio/credentials/
+studio/credentials.json
+studio/channels.json
+.env
+.env.*
+*.pem
+*.key
+
+# Rendered Video Outputs & Stills (Keep repository lightweight)
+out/*
+!out/.gitkeep
+out/*.mp4
+out/*.png
+out/*.mov
+
+# Production Temporary Renders
+production/*.mp4
+production/*.png
+production/*.wav
+production/*.mp3
+
+# Build & OS Artifacts
+.remotion/
+dist/
+build/
+.DS_Store
+Thumbs.db
+*.log

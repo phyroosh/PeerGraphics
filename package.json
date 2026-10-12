@@ -1,0 +1,37 @@
+{
+  "name": "peergraphics",
+  "version": "1.0.0",
+  "description": "Educational Motion Graphics & YouTube Studio Engine powered by Remotion and React",
+  "main": "studio/server.js",
+  "scripts": {
+    "start": "./start_studio.sh",
+    "studio": "node studio/server.js",
+    "dev": "remotion preview src/index.ts",
+    "build": "tsc --noEmit",
+    "render": "remotion render src/index.ts ExplanationVideo out/video.mp4"
+  },
+  "keywords": [
+    "remotion",
+    "motion-graphics",
+    "educational-video",
+    "youtube-studio",
+    "auto-uploader"
+  ],
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "googleapis": "^140.0.0"
+  },
+  "devDependencies": {
+    "@remotion/cli": "^4.0.200",
+    "@remotion/media-utils": "^4.0.200",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remotion": "^4.0.200",
+    "typescript": "^5.3.3"
+  }
+}

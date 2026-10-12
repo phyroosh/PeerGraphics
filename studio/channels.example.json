@@ -1,0 +1,17 @@
+{
+  "channels": [
+    {
+      "channelId": "UC_EXAMPLE_CHANNEL_ID",
+      "title": "Example Channel",
+      "customUrl": "@examplechannel",
+      "avatar": "https://ui-avatars.com/api/?name=Example+Channel&background=0284c7&color=fff",
+      "subscriberCount": "1000",
+      "videoCount": "10",
+      "uploadsPlaylistId": "UU_EXAMPLE_CHANNEL_ID",
+      "credentialId": "default",
+      "tokenFile": "tokens/yt_UC_EXAMPLE_CHANNEL_ID.json",
+      "connectedAt": "2026-10-12T00:00:00.000Z"
+    }
+  ],
+  "activeChannelId": "UC_EXAMPLE_CHANNEL_ID"
+}
