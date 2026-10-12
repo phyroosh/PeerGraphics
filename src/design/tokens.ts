@@ -1,9 +1,13 @@
+/**
+ * Design Tokens for PeerGraphics
+ * Default Visual System: Theme 3 (Swiss Bauhaus & Neo-Brutalist)
+ */
 export const DESIGN_TOKENS = {
   canvas: {
     width: 1080,
     height: 1920,
     fps: 30,
-    durationInFrames: 1146, // Math.ceil(38.191 * 30) = 1146
+    durationInFrames: 1146,
   },
   safeArea: {
     top: 140,
@@ -11,34 +15,58 @@ export const DESIGN_TOKENS = {
     left: 80,
     right: 80,
   },
+  // Default Visual System Identifier
+  defaultTheme: 'Theme3_SwissBauhaus',
+  
   colors: {
-    bg: '#070B14',
-    bgGradientStart: '#0B1120',
-    bgGradientEnd: '#05070D',
-    surface: 'rgba(15, 23, 42, 0.75)',
-    surfaceBorder: 'rgba(255, 255, 255, 0.1)',
-    textPrimary: '#F8FAFC',
-    textSecondary: '#94A3B8',
-    textMuted: '#64748B',
-    accentSky: '#38BDF8',
+    // Swiss Bauhaus & Neo-Brutalist Base Canvas & Cards
+    bg: '#F3EFE6',              // Modernist warm off-white canvas
+    surface: '#FFFFFF',         // Crisp white card surface
+    surfaceAlt: '#F9F8F5',      // Subordinate card background
+    border: '#121212',          // Heavy pitch-black brutalist borders
+    surfaceBorder: '#121212',   // Brutalist card border
+    bgGradientStart: '#F3EFE6',
+    bgGradientEnd: '#EBE5D8',
     
-    // Semantic System A: LIKING (Pleasure / Opioids)
-    likingEmerald: '#10B981',
-    likingEmeraldGlow: 'rgba(16, 185, 129, 0.45)',
-    likingEmeraldDark: '#064E3B',
+    // Typography
+    textPrimary: '#121212',     // Stark brutalist black
+    textSecondary: '#333333',   // High-contrast secondary
+    textMuted: '#666666',       // Muted annotations
+    textInverse: '#FFFFFF',     // White on dark backgrounds
     
-    // Semantic System B: WANTING (Craving / Dopamine)
-    wantingAmber: '#F97316',
-    wantingAmberGlow: 'rgba(249, 115, 22, 0.5)',
-    wantingAmberDark: '#7C2D12',
+    // Swiss Bauhaus Primary Semantic Palette
+    vermilionRed: '#E63946',    // Conflict, penalty, defect, focal point
+    deepNavy: '#1D3557',        // Structure, baseline, cooperation
+    cadmiumYellow: '#FFB703',   // Highlights, badges, equilibrium status
     
-    // Conflict / Warning / Hate
-    dangerRed: '#EF4444',
-    dangerRedGlow: 'rgba(239, 68, 68, 0.4)',
+    // Legacy / Scene Semantic Compatibility Mappings
+    accentSky: '#1D3557',
+    likingEmerald: '#1D3557',
+    likingEmeraldGlow: 'rgba(29, 53, 87, 0.25)',
+    likingEmeraldDark: '#112238',
+    wantingAmber: '#E63946',
+    wantingAmberGlow: 'rgba(230, 57, 70, 0.25)',
+    wantingAmberDark: '#9E1C26',
+    dangerRed: '#E63946',
+    dangerRedGlow: 'rgba(230, 57, 70, 0.3)',
+    accentPrimary: '#E63946',
+    accentSecondary: '#1D3557',
+    accentBadge: '#FFB703',
+  },
+  borders: {
+    brutalistStandard: '6px solid #121212',
+    brutalistHeavy: '8px solid #121212',
+    brutalistThin: '3px solid #121212',
+  },
+  shadows: {
+    brutalist: '8px 8px 0 #121212',
+    brutalistLarge: '12px 12px 0 #121212',
+    brutalistDeep: '16px 16px 0 #121212',
   },
   fonts: {
-    primary: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-    mono: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
+    primary: "'Helvetica Neue', Helvetica, -apple-system, Arial, sans-serif",
+    display: "'Helvetica Neue', Helvetica, -apple-system, Arial, sans-serif",
+    mono: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
   },
   spring: {
     default: {

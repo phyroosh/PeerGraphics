@@ -35,6 +35,7 @@ The default deliverable is a native vertical short for YouTube Shorts, Instagram
 11. **Be honest about deliverables.** Distinguish a finished render from a preview, a storyboard, or an unrendered implementation. Report any review that could not be performed.
 12. **Do not silently discard user constraints.** Preserve requested language, audience, tone, branding, and supplied assets where feasible. If details are missing, use the defaults below rather than stalling on avoidable questions.
 13. **Mandatory YouTube metadata and captions.** Every rendered video in Phase 2 must be accompanied by complete YouTube publishing metadata (`production/metadata.json` and sync to `studio/metadata.json`) including high-CTR title with `#Shorts`, rich description with topic hashtags, searchable tags array, YouTube categoryId (27 = Education, 28 = Science & Tech), high-converting pinned discussion comment, and a synchronized `.srt` caption file (`production/captions.srt` or `out/<video>.srt`).
+14. **Default Visual Theme — Theme 3 (Swiss Bauhaus & Neo-Brutalist).** For every new video generation in PeerGraphics, all agents must use **Theme 3 (Swiss Bauhaus & Neo-Brutalist)** as the mandatory default design system unless the user explicitly requests a different theme. All scenes, diagrams, text cards, and layouts must follow the high-contrast modernist off-white canvas (`#F3EFE6`), heavy black brutalist borders (`#121212`, 4–8px), hard drop shadows (`8px 8px 0 #121212` to `12px 12px 0 #121212`), Vermilion red (`#E63946`) conflict/focal accents, deep navy/cobalt (`#1D3557`) structural elements, cadmium yellow (`#FFB703`) highlight badges, and ultra-bold grotesque typography (Helvetica Neue / Inter, 900 weight) with tight tracking. Reference implementation: `src/themes/Theme3_SwissBauhaus.tsx`.
 
 ---
 
@@ -67,6 +68,7 @@ Only research, reason, and write the explanation. You may consult reliable exter
 ### Stage 0.2 — Default delivery format
 
 - **Target video format:** vertical 9:16, 1080 × 1920, 30 fps, 25–40 seconds.
+- **Default visual theme:** **Theme 3 (Swiss Bauhaus & Neo-Brutalist)** — Modernist off-white canvas `#F3EFE6`, 6px brutalist black borders `#121212`, hard drop shadows, high-contrast Vermilion red `#E63946`, deep navy `#1D3557`, and ultra-bold grotesque typography.
 - **Narration planning length:** approximately 60–95 words as an initial guideline; natural read speed, complexity, language, emphasis, and pauses take precedence over a rigid word count.
 - **Narration style:** concise, conversational, vivid but not sensational, accurate, and easy to speak aloud.
 - **Visual production input:** only the audio file supplied by the user after external ElevenLabs generation, plus relevant context already in the conversation.
@@ -324,6 +326,19 @@ Create `production/art-direction.md` before producing a large set of assets. Spe
 - **Audio identity:** narration, music, ambience, and sound-effect principles.
 
 The design system should make different scenes feel related without making them indistinguishable. Use the subject itself to inspire visual motifs: flows for processes, layers for hierarchies, fields for spatial relationships, timelines for change, or contrasting geometries for competing models.
+
+#### 4.1.1 Mandatory Default: Swiss Bauhaus & Neo-Brutalist (Theme 3)
+Unless explicitly instructed otherwise by the user, configure the production design system to match **Theme 3 (Swiss Bauhaus & Neo-Brutalist)**:
+- **Canvas Base**: `#F3EFE6` (warm architectural off-white).
+- **Cards & Surfaces**: `#FFFFFF` with heavy `border: '6px solid #121212'` and hard drop shadows (`boxShadow: '8px 8px 0 #121212'` or `'12px 12px 0 #121212'`).
+- **Semantic Colors**:
+  - `#E63946` (Vermilion Red): Core tension, defect, penalty, dominant trap, key focal takeaway.
+  - `#1D3557` (Deep Cobalt): Cooperation, baseline structure, mathematical framing.
+  - `#FFB703` (Cadmium Yellow): Stable equilibrium badges, accent chips, status callouts.
+  - `#121212` (Pitch Black): High-contrast brutalist borders, headers, and framing bands.
+- **Typography**: Ultra-bold grotesque typography (`'Helvetica Neue', Helvetica, Arial, sans-serif` or `Inter`, font-weight `900`). Display titles use tight tracking (`letterSpacing: -1` to `-2`), and section tags use wide uppercase tracking (`letterSpacing: 2` to `3`).
+- **Layout Patterns**: 2×2 payoff matrices, brutalist callout strips with offset shadows, geometric badge chips (circle, square, triangle), and stacked vertical comparison hierarchies.
+- **Component Blueprint**: Follow [`src/themes/Theme3_SwissBauhaus.tsx`](file:///home/phyroosh/PeerGraphics/src/themes/Theme3_SwissBauhaus.tsx) as the primary architectural template.
 
 ### 4.2 Typography and layout standards
 
