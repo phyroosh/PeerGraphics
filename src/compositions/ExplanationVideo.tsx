@@ -5,13 +5,11 @@ import {Captions} from '../components/Captions';
 import {DESIGN_TOKENS} from '../design/tokens';
 import {SCENES} from '../data/scenes';
 import {AnimatedBackground} from '../motion/AnimatedBackground';
-import {S01_TheChemistryTrap} from '../scenes/S01_TheChemistryTrap';
-import {S02_BattleForControl} from '../scenes/S02_BattleForControl';
-import {S03_WalkingOnEggshells} from '../scenes/S03_WalkingOnEggshells';
-import {S04_EmotionalSafety} from '../scenes/S04_EmotionalSafety';
-import {S05_UsVsTheProblem} from '../scenes/S05_UsVsTheProblem';
-import {S06_TheBoundaryTest} from '../scenes/S06_TheBoundaryTest';
-import {S07_AntidoteSynthesis} from '../scenes/S07_AntidoteSynthesis';
+import {S01_TheRoteDrillTrap} from '../scenes/S01_TheRoteDrillTrap';
+import {S02_BernsteinAndBlacksmith} from '../scenes/S02_BernsteinAndBlacksmith';
+import {S03_NeuralPlasticityVsAutopilot} from '../scenes/S03_NeuralPlasticityVsAutopilot';
+import {S04_DynamicMastery} from '../scenes/S04_DynamicMastery';
+import {S05_ActionableAntidote} from '../scenes/S05_ActionableAntidote';
 
 export const ExplanationVideo: React.FC = () => {
   return (
@@ -34,31 +32,23 @@ export const ExplanationVideo: React.FC = () => {
 
       {/* Synchronized Visual Scenes (Theme 09: Punk Editorial & Risograph Collage) */}
       <Sequence from={SCENES[0].from} durationInFrames={SCENES[0].durationInFrames}>
-        <S01_TheChemistryTrap />
+        <S01_TheRoteDrillTrap />
       </Sequence>
 
       <Sequence from={SCENES[1].from} durationInFrames={SCENES[1].durationInFrames}>
-        <S02_BattleForControl />
+        <S02_BernsteinAndBlacksmith />
       </Sequence>
 
       <Sequence from={SCENES[2].from} durationInFrames={SCENES[2].durationInFrames}>
-        <S03_WalkingOnEggshells />
+        <S03_NeuralPlasticityVsAutopilot />
       </Sequence>
 
       <Sequence from={SCENES[3].from} durationInFrames={SCENES[3].durationInFrames}>
-        <S04_EmotionalSafety />
+        <S04_DynamicMastery />
       </Sequence>
 
       <Sequence from={SCENES[4].from} durationInFrames={SCENES[4].durationInFrames}>
-        <S05_UsVsTheProblem />
-      </Sequence>
-
-      <Sequence from={SCENES[5].from} durationInFrames={SCENES[5].durationInFrames}>
-        <S06_TheBoundaryTest />
-      </Sequence>
-
-      <Sequence from={SCENES[6].from} durationInFrames={SCENES[6].durationInFrames}>
-        <S07_AntidoteSynthesis />
+        <S05_ActionableAntidote />
       </Sequence>
 
       {/* Synchronized Captions Overlay */}

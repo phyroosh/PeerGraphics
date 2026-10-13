@@ -1,17 +1,22 @@
 # Verified Voiceover Transcript & Alignment
 
-- **Audio File**: `production/voiceover.mp3`
+- **Audio File**: `production/voiceover.mp3` (copied from user upload)
 - **Voice**: Buster - Conversational, Original Eric (ElevenLabs)
-- **Duration**: 60.76s (1,824 frames @ 30 fps)
+- **Duration**: 58.44s (1,760 frames @ 30 fps)
+- **Sample Rate**: 44,100 Hz Mono MP3
 
 ## Full Spoken Narration
 
 ```text
-We often mistake intense chemistry for a healthy connection, but the real difference between a healthy and an unhealthy relationship isn't how good the highs feel. It's how safe you feel when things get uncomfortable.
+When practicing a skill, doing the exact same drill a hundred times feels productive. But your brain actually learns best when you never repeat the exact same movement.
 
-In an unhealthy dynamic, conflict is a battle for control. Boundaries are treated as threats, and disagreements are met with guilt, silence, or anger. You end up walking on eggshells, editing yourself just to keep the peace.
+In the nineteen thirties, neurophysiologist Nikolai Bernstein studied master blacksmiths. The hammer hit the exact same millimeter every time, yet the path of their arms and joints was different on every single strike.
 
-A healthy relationship isn't the absence of conflict. It's the presence of emotional safety. Differences are met with curiosity instead of contempt. When tension rises, it's the two of you teaming up against the problem, not against each other.
+He called this repetition without repetition.
 
-To see where your relationship stands, observe what happens when you set a simple boundary. A healthy partner responds with curiosity and respect. An unhealthy dynamic responds with guilt, withdrawal, or defensiveness. That isn't passion, it's control. Always choose consistent safety over chaotic intensity.
+Your brain does not wire rigid, robotic tracks. Neuroplasticity works by solving problems. When you mindlessly repeat an identical motion, your nervous system goes on autopilot and stops adapting.
+
+True mastery is training your brain to find the solution through changing conditions.
+
+So stop doing identical reps. Keep your target constant, but vary the execution: shift your stance, change the tempo, adjust your angle. Repeat the goal, never the movement. That is how you build real skill.
 ```

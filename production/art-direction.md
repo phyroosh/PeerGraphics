@@ -1,36 +1,30 @@
-# Art Direction: Theme 09 (Punk Editorial & Risograph Collage)
+# Art Direction: Brain Plasticity & Repetition Without Repetition
 
-- **Canvas Dimensions**: 1080 × 1920 (9:16 vertical ratio).
-- **Framerate**: 30 frames per second.
-- **Duration**: 1,824 frames (60.76 seconds).
+## Visual Thesis
+A dynamic, intellectual, tactile Risograph editorial world where biomechanical laboratory diagrams, articulated vector puppet animations, and vibrant neural pathways collide to illustrate that mastery is dynamic adaptability, not rigid mechanical repetition.
 
-## Design System & Rules
+## Composition Grammar & Safe Zones
+- **Canvas**: Vertical 9:16 (1080 × 1920 px at 30 fps).
+- **Safe Area Standards**:
+  - Top padding: $\ge 160$ px (clears mobile status and YouTube UI).
+  - Bottom padding: $\ge 400$ px (content terminates at $y \le 1520$ px to clear YouTube Shorts shelf: avatar, channel, title, sound ticker, scrubber).
+  - Right margin: $\ge 140$ px (content width $\le 850$ px, clears like/comment action buttons).
+  - Left margin: $\ge 90$ px.
+- **Strict Anti-Clutter Rule**:
+  - NO meaningless telemetry bars, fake circuit codes (`CIRCUIT 02`), technical figure tags (`FIG. 4.0`), or shape rows (`■ ● ▲`).
+  - Single primary visual focal point per scene with generous negative space.
+  - Passes the **Mute Test**: Any viewer watching without sound or subtitles intuitively understands the mechanism and solution through physical motion alone.
 
-### 1. Canvas & Textures
-- **Base Canvas**: `#EAE5DB` (warm tactile newsprint halftone paper).
-- **Halftone Pattern**: `radial-gradient(#C4BCAD 2px, transparent 2px)` with `28px 28px` grid repetition.
-- **Surface Panels**: Crisp white cutouts (`#FFFFFF`) with heavy black borders (`5px solid #111111`) and brutalist drop shadows (`12px 12px 0 #111111` or `14px 14px 0 #111111`).
+## Color Logic (Theme 09: Punk Editorial & Risograph Collage)
+- **Canvas Base**: `#EAE5DB` (Warm Newsprint with tactile 12 fps grain boil).
+- **Ink Outlines**: `#111111` (Pitch Black, 4–6px chunky tactile stroke, solid 10px offset drop shadows).
+- **Spot Palette**:
+  - `#FF0055` (Risograph Hot Pink): Tension, rigid mono-track failure, alert warnings.
+  - `#FFE600` (High-Voltage Neon Yellow): Kinetic highlights, hammer sparks, insight tape.
+  - `#00E5FF` (Electric Cyan): Active neuroplastic pathways, target crosshair, adaptive stability.
+  - `#FFFFFF` (Pure White): High-contrast paper cutouts, labels, bone structures.
 
-### 2. High-Voltage Palette
-- **Risograph Pink (`#FF0055`)**: Primary tension color, alert stamps, unhealthy dynamics, and dominant headline cutouts.
-- **High-Voltage Yellow (`#FFE600`)**: Key insight badges, highlight tapes, and actionable resolution stickers.
-- **Electric Cyan (`#00E5FF`)**: Healthy dynamic indicators, emotional safety bedrock, and collaborative vectors.
-- **Pitch Black (`#111111`)**: Heavy structural ink, high-contrast borders, solid shadows, and text backings.
-- **Pure White (`#FFFFFF`)**: High-contrast card surfaces and inverse text chips.
-
-### 3. Typography & Mobile Readability Standards
-- **Headline Display**: Heavy condensed sans-serif (`'Arial Black', 'Impact', -apple-system, sans-serif`), uppercase, letter-spacing -1.5px, line-height 1.02. Size: **84px**.
-- **Card Subheads**: **34px – 38px** bold uppercase.
-- **Explanatory Copy**: **34px – 36px** high-contrast text.
-- **Minimum Font Size Floor**: **32px strictly enforced everywhere** on screen (guarantees readability on compact mobile screens such as iPhone 15 base display).
-
-### 4. YouTube Shorts Safe Area Enforcement
-- **Top Safe Margin**: $\ge 160$px (clears status bar and search icons; headlines begin at $y = 160$px).
-- **Bottom Safe Margin**: $\ge 400$px (all focal graphics finish by $y \le 1380$px; captions sit at $y \approx 1420$–$1500$px; bottom 400px $y > 1520$px is 100% clean for Shorts interactive controls).
-- **Right Rail Margin**: $\ge 140$px (content max width $\le 850$px; clears Like/Comment/Share buttons).
-- **Left Margin**: $\ge 90$px (consistent breathing room).
-
-### 5. Anti-Clutter Rules
-- **Zero Top Telemetry**: No decorative telemetry lines, fake figure markers (`FIG 1.0`), status icon shapes, or circuit codes.
-- **Zero Badge Soup**: No floating useless pill tags.
-- **Single Focal Focus**: Exactly one bold cutout headline and one high-clarity focal graphic per scene.
+## Typography Floor (Mobile iPhone 15 Legibility)
+- **Headline**: 80–100px, 900 weight, display font, uppercase, high contrast with risograph spot highlights.
+- **Explanatory Callouts**: 38–52px, bold, concise.
+- **Labels & Numbers**: 32–38px (Absolute minimum floor: **never below 32px** anywhere on canvas).

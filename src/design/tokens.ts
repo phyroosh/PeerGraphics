@@ -15,7 +15,7 @@ export const DESIGN_TOKENS = {
     width: 1080,
     height: 1920,
     fps: 30,
-    durationInFrames: 1824,
+    durationInFrames: 1760,
   },
   safeArea: {
     top: 160,              // Clears top navigation & camera/search UI

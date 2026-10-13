@@ -5,12 +5,11 @@ import {SCENES} from '../data/scenes';
 /**
  * AnimatedBackground: Living Environmental Storytelling Canvas.
  * 
- * Replaces the static paper background with a dynamic 4-layer environmental stack:
- * - Layer 0: Atmospheric color grading & emotional temperature shifts across scenes
- * - Layer 1: Narrative kinetic motifs (S01 parallax climb, S02 seismic shockwaves,
- *            S03 anxiety tremor, S04 storm sheets & aura, S05 radial speed burst,
- *            S06 split lab atmosphere, S07 golden dawn sunburst)
- * - Layer 2: Ambient depth micro-particles (floating dust motes & sparks)
+ * Tailored for Brain Plasticity & Bernstein's Repetition Without Repetition:
+ * - Layer 0: Atmospheric color grading & emotional shifts across the 5 scenes
+ * - Layer 1: Narrative kinetic motifs (S01 rigid track fractures, S02 blacksmith forge shockwaves & sparks,
+ *            S03 neural web & autopilot split, S04 radial speed rays on mastery, S05 golden victory sunburst)
+ * - Layer 2: Ambient depth micro-particles (floating sparks and motes)
  * - Layer 3: Tactile Risograph "boiling" paper grain & halftone dot grid at 12 fps
  */
 export const AnimatedBackground: React.FC = () => {
@@ -36,76 +35,59 @@ export const AnimatedBackground: React.FC = () => {
   let vignetteColor = 'rgba(17, 17, 17, 0.08)';
 
   if (activeSceneIndex === 0) {
-    // S01: Chemistry Trap (Starts warm beige, shifts to suspenseful cool gray as cliff nears)
-    const tension = interpolate(frame, [140, 260], [0, 1], {
+    // S01: Rote Drill Trap (Begins warm beige, shifts to high-tension warning as mono-track breaks)
+    const tension = interpolate(sceneLocalFrame, [140, 220], [0, 1], {
       extrapolateLeft: 'clamp',
       extrapolateRight: 'clamp',
     });
-    baseColor = tension > 0.5 ? '#E2DDD2' : '#EAE5DB';
-    vignetteColor = `rgba(17, 17, 17, ${0.08 + tension * 0.12})`;
+    baseColor = tension > 0.5 ? '#E4DDD2' : '#EAE5DB';
+    vignetteColor = `rgba(255, 0, 85, ${0.05 + tension * 0.15})`;
   } else if (activeSceneIndex === 1) {
-    // S02: Battle for Control (Volcanic high-tension danger undertones)
+    // S02: Bernstein & Forge (Warm volcanic forge ambience, heavy energy)
     baseColor = '#E8DFD5';
-    vignetteColor = 'rgba(255, 0, 85, 0.14)';
+    vignetteColor = 'rgba(255, 0, 85, 0.16)';
   } else if (activeSceneIndex === 2) {
-    // S03: Walking on Eggshells (Cold, fragile desaturated fog)
-    baseColor = '#E3DFD7';
-    vignetteColor = 'rgba(17, 17, 17, 0.22)';
+    // S03: Neuroplasticity vs Autopilot (Dual psychological atmosphere: cold fog vs active cyan)
+    baseColor = '#E2E2DC';
+    vignetteColor = 'rgba(0, 229, 255, 0.14)';
   } else if (activeSceneIndex === 3) {
-    // S04: Emotional Safety (Gentle slate outside, radiant cyan aura inside)
-    baseColor = '#E0E5E5';
-    vignetteColor = 'rgba(0, 229, 255, 0.16)';
-  } else if (activeSceneIndex === 4) {
-    // S05: Us Vs The Problem (High-energy warm amber teamwork burst)
+    // S04: Dynamic Mastery (High-energy warm amber breakthrough)
     baseColor = '#ECE5D5';
-    vignetteColor = 'rgba(255, 230, 0, 0.18)';
-  } else if (activeSceneIndex === 5) {
-    // S06: Boundary Test (Laboratory clinical split)
-    baseColor = '#E6E4DE';
-    vignetteColor = 'rgba(17, 17, 17, 0.12)';
-  } else if (activeSceneIndex === 6) {
-    // S07: Antidote Synthesis (Golden dawn horizon)
-    const dawn = interpolate(sceneLocalFrame, [20, 100], [0, 1], {
+    vignetteColor = 'rgba(255, 230, 0, 0.20)';
+  } else if (activeSceneIndex === 4) {
+    // S05: Actionable Antidote (Radiant golden dawn horizon)
+    const dawn = interpolate(sceneLocalFrame, [30, 120], [0, 1], {
       extrapolateLeft: 'clamp',
       extrapolateRight: 'clamp',
     });
-    baseColor = dawn > 0.5 ? '#EFEAD8' : '#EAE5DB';
-    vignetteColor = `rgba(255, 230, 0, ${0.1 + dawn * 0.18})`;
+    baseColor = dawn > 0.5 ? '#EFEAD8' : '#ECE5D5';
+    vignetteColor = `rgba(255, 230, 0, ${0.12 + dawn * 0.18})`;
   }
 
   // -------------------------------------------------------------
   // LAYER 1: NARRATIVE KINETIC MOTIFS
   // -------------------------------------------------------------
 
-  // S01: Downward-drifting elevation lines (high speed vertical parallax)
-  const s01ElevationOffset = (frame * 12) % 180;
-  const s01TrackSnap = frame >= 140 && frame <= 220;
-  const s01LightningFlash = s01TrackSnap && frame % 10 < 3;
+  // S01: Monorail track lines + horizontal stress fractures
+  const s01Break = activeSceneIndex === 0 && sceneLocalFrame > 155;
+  const s01Tremor = s01Break ? Math.sin(frame * 2.5) * 4 : 0;
 
-  // S02: Seismic shockwave rings on weight impacts (local frames: 120, 170, 220)
-  const s02Shock1 = spring({frame: sceneLocalFrame - 120, fps, config: {damping: 10, stiffness: 120}});
-  const s02Shock2 = spring({frame: sceneLocalFrame - 170, fps, config: {damping: 10, stiffness: 120}});
-  const s02Shock3 = spring({frame: sceneLocalFrame - 220, fps, config: {damping: 10, stiffness: 120}});
+  // S02: Seismic shockwaves from hammer impacts (local frames: 170, 270, 390)
+  const s02Shock1 = spring({frame: sceneLocalFrame - 170, fps, config: {damping: 10, stiffness: 120}});
+  const s02Shock2 = spring({frame: sceneLocalFrame - 270, fps, config: {damping: 10, stiffness: 120}});
+  const s02Shock3 = spring({frame: sceneLocalFrame - 390, fps, config: {damping: 10, stiffness: 120}});
 
-  // S03: Anxiety tremor jitter
-  const s03Tremor = activeSceneIndex === 2 && sceneLocalFrame > 50
-    ? Math.sin(frame * 2.8) * 3
-    : 0;
-
-  // S04: Exterior storm sheets
-  const s04RainOffset = (frame * 24) % 600;
-
-  // S05: Radial action speed lines on boulder heave (local frames: 85 - 150)
-  const s05Burst = spring({
-    frame: sceneLocalFrame - 85,
+  // S04: Radial speed rays burst on breakthrough
+  const s04Burst = spring({
+    frame: sceneLocalFrame - 20,
     fps,
-    config: {damping: 12, stiffness: 160},
+    config: {damping: 12, stiffness: 150},
   });
-  const s05BurstScale = interpolate(s05Burst, [0, 1], [0.2, 1.4]);
-  const s05BurstOpacity = interpolate(s05Burst, [0, 0.4, 1], [0, 0.6, 0.1]);
+  const s04BurstScale = interpolate(s04Burst, [0, 1], [0.3, 1.3]);
+  const s04BurstOpacity = interpolate(s04Burst, [0, 0.3, 1], [0, 0.5, 0.15]);
 
-  // S07: Golden sunburst rotation
-  const s07SunburstAngle = (frame * 0.35) % 360;
+  // S05: Golden dawn sunburst rotation
+  const s05SunburstAngle = (frame * 0.35) % 360;
 
   return (
     <div
@@ -150,29 +132,28 @@ export const AnimatedBackground: React.FC = () => {
       {/* LAYER 1: SCENE-SPECIFIC NARRATIVE ENVIRONMENTAL MOTIFS     */}
       {/* ========================================================= */}
 
-      {/* SCENE 01: High-Speed Parallax Elevation Lines & Horizon Lightning */}
+      {/* SCENE 01: Rigid Track Lines & Fracture Warning */}
       {activeSceneIndex === 0 && (
         <svg
           width="1080"
           height="1920"
-          style={{position: 'absolute', top: 0, left: 0, opacity: 0.28}}
+          style={{position: 'absolute', top: 0, left: s01Tremor, opacity: 0.28}}
         >
-          {/* Vertical elevation speed lines drifting downward */}
-          {[120, 260, 400, 540, 680, 820, 960].map((x, i) => (
+          {/* Rigid vertical mono-track rails */}
+          {[200, 360, 540, 720, 880].map((x, i) => (
             <line
               key={i}
               x1={x}
-              y1={-200 + s01ElevationOffset + i * 25}
+              y1={-100}
               x2={x}
-              y2={2100 + s01ElevationOffset}
+              y2={2020}
               stroke="#111111"
-              strokeWidth="2.5"
-              strokeDasharray="40 80"
+              strokeWidth="3"
+              strokeDasharray={s01Break ? '20 30' : '40 60'}
             />
           ))}
-
-          {/* Horizon Storm Flash when Track Snaps */}
-          {s01LightningFlash && (
+          {/* Fracture warning red flashes on break */}
+          {s01Break && frame % 12 < 4 && (
             <rect
               width="1080"
               height="1920"
@@ -183,124 +164,82 @@ export const AnimatedBackground: React.FC = () => {
         </svg>
       )}
 
-      {/* SCENE 02: Volcanic Danger Pit & Seismic Shockwave Ripples */}
+      {/* SCENE 02: Volcanic Blacksmith Forge Shockwaves */}
       {activeSceneIndex === 1 && (
         <svg
           width="1080"
           height="1920"
           style={{position: 'absolute', top: 0, left: 0}}
         >
-          {/* Ambient red hazard glow at bottom */}
-          <radialGradient id="hazard-glow" cx="50%" cy="85%" r="60%">
+          <radialGradient id="forge-glow" cx="50%" cy="75%" r="65%">
             <stop offset="0%" stopColor="#FF0055" stopOpacity="0.18" />
+            <stop offset="60%" stopColor="#FFE600" stopOpacity="0.06" />
             <stop offset="100%" stopColor="#FF0055" stopOpacity="0" />
           </radialGradient>
-          <rect width="1080" height="1920" fill="url(#hazard-glow)" />
+          <rect width="1080" height="1920" fill="url(#forge-glow)" />
 
-          {/* Seismic Shockwave 1 (GUILT crash) */}
+          {/* Seismic Shockwave 1 (Strike 1) */}
           {s02Shock1 > 0.05 && s02Shock1 < 0.98 && (
             <circle
-              cx="600"
+              cx="540"
               cy="980"
-              r={interpolate(s02Shock1, [0, 1], [40, 460])}
+              r={interpolate(s02Shock1, [0, 1], [40, 480])}
               fill="none"
-              stroke="#FF0055"
-              strokeWidth={interpolate(s02Shock1, [0, 1], [10, 1])}
+              stroke="#FFE600"
+              strokeWidth={interpolate(s02Shock1, [0, 1], [12, 1])}
               opacity={interpolate(s02Shock1, [0, 1], [0.8, 0])}
             />
           )}
 
-          {/* Seismic Shockwave 2 (SILENCE crash) */}
+          {/* Seismic Shockwave 2 (Strike 2) */}
           {s02Shock2 > 0.05 && s02Shock2 < 0.98 && (
             <circle
-              cx="700"
-              cy="940"
-              r={interpolate(s02Shock2, [0, 1], [40, 520])}
+              cx="540"
+              cy="980"
+              r={interpolate(s02Shock2, [0, 1], [40, 540])}
               fill="none"
-              stroke="#111111"
-              strokeWidth={interpolate(s02Shock2, [0, 1], [12, 1])}
-              opacity={interpolate(s02Shock2, [0, 1], [0.7, 0])}
+              stroke="#00E5FF"
+              strokeWidth={interpolate(s02Shock2, [0, 1], [14, 1])}
+              opacity={interpolate(s02Shock2, [0, 1], [0.85, 0])}
             />
           )}
 
-          {/* Seismic Shockwave 3 (ANGER crash) */}
+          {/* Seismic Shockwave 3 (Strike 3) */}
           {s02Shock3 > 0.05 && s02Shock3 < 0.98 && (
             <circle
-              cx="650"
-              cy="900"
-              r={interpolate(s02Shock3, [0, 1], [50, 600])}
+              cx="540"
+              cy="980"
+              r={interpolate(s02Shock3, [0, 1], [50, 620])}
               fill="none"
-              stroke="#FFE600"
-              strokeWidth={interpolate(s02Shock3, [0, 1], [14, 1])}
+              stroke="#FF0055"
+              strokeWidth={interpolate(s02Shock3, [0, 1], [16, 1])}
               opacity={interpolate(s02Shock3, [0, 1], [0.9, 0])}
             />
           )}
         </svg>
       )}
 
-      {/* SCENE 03: Fragile Void & Anxiety Tremor Jitter */}
+      {/* SCENE 03: Neural Web & Autopilot Split Canvas */}
       {activeSceneIndex === 2 && (
-        <svg
-          width="1080"
-          height="1920"
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: s03Tremor,
-            opacity: 0.3,
-          }}
-        >
-          {/* Subtle horizontal fracture grid */}
-          {[350, 550, 750, 950, 1150, 1350].map((y, i) => (
-            <line
-              key={i}
-              x1="60"
-              y1={y}
-              x2="1020"
-              y2={y}
-              stroke="#111111"
-              strokeWidth="2"
-              strokeDasharray="16 24"
-            />
-          ))}
-        </svg>
-      )}
-
-      {/* SCENE 04: Emotional Safety — Exterior Storm Sheets & Sanctuary Aura */}
-      {activeSceneIndex === 3 && (
         <svg
           width="1080"
           height="1920"
           style={{position: 'absolute', top: 0, left: 0}}
         >
-          {/* Radiant Cyan Sanctuary Aura in Center */}
-          <radialGradient id="sanctuary-aura" cx="50%" cy="54%" r="45%">
-            <stop offset="0%" stopColor="#00E5FF" stopOpacity="0.22" />
-            <stop offset="60%" stopColor="#00E5FF" stopOpacity="0.08" />
-            <stop offset="100%" stopColor="#00E5FF" stopOpacity="0" />
-          </radialGradient>
-          <circle cx="540" cy="1040" r="480" fill="url(#sanctuary-aura)" />
-
-          {/* Exterior Storm Rain Sheets outside the aura */}
-          <g opacity={0.25}>
-            {[100, 220, 340, 740, 860, 980].map((x, i) => (
-              <line
-                key={i}
-                x1={x}
-                y1={-100 + s04RainOffset}
-                x2={x - 60}
-                y2={300 + s04RainOffset}
-                stroke="#FF0055"
-                strokeWidth="4"
-                strokeLinecap="round"
-              />
-            ))}
+          {/* Autopilot hazard glow on left half */}
+          <rect x="0" y="0" width="540" height="1920" fill="rgba(255, 0, 85, 0.05)" />
+          {/* Active cyan neuroplastic field on right half */}
+          <rect x="540" y="0" width="540" height="1920" fill="rgba(0, 229, 255, 0.06)" />
+          {/* Subtle neural network background strands */}
+          <g opacity={0.2} stroke="#111111" strokeWidth="2" strokeDasharray="10 15">
+            <path d="M 120 400 Q 300 650 540 800 T 960 1100" fill="none" />
+            <path d="M 960 400 Q 700 650 540 800 T 120 1200" fill="none" />
           </g>
         </svg>
       )}
 
-      {/* SCENE 05: Us Vs The Problem — Explosive Radial Speed Lines */}
-      {activeSceneIndex === 4 && s05BurstOpacity > 0.05 && (
+      {/* SCENE 04: Explosive Radial Speed Rays on Mastery */}
+      {activeSceneIndex === 3 && s04BurstOpacity > 0.05 && (
         <svg
           width="1080"
           height="1920"
@@ -308,22 +247,21 @@ export const AnimatedBackground: React.FC = () => {
             position: 'absolute',
             top: 0,
             left: 0,
-            opacity: s05BurstOpacity,
-            transform: `scale(${s05BurstScale})`,
-            transformOrigin: '540px 1040px',
+            opacity: s04BurstOpacity,
+            transform: `scale(${s04BurstScale})`,
+            transformOrigin: '540px 960px',
           }}
         >
-          {/* Radial speed lines bursting from fulcrum center */}
           {Array.from({length: 24}).map((_, i) => {
             const angle = (i * 360) / 24;
             const rad = (angle * Math.PI) / 180;
             const x2 = 540 + Math.cos(rad) * 900;
-            const y2 = 1040 + Math.sin(rad) * 900;
+            const y2 = 960 + Math.sin(rad) * 900;
             return (
               <line
                 key={i}
                 x1={540 + Math.cos(rad) * 120}
-                y1={1040 + Math.sin(rad) * 120}
+                y1={960 + Math.sin(rad) * 120}
                 x2={x2}
                 y2={y2}
                 stroke={i % 2 === 0 ? '#111111' : '#FFE600'}
@@ -335,112 +273,72 @@ export const AnimatedBackground: React.FC = () => {
         </svg>
       )}
 
-      {/* SCENE 06: The Boundary Test — Split Laboratory Atmosphere */}
-      {activeSceneIndex === 5 && (
+      {/* SCENE 05: Radiant Golden Dawn Sunburst */}
+      {activeSceneIndex === 4 && (
         <svg
           width="1080"
           height="1920"
           style={{position: 'absolute', top: 0, left: 0}}
         >
-          {/* Left Chamber: Hazard Red Pulse */}
-          <rect
-            x="0"
-            y="0"
-            width="540"
-            height="1920"
-            fill="rgba(255, 0, 85, 0.05)"
-          />
-          {/* Right Chamber: Tranquil Cyan Clarity */}
-          <rect
-            x="540"
-            y="0"
-            width="540"
-            height="1920"
-            fill="rgba(0, 229, 255, 0.05)"
-          />
-        </svg>
-      )}
-
-      {/* SCENE 07: Antidote Synthesis — Radiant Golden Dawn Sunburst */}
-      {activeSceneIndex === 6 && (
-        <svg
-          width="1080"
-          height="1920"
-          style={{position: 'absolute', top: 0, left: 0}}
-        >
-          {/* Golden Dawn Sunburst Rays radiating from bedrock */}
           <g
-            transform={`translate(540, 1100) rotate(${s07SunburstAngle})`}
-            opacity={0.16}
+            style={{
+              transform: `rotate(${s05SunburstAngle}deg)`,
+              transformOrigin: '540px 960px',
+              opacity: 0.22,
+            }}
           >
             {Array.from({length: 16}).map((_, i) => {
               const startAngle = (i * 360) / 16;
-              const endAngle = startAngle + 11.25;
               const rad1 = (startAngle * Math.PI) / 180;
-              const rad2 = (endAngle * Math.PI) / 180;
-              const x1 = Math.cos(rad1) * 1200;
-              const y1 = Math.sin(rad1) * 1200;
-              const x2 = Math.cos(rad2) * 1200;
-              const y2 = Math.sin(rad2) * 1200;
+              const rad2 = ((startAngle + 11.25) * Math.PI) / 180;
+              const p1 = `${540 + Math.cos(rad1) * 1400},${960 + Math.sin(rad1) * 1400}`;
+              const p2 = `${540 + Math.cos(rad2) * 1400},${960 + Math.sin(rad2) * 1400}`;
               return (
                 <polygon
                   key={i}
-                  points={`0,0 ${x1},${y1} ${x2},${y2}`}
-                  fill="#FFE600"
+                  points={`540,960 ${p1} ${p2}`}
+                  fill={i % 2 === 0 ? '#FFE600' : '#FF0055'}
                 />
               );
             })}
           </g>
-
-          {/* Warm Golden Glow Center */}
-          <radialGradient id="dawn-glow" cx="50%" cy="60%" r="50%">
-            <stop offset="0%" stopColor="#FFE600" stopOpacity="0.22" />
-            <stop offset="70%" stopColor="#FFE600" stopOpacity="0.06" />
-            <stop offset="100%" stopColor="#FFE600" stopOpacity="0" />
-          </radialGradient>
-          <circle cx="540" cy="1100" r="500" fill="url(#dawn-glow)" />
         </svg>
       )}
 
       {/* ========================================================= */}
-      {/* LAYER 2: AMBIENT DEPTH MICRO-PARTICLES (Drifting gently)   */}
+      {/* LAYER 2: AMBIENT DEPTH MICRO-PARTICLES (SPARKS & MOTES)   */}
       {/* ========================================================= */}
       <svg
         width="1080"
         height="1920"
-        style={{position: 'absolute', top: 0, left: 0, opacity: 0.4}}
+        style={{position: 'absolute', top: 0, left: 0, pointerEvents: 'none'}}
       >
-        {Array.from({length: 16}).map((_, i) => {
-          // Deterministic pseudorandom placement with gentle drift
-          const baseX = (i * 68 + 45) % 1000;
-          const baseY = (i * 122 + 90) % 1800;
-          const driftY = (baseY - (frame * (0.8 + (i % 3) * 0.4))) % 1920;
-          const finalY = driftY < 0 ? driftY + 1920 : driftY;
-          const driftX = baseX + Math.sin(frame * 0.05 + i) * 15;
-          const isSpark = i % 4 === 0;
-
-          return isSpark ? (
-            <polygon
-              key={i}
-              points={`${driftX},${finalY - 6} ${driftX + 4},${finalY} ${driftX},${finalY + 6} ${driftX - 4},${finalY}`}
-              fill={i % 2 === 0 ? '#FFE600' : '#00E5FF'}
-            />
-          ) : (
+        {[
+          {seedX: 180, seedY: 340, speed: 1.4, r: 4, color: '#FF0055'},
+          {seedX: 320, seedY: 620, speed: 0.9, r: 6, color: '#FFE600'},
+          {seedX: 490, seedY: 280, speed: 1.8, r: 5, color: '#00E5FF'},
+          {seedX: 720, seedY: 540, speed: 1.1, r: 4, color: '#111111'},
+          {seedX: 860, seedY: 820, speed: 1.6, r: 6, color: '#FF0055'},
+          {seedX: 240, seedY: 1100, speed: 1.3, r: 5, color: '#FFE600'},
+          {seedX: 620, seedY: 1300, speed: 1.5, r: 4, color: '#00E5FF'},
+          {seedX: 800, seedY: 1450, speed: 0.8, r: 5, color: '#111111'},
+        ].map((pt, i) => {
+          const cy = ((pt.seedY - frame * pt.speed) % 1920 + 1920) % 1920;
+          const cx = pt.seedX + Math.sin((frame + i * 20) * 0.05) * 18;
+          return (
             <circle
               key={i}
-              cx={driftX}
-              cy={finalY}
-              r={2 + (i % 3)}
-              fill="#111111"
+              cx={cx}
+              cy={cy}
+              r={pt.r}
+              fill={pt.color}
               opacity={0.35}
             />
           );
         })}
       </svg>
 
-      {/* ========================================================= */}
-      {/* LAYER 0: CORNER VIGNETTE SHADOW (Film-noir / Zine depth)   */}
-      {/* ========================================================= */}
+      {/* Dynamic Vignette Overlay */}
       <div
         style={{
           position: 'absolute',
@@ -448,7 +346,7 @@ export const AnimatedBackground: React.FC = () => {
           left: 0,
           width: 1080,
           height: 1920,
-          background: `radial-gradient(circle at 50% 50%, transparent 60%, ${vignetteColor} 100%)`,
+          boxShadow: `inset 0 0 160px ${vignetteColor}`,
           pointerEvents: 'none',
         }}
       />

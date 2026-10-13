@@ -20,6 +20,18 @@ out/*.mp4
 out/*.png
 out/*.mov
 
+# Voice, Audio & Video Assets (Do not commit media files to GitHub)
+*.mp3
+*.wav
+*.aac
+*.m4a
+*.mp4
+*.mov
+*.avi
+*.mkv
+public/audio/*
+!public/audio/.gitkeep
+
 # Production Temporary Renders
 production/*.mp4
 production/*.png
