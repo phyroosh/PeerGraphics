@@ -4,6 +4,7 @@ import {AudioVoiceover} from '../components/AudioVoiceover';
 import {Captions} from '../components/Captions';
 import {DESIGN_TOKENS} from '../design/tokens';
 import {SCENES} from '../data/scenes';
+import {AnimatedBackground} from '../motion/AnimatedBackground';
 import {S01_TheChemistryTrap} from '../scenes/S01_TheChemistryTrap';
 import {S02_BattleForControl} from '../scenes/S02_BattleForControl';
 import {S03_WalkingOnEggshells} from '../scenes/S03_WalkingOnEggshells';
@@ -19,14 +20,15 @@ export const ExplanationVideo: React.FC = () => {
         width: DESIGN_TOKENS.canvas.width,
         height: DESIGN_TOKENS.canvas.height,
         backgroundColor: '#EAE5DB',
-        backgroundImage: `radial-gradient(#C4BCAD 2px, transparent 2px)`,
-        backgroundSize: '28px 28px',
         position: 'relative',
         overflow: 'hidden',
         fontFamily: DESIGN_TOKENS.fonts.display,
         color: '#111111',
       }}
     >
+      {/* Living Animated Background Stack (Atmosphere, Kinetic Motifs, Particles, Grain Boil) */}
+      <AnimatedBackground />
+
       {/* Synchronized ElevenLabs Audio Voiceover */}
       <AudioVoiceover />
 

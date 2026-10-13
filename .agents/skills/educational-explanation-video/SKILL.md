@@ -54,6 +54,19 @@ The default deliverable is a native vertical short for YouTube Shorts, Instagram
       * Absolute minimum font size anywhere on screen: **32px** (NEVER use micro-text < 32px).
     - **Mandatory Actionable Solution at the End**: Every explanation script must provide the concrete solution, actionable antidote, or resolution to the problem before concluding.
     - **Strict YouTube Shorts UI Safe Zones**: Top padding ≥ 160px, Bottom padding ≥ 400px (all visual content terminates cleanly at $y \le 1520\text{ px}$ to clear channel avatar, subscribe button, captions, sound ticker, and progress scrubber), Right margin ≥ 140px (clears Like/Comment/Share action buttons), Left margin ≥ 90px.
+15. **Living Animated Background System (No Flat / Static Backgrounds)**: Instead of a dead, static paper background or simple flat CSS gradient, every composition must feature a living, multi-layered environmental canvas that evolves across the narrative arc:
+    - **Layer 0: Atmospheric Color Grading & Emotional Shifts**: Dynamically shift the ambient background color and vignette intensity across scenes to mirror the psychological temperature and narrative tension (e.g. warm curiosity beige `#EAE5DB` → volcanic tension `#E8DFD5` with danger vignette on conflict → desaturated cool fog `#E3DFD7` on anxiety → radiant protective cyan `#E0E5E5` on safety → warm amber burst `#ECE5D5` on teamwork → clinical laboratory split on boundary testing → golden dawn horizon `#EFEAD8` on resolution).
+    - **Layer 1: Narrative Kinetic Motifs (Story-Reactive Vectors)**: Background elements must actively respond to the narrative action:
+      * *Parallax elevation lines*: Stream downward during climbs and falls to convey speed and vertigo.
+      * *Seismic shockwave ripples*: Concentric circular waves that expand outwards on physical impacts or weight drops.
+      * *Anxiety micro-tremors*: High-frequency horizontal jitter lines that activate during tension, doubt, or hesitation.
+      * *Weather & particle barriers*: Atmospheric storm rain sheets deflected around protective domes or shields.
+      * *Radial action speed bursts*: Manga/editorial speed rays bursting outward from fulcrums during breakthrough moments.
+      * *Comparative environment splits*: Contrasting ambient tones across a central boundary divider.
+      * *Golden dawn sunburst*: Rotating rays of warm sunlight expanding across the final resolution.
+    - **Layer 2: Ambient Depth Micro-Particles**: Subtle floating dust motes, sparks, and rising energy flakes driven by deterministic frame calculations (`frame % N`, `sin(frame)`).
+    - **Layer 3: Tactile 12 fps Risograph Grain Boil**: A stop-motion halftone dot grid and paper grain offset (`Math.floor(frame / 2.5) % 4`) that shifts at 12 fps, infusing the entire production with a tactile, handmade, high-budget animation studio character.
+    - **Mute Test & Contrast Safeguard**: Background motifs must remain subordinate (opacity 0.15–0.40) so that foreground characters, vector apparatuses, and captions always maintain 100% razor-sharp readability.
 
 ---
 
@@ -758,11 +771,18 @@ A transition should preserve, reveal, compare, or intentionally break continuity
 
 Use simple cuts when the next visual is a distinct thought. Avoid stacking blur, zoom, spin, shake, and wipe effects to disguise weak story structure. Do not use a preset transition solely because it is available in a package. Check support and API for the installed version before adopting `@remotion/transitions` or any additional dependency.
 
-### 6.6 Depth, composition, and camera-like motion
+### 6.6 Depth, living animated background, and camera-like motion
 
 Create depth intentionally with scale, overlap, light, contrast, shadow, blur, and controlled parallax. Depth should clarify layers and focus rather than make diagrams harder to parse. Keep labels in readable planes and avoid excessive perspective distortion of text or data.
 
-For zooms and pans, define a focal point and a reason to move. The viewer must understand what the camera movement reveals. Avoid constant floating movement on backgrounds; it competes with narration and can make a thoughtful explanation feel restless.
+**The Living Animated Background Architecture**:
+Never leave the background as a static flat color or dead wallpaper. Build an environmental `<AnimatedBackground />` layer stack placed behind the scene sequences:
+1. **Layer 0 (Atmospheric Hue & Vignette)**: Scene-by-scene color grading that mirrors emotional tension (warm beige curiosity → high-tension danger vignette on conflict → desaturated cool fog on anxiety → serene cyan glow on safety → golden dawn on resolution).
+2. **Layer 1 (Narrative Kinetic Motifs)**: Story-reactive vectors that punctuate the action (elevation parallax lines, seismic impact shockwaves, anxiety micro-tremors, weather shield deflection, radial manga speed bursts, split comparison lab grids, rotating sunbursts).
+3. **Layer 2 (Depth Micro-Particles)**: Floating dust motes and sparks calculated deterministically from frames.
+4. **Layer 3 (Tactile 12 fps Risograph Grain Boil)**: Halftone dot grid and grain offset shifting at 12 fps (`Math.floor(frame / 2.5) % 4`), giving the animation a handcrafted zine feel without distracting from the foreground.
+
+Always subordinate the background: maintain opacity between 0.15 and 0.40 so foreground characters, physical apparatuses, and captions always pop with high contrast. Avoid random, floating screen-wide drift that competes with focal mechanisms.
 
 ### 6.7 Charts and quantitative visuals
 
