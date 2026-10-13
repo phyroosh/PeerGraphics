@@ -402,19 +402,19 @@
               <span id="desc-char-count" class="text-[11px] font-mono text-slate-400">0 / 5000</span>
             </div>
           </div>
-          <textarea id="meta-description" rows="5" placeholder="Hook the viewer in the first 2 lines...&#10;&#10;Explain the 3-step mechanism clearly...&#10;&#10;State the core insight/takeaway...&#10;&#10;#Shorts #Education #Science #PeerGraphics" class="w-full bg-slate-950/90 border border-slate-700/80 rounded-xl p-3.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 font-sans leading-relaxed transition" oninput="handleDescInput()"></textarea>
+          <textarea id="meta-description" rows="5" placeholder="Hook the viewer in the first 2 lines...&#10;&#10;Explain the relationship/psychology mechanism clearly...&#10;&#10;State the core insight/antidote...&#10;&#10;#Relationships #SelfImprovement #Psychology #MentalHealth #Shorts" class="w-full bg-slate-950/90 border border-slate-700/80 rounded-xl p-3.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-sky-500 font-sans leading-relaxed transition" oninput="handleDescInput()"></textarea>
           
           <!-- Hashtags Palette -->
           <div class="flex flex-wrap items-center gap-1.5 mt-2">
             <span class="text-[10px] uppercase font-bold text-slate-500 mr-1 tracking-wider">Quick Tags:</span>
             <button onclick="toggleHashtag('#Shorts')" class="px-2.5 py-1 rounded-lg bg-sky-950/70 hover:bg-sky-900 border border-sky-800/80 text-[11px] text-sky-300 font-semibold transition">+ #Shorts</button>
-            <button onclick="toggleHashtag('#Education')" class="px-2.5 py-1 rounded-lg bg-sky-950/70 hover:bg-sky-900 border border-sky-800/80 text-[11px] text-sky-300 font-semibold transition">+ #Education</button>
-            <button onclick="toggleHashtag('#Science')" class="px-2.5 py-1 rounded-lg bg-sky-950/70 hover:bg-sky-900 border border-sky-800/80 text-[11px] text-sky-300 font-semibold transition">+ #Science</button>
-            <button onclick="toggleHashtag('#Explained')" class="px-2.5 py-1 rounded-lg bg-sky-950/70 hover:bg-sky-900 border border-sky-800/80 text-[11px] text-sky-300 font-semibold transition">+ #Explained</button>
-            <button onclick="toggleHashtag('#HowItWorks')" class="px-2.5 py-1 rounded-lg bg-sky-950/70 hover:bg-sky-900 border border-sky-800/80 text-[11px] text-sky-300 font-semibold transition">+ #HowItWorks</button>
-            <button onclick="toggleHashtag('#Physics')" class="px-2.5 py-1 rounded-lg bg-sky-950/70 hover:bg-sky-900 border border-sky-800/80 text-[11px] text-sky-300 font-semibold transition">+ #Physics</button>
-            <button onclick="toggleHashtag('#MentalModel')" class="px-2.5 py-1 rounded-lg bg-sky-950/70 hover:bg-sky-900 border border-sky-800/80 text-[11px] text-sky-300 font-semibold transition">+ #MentalModel</button>
-            <button onclick="toggleHashtag('#PeerGraphics')" class="px-2.5 py-1 rounded-lg bg-sky-950/70 hover:bg-sky-900 border border-sky-800/80 text-[11px] text-sky-300 font-semibold transition">+ #PeerGraphics</button>
+            <button onclick="toggleHashtag('#Relationships')" class="px-2.5 py-1 rounded-lg bg-rose-950/70 hover:bg-rose-900 border border-rose-800/80 text-[11px] text-rose-300 font-semibold transition">+ #Relationships</button>
+            <button onclick="toggleHashtag('#SelfImprovement')" class="px-2.5 py-1 rounded-lg bg-emerald-950/70 hover:bg-emerald-900 border border-emerald-800/80 text-[11px] text-emerald-300 font-semibold transition">+ #SelfImprovement</button>
+            <button onclick="toggleHashtag('#MentalHealth')" class="px-2.5 py-1 rounded-lg bg-violet-950/70 hover:bg-violet-900 border border-violet-800/80 text-[11px] text-violet-300 font-semibold transition">+ #MentalHealth</button>
+            <button onclick="toggleHashtag('#Psychology')" class="px-2.5 py-1 rounded-lg bg-sky-950/70 hover:bg-sky-900 border border-sky-800/80 text-[11px] text-sky-300 font-semibold transition">+ #Psychology</button>
+            <button onclick="toggleHashtag('#EmotionalSafety')" class="px-2.5 py-1 rounded-lg bg-cyan-950/70 hover:bg-cyan-900 border border-cyan-800/80 text-[11px] text-cyan-300 font-semibold transition">+ #EmotionalSafety</button>
+            <button onclick="toggleHashtag('#Boundaries')" class="px-2.5 py-1 rounded-lg bg-amber-950/70 hover:bg-amber-900 border border-amber-800/80 text-[11px] text-amber-300 font-semibold transition">+ #Boundaries</button>
+            <button onclick="toggleHashtag('#PersonalGrowth')" class="px-2.5 py-1 rounded-lg bg-emerald-950/70 hover:bg-emerald-900 border border-emerald-800/80 text-[11px] text-emerald-300 font-semibold transition">+ #PersonalGrowth</button>
           </div>
         </div>
 
@@ -1079,10 +1079,15 @@
     function formatEducationalDescription() {
       if (!activeVideo) return;
       const name = activeVideo.cleanName;
-      const desc = `Ever wonder how ${name} actually works in real life?\n\nHere is the mechanism broken down step-by-step:\n1. The trigger initiates the initial reaction\n2. The system redistributes energy and stabilizes\n3. The observable outcome manifests\n\nKey Insight: When you visualize the hidden process, the entire problem makes sense.\n\n#Shorts #Education #Science #Explained #HowItWorks #DidYouKnow #PeerGraphics`;
+      let desc = '';
+      if (activeVideo.filename.includes('relationship') || activeVideo.filename === 'explanation_video.mp4') {
+        desc = `We often mistake intense chemistry for a healthy connection. But the real difference between a healthy and an unhealthy relationship isn't how good the highs feel—it's how safe you feel when things get uncomfortable.\n\n🚩 In an unhealthy dynamic, conflict is a battle for control. Boundaries are treated as threats, and disagreements are met with guilt trips, silent treatment, or explosive anger. You end up walking on eggshells, editing yourself just to keep the peace.\n\n🌱 A healthy relationship isn't the absence of conflict—it's the presence of emotional safety. Differences are met with curiosity instead of contempt. When tension rises, the two of you team up against the problem, not against each other.\n\nTHE LITMUS TEST:\nObserve what happens when you set a simple boundary.\nA healthy partner responds with curiosity and respect.\nAn unhealthy dynamic responds with guilt, withdrawal, or defensiveness.\n\nThat isn't passion—it's control. Always choose consistent safety over chaotic intensity.\n\n#Relationships #SelfImprovement #MentalHealth #Psychology #EmotionalSafety #Boundaries #DatingAdvice #PersonalGrowth #HealthyRelationships #Shorts`;
+      } else {
+        desc = `Ever wonder what is really happening when you experience ${name}?\n\nHere is the psychological mechanism broken down:\n1. The initial trigger activates a subconscious emotional reaction\n2. The brain rationalizes the behavior instead of addressing the root need\n3. Recognizing this pattern is the essential key to lasting self-improvement\n\nKey Takeaway: True self-mastery starts with emotional self-awareness.\n\n#SelfImprovement #Psychology #MentalHealth #PersonalGrowth #Health #BrainThings #Shorts`;
+      }
       document.getElementById('meta-description').value = desc;
       handleDescInput();
-      showToast('Educational description template applied!', 'info');
+      showToast('Health & Self-Improvement template applied!', 'info');
     }
 
     // Tag Chip Functions

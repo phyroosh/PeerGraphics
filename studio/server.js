@@ -263,6 +263,105 @@ app.get('/api/channel-avatar/:channelId', (req, res) => {
   res.redirect(avatarUrl);
 });
 
+// Smart Metadata Generator aligned with Health, Psychology & Self-Improvement channel ("Brain Things")
+function buildSmartMetadataForVideo(filename, existingSaved = {}) {
+  const rawBase = filename.replace(/\.mp4$/i, '');
+  const cleanName = rawBase
+    .replace(/_/g, ' ')
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+
+  // 1. If existing metadata already exists and is NOT a generic physics placeholder, keep it!
+  const existing = existingSaved[filename];
+  if (
+    existing &&
+    existing.title &&
+    !existing.title.includes('(The Secret Mechanism Explained)') &&
+    !existing.title.includes('Explanation Video (The Secret Mechanism') &&
+    !existing.description?.includes('Ever wonder how Explanation Video actually works')
+  ) {
+    return existing;
+  }
+
+  // 2. Specific matching for relationship explanation videos (e.g. explanation_video.mp4 or video.mp4)
+  if (filename === 'explanation_video.mp4' || filename === 'video.mp4' || filename.includes('relationship')) {
+    return {
+      topic: 'Healthy vs Unhealthy Relationships',
+      title: 'Healthy vs Unhealthy Relationships: The Real Test 🚩 #Shorts',
+      description: `We often mistake intense chemistry for a healthy connection. But the real difference between a healthy and an unhealthy relationship isn't how good the highs feel—it's how safe you feel when things get uncomfortable.\n\n🚩 In an unhealthy dynamic, conflict is a battle for control. Boundaries are treated as threats, and disagreements are met with guilt trips, silent treatment, or explosive anger. You end up walking on eggshells, editing yourself just to keep the peace.\n\n🌱 A healthy relationship isn't the absence of conflict—it's the presence of emotional safety. Differences are met with curiosity instead of contempt. When tension rises, the two of you team up against the problem, not against each other.\n\nTHE LITMUS TEST:\nObserve what happens when you set a simple boundary. \nA healthy partner responds with curiosity and respect. \nAn unhealthy dynamic responds with guilt, withdrawal, or defensiveness.\n\nThat isn't passion—it's control. Always choose consistent safety over chaotic intensity.\n\n#Relationships #SelfImprovement #MentalHealth #Psychology #EmotionalSafety #Boundaries #DatingAdvice #PersonalGrowth #HealthyRelationships #Shorts`,
+      tags: [
+        'healthy relationships',
+        'unhealthy relationships',
+        'emotional safety',
+        'relationship advice',
+        'boundaries in relationships',
+        'walking on eggshells',
+        'psychology',
+        'self improvement',
+        'mental health',
+        'gottman method',
+        'red flags vs green flags',
+        'toxic relationships',
+        'dating advice',
+        'conflict resolution',
+        'communication skills',
+        'personal growth',
+        'how to set boundaries',
+        'Brain Things',
+        'shorts',
+      ],
+      categoryId: '27',
+      privacyStatus: 'public',
+      pinnedComment: `💬 What's your #1 green flag when you disagree with someone? Have you ever had to "edit yourself" just to keep the peace? Share below! 👇`,
+    };
+  }
+
+  // 3. Specific matching for quit / habit / dopamine videos
+  if (filename.includes('quit') || filename.includes('habit')) {
+    return {
+      topic: 'Why You Can\'t Quit Bad Habits',
+      title: 'Why You Can\'t Quit Bad Habits (The Dopamine Trap) 🧠 #Shorts',
+      description: `Ever wonder why quitting bad habits feels impossible even when you genuinely want to change?\n\nIt's not a lack of willpower. Your brain isn't addicted to the activity itself—it's hooked on the dopamine anticipation loop.\n\nWhen stress triggers a craving, your brain demands an immediate relief cycle. The real secret to breaking the loop isn't resisting with brute force, but replacing the reward cue.\n\n#Habits #SelfImprovement #Psychology #MentalHealth #Dopamine #PersonalGrowth #BrainThings #Shorts`,
+      tags: [
+        'habits',
+        'how to break bad habits',
+        'self improvement',
+        'psychology',
+        'mental health',
+        'dopamine detox',
+        'willpower',
+        'personal development',
+        'Brain Things',
+        'shorts',
+      ],
+      categoryId: '27',
+      privacyStatus: 'public',
+      pinnedComment: `What's the hardest habit you've tried breaking? Let's discuss strategies below! 🧠👇`,
+    };
+  }
+
+  // 4. Default for Health & Self-Improvement channel ("Brain Things")
+  return {
+    topic: rawBase,
+    title: `${cleanName}: The Psychological Reality 🧠 #Shorts`,
+    description: `Ever wondered what's really happening when you experience ${cleanName}?\n\nHere is what psychology and behavioral science tell us:\n\n1. The initial trigger activates subconscious emotional responses.\n2. We rationalize the reaction instead of addressing the core need.\n3. Recognizing the root pattern is the first step toward lasting self-improvement.\n\nTakeaway: True self-mastery starts with self-awareness.\n\n#SelfImprovement #Psychology #MentalHealth #PersonalGrowth #Health #Mindset #BrainThings #Shorts`,
+    tags: [
+      'Self Improvement',
+      'Psychology',
+      'Mental Health',
+      'Personal Growth',
+      'Health',
+      'Mindset',
+      cleanName,
+      'Brain Things',
+      'Shorts',
+    ],
+    categoryId: '27',
+    privacyStatus: 'public',
+    pinnedComment: `How has this played out in your own life? Share your perspective below! 🧠👇`,
+  };
+}
+
 app.post('/api/generate-metadata-auto', (req, res) => {
   const { filename } = req.body;
   try {
@@ -281,34 +380,7 @@ app.post('/api/generate-metadata-auto', (req, res) => {
     }
 
     for (const f of targets) {
-      const rawBase = f.replace(/\.mp4$/i, '');
-      const cleanName = rawBase
-        .replace(/_/g, ' ')
-        .replace(/-/g, ' ')
-        .replace(/\b\w/g, (c) => c.toUpperCase());
-
-      savedMeta[f] = {
-        topic: rawBase,
-        title: `${cleanName} (The Secret Mechanism Explained) 🧠 #Shorts`,
-        description: `Ever wonder how ${cleanName} actually works behind the scenes?\n\nMost people think it happens one way, but the real mechanism is completely counterintuitive.\n\nHere is what is happening step-by-step:\n1. The initial trigger creates an immediate feedback shift\n2. The underlying forces interact and cascade through the system\n3. The result stabilizes, giving you the phenomenon you see every day.\n\nKey Takeaway: When you understand the causal chain, you can predict what happens next.\n\nWhat part surprised you the most?\n\n#Shorts #Education #Science #Explanation #Physics #HowItWorks #DidYouKnow #Learning #PeerGraphics`,
-        tags: [
-          'Shorts',
-          'Education',
-          'Science',
-          cleanName,
-          'How It Works',
-          'Explained',
-          'Mechanism',
-          'Scientific Explanation',
-          'Mind Blowing',
-          'Educational Short',
-          'Learning',
-          'PeerGraphics',
-        ],
-        categoryId: '27',
-        privacyStatus: 'public',
-        pinnedComment: `What part of ${cleanName} surprised you the most? Tell us your theory in the comments! 🧠👇`,
-      };
+      savedMeta[f] = buildSmartMetadataForVideo(f, savedMeta);
     }
 
     ytManager.saveMetadataRecord(savedMeta);
@@ -344,16 +416,8 @@ app.get('/api/videos', (req, res) => {
       const cleanName = rawBase.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
       const isVertical = filename.toLowerCase().includes('vert') || filename.toLowerCase().includes('short') || true;
 
-      // Extract metadata or construct structured default
-      const meta = savedMetadata[filename] || {
-        topic: rawBase,
-        title: `${cleanName} (Explained in 30s) 🧠 #Shorts`,
-        description: `Ever wondered how ${cleanName} actually works?\n\nHere is the real mechanism explained simply.\n\nKey Takeaway: Understanding this changes how you see the entire concept.\n\n#Shorts #Education #Science #Explained #HowItWorks #PeerGraphics`,
-        tags: ['Shorts', 'Education', 'Science', cleanName, 'How It Works', 'Explanation', 'PeerGraphics'],
-        categoryId: '27',
-        privacyStatus: 'public',
-        pinnedComment: `What part of ${cleanName} surprised you most? Drop your thoughts below! 🧠👇`,
-      };
+      // Extract metadata or construct structured smart default
+      const meta = buildSmartMetadataForVideo(filename, savedMetadata);
 
       const uploadInfo = uploads[filename] || {};
       const uploaded = !!uploadInfo.uploaded;
