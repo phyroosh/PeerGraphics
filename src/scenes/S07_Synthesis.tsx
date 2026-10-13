@@ -1,5 +1,5 @@
 import React from 'react';
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
 import {DESIGN_TOKENS} from '../design/tokens';
 
 export const S07_Synthesis: React.FC = () => {
@@ -12,158 +12,200 @@ export const S07_Synthesis: React.FC = () => {
     config: DESIGN_TOKENS.spring.default,
   });
 
-  const glowPulse = 0.8 + 0.2 * Math.sin(frame * 0.2);
-
   return (
     <div
       style={{
         width: '100%',
         height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        paddingTop: DESIGN_TOKENS.safeArea.top + 40,
+        position: 'relative',
+        padding: '110px 80px 40px 80px',
         opacity: entry,
+        boxSizing: 'border-box',
+        fontFamily: DESIGN_TOKENS.fonts.primary,
+        color: '#121212',
       }}
     >
-      {/* Category Pill */}
-      <div
-        style={{
-          backgroundColor: 'rgba(249, 115, 22, 0.15)',
-          border: '1px solid rgba(249, 115, 22, 0.4)',
-          borderRadius: 99,
-          padding: '8px 26px',
-          marginBottom: 32,
-        }}
-      >
-        <span
+      {/* Top Header Banner */}
+      <div>
+        <div
           style={{
-            color: '#FDBA74',
-            fontFamily: DESIGN_TOKENS.fonts.mono,
-            fontSize: 22,
-            fontWeight: 700,
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            borderBottom: '6px solid #121212',
+            paddingBottom: 20,
           }}
         >
-          Key Insight
-        </span>
+          <div style={{display: 'flex', gap: 12, alignItems: 'center'}}>
+            <div style={{width: 24, height: 24, backgroundColor: '#E63946'}} />
+            <div style={{width: 24, height: 24, borderRadius: '50%', backgroundColor: '#1D3557'}} />
+            <div
+              style={{
+                width: 0,
+                height: 0,
+                borderLeft: '12px solid transparent',
+                borderRight: '12px solid transparent',
+                borderBottom: '24px solid #FFB703',
+              }}
+            />
+            <span
+              style={{
+                fontSize: 22,
+                fontWeight: 900,
+                letterSpacing: 2,
+                marginLeft: 8,
+                textTransform: 'uppercase',
+              }}
+            >
+              SYNTHESIS & RESOLUTION // 07
+            </span>
+          </div>
+          <span
+            style={{
+              fontSize: 20,
+              fontWeight: 800,
+              backgroundColor: '#121212',
+              color: '#F3EFE6',
+              padding: '6px 14px',
+            }}
+          >
+            FIG. 7.0
+          </span>
+        </div>
+
+        {/* Headline */}
+        <div style={{marginTop: 28}}>
+          <div
+            style={{
+              fontSize: 24,
+              fontWeight: 800,
+              color: '#1D3557',
+              letterSpacing: 3,
+              textTransform: 'uppercase',
+            }}
+          >
+            THE SCIENTIFIC VERDICT
+          </div>
+          <h2
+            style={{
+              fontSize: 50,
+              fontWeight: 900,
+              lineHeight: 1.1,
+              margin: '12px 0 0 0',
+              letterSpacing: -1,
+              textTransform: 'uppercase',
+              color: '#121212',
+            }}
+          >
+            YOU ARE NOT CHASING PLEASURE ANYMORE.
+          </h2>
+        </div>
       </div>
 
-      {/* Hero Takeaway Card */}
+      {/* Hero Poster Centerpiece Card */}
       <div
         style={{
-          width: 900,
-          backgroundColor: 'rgba(15, 23, 42, 0.9)',
-          border: `3px solid ${DESIGN_TOKENS.colors.wantingAmber}`,
-          borderRadius: 36,
-          padding: '50px 44px',
+          width: '100%',
+          maxWidth: 920,
+          margin: '24px auto 0 auto',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
-          boxShadow: `0 24px 60px rgba(249, 115, 22, ${0.25 * glowPulse})`,
-          marginBottom: 40,
+          gap: 16,
         }}
       >
-        <span
-          style={{
-            color: '#94A3B8',
-            fontSize: 26,
-            fontWeight: 700,
-            fontFamily: DESIGN_TOKENS.fonts.mono,
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
-            marginBottom: 16,
-          }}
-        >
-          The Reality
-        </span>
-
-        <h1
-          style={{
-            fontSize: 76,
-            fontWeight: 900,
-            color: DESIGN_TOKENS.colors.textPrimary,
-            textAlign: 'center',
-            lineHeight: 1.1,
-            letterSpacing: '-0.03em',
-            margin: '0 0 28px 0',
-          }}
-        >
-          You Are{' '}
-          <span
-            style={{
-              color: DESIGN_TOKENS.colors.wantingAmber,
-              textShadow: `0 0 25px ${DESIGN_TOKENS.colors.wantingAmber}`,
-            }}
-          >
-            Trapped in Wanting
-          </span>
-        </h1>
-
+        {/* Massive Vermilion Hero Box */}
         <div
           style={{
-            width: 120,
-            height: 4,
-            backgroundColor: DESIGN_TOKENS.colors.wantingAmber,
-            borderRadius: 2,
-            marginBottom: 32,
-          }}
-        />
-
-        <p
-          style={{
-            fontSize: 32,
-            color: '#E2E8F0',
-            textAlign: 'center',
-            lineHeight: 1.45,
-            margin: '0 0 28px 0',
+            backgroundColor: '#E63946',
+            color: '#FFFFFF',
+            border: '6px solid #121212',
+            boxShadow: '10px 10px 0 #121212',
+            padding: '28px 28px',
+            position: 'relative',
           }}
         >
-          The pleasure left long ago. Your dopamine circuit is firing on pure conditioned cues.
-        </p>
-
-        <div
-          style={{
-            backgroundColor: 'rgba(30, 41, 59, 0.8)',
-            borderRadius: 20,
-            padding: '18px 28px',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-            width: '100%',
-            textAlign: 'center',
-          }}
-        >
-          <span
+          <div
             style={{
-              color: DESIGN_TOKENS.colors.accentSky,
-              fontSize: 24,
-              fontWeight: 700,
+              position: 'absolute',
+              top: -14,
+              right: 20,
+              backgroundColor: '#FFB703',
+              color: '#121212',
+              padding: '4px 12px',
+              fontSize: 14,
+              fontWeight: 900,
+              border: '2px solid #121212',
             }}
           >
-            💡 Insight: Stop fighting pleasure. Remove the environment triggers.
+            THE BIOLOGICAL TRAP
+          </div>
+
+          <h1
+            style={{
+              fontSize: 62,
+              fontWeight: 900,
+              lineHeight: 1.05,
+              margin: '4px 0 0 0',
+              letterSpacing: -2,
+              textTransform: 'uppercase',
+            }}
+          >
+            YOU ARE TRAPPED<br />IN WANTING.
+          </h1>
+        </div>
+
+        {/* Analytical Explanation Card */}
+        <div
+          style={{
+            backgroundColor: '#FFFFFF',
+            border: '6px solid #121212',
+            boxShadow: '8px 8px 0 #121212',
+            padding: '20px 24px',
+          }}
+        >
+          <div style={{fontSize: 21, fontWeight: 700, color: '#121212', lineHeight: 1.4}}>
+            The pleasure left long ago through tolerance. Your dopamine pursuit hardware was hyper-sensitized to environmental triggers.
+          </div>
+        </div>
+
+        {/* Strategic Insight Strip */}
+        <div
+          style={{
+            backgroundColor: '#FFB703',
+            color: '#121212',
+            border: '4px solid #121212',
+            boxShadow: '6px 6px 0 #121212',
+            padding: '16px 20px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 14,
+          }}
+        >
+          <span style={{fontSize: 22, fontWeight: 900}}>TAKEAWAY:</span>
+          <span style={{fontSize: 18, fontWeight: 800, lineHeight: 1.3}}>
+            Do not fight cravings with willpower alone. Alter the environment to remove the cues that trigger dopamine sensitization.
           </span>
         </div>
       </div>
 
-      {/* Community Engagement Discussion Prompt */}
+      {/* Pinned Bottom Footer Banner */}
       <div
         style={{
-          width: 900,
-          backgroundColor: 'rgba(30, 41, 59, 0.5)',
-          borderRadius: 24,
-          padding: '22px 32px',
-          border: '1px solid rgba(255, 255, 255, 0.08)',
+          position: 'absolute',
+          bottom: 50,
+          left: 80,
+          right: 80,
           display: 'flex',
+          justifyContent: 'space-between',
           alignItems: 'center',
-          justifyContent: 'center',
-          gap: 16,
+          borderTop: '4px solid #121212',
+          paddingTop: 16,
         }}
       >
-        <span style={{fontSize: 30}}>💬</span>
-        <span style={{fontSize: 24, fontWeight: 700, color: '#F1F5F9'}}>
-          What habit have you caught yourself wanting without liking?
-        </span>
+        <span style={{fontSize: 20, fontWeight: 900}}>PEERGRAPHICS // SWISS DESIGN SYSTEM</span>
+        <span style={{fontSize: 18, fontWeight: 700, color: '#1D3557'}}>BERRIDGE & ROBINSON (1993, 2016)</span>
       </div>
     </div>
   );
 };
+

@@ -1,9 +1,11 @@
-# Production Brief: Why Can't You Quit Even If You Hate It?
+# Production Brief: Identifying Healthy vs Unhealthy Relationships
 
-- **Format:** Native Vertical Short (9:16, 1080 × 1920, 30 fps)
-- **Target Runtime:** 38.19 seconds (1146 frames at 30 fps)
-- **Target Audience:** General audience, students, and anyone experiencing compulsive habits (doomscrolling, gaming, smoking, snacking) who wonders why willpower fails when the pleasure is gone.
-- **Primary Learning Outcome:** Understand that the brain has two dissociable reward systems—opioid-driven "liking" (pleasure) and dopamine-driven "wanting" (craving)—and explain how chronic repetition silences pleasure via tolerance while sensitizing dopamine craving, trapping them in pure wanting.
-- **Tone:** Intellectual, empathetic, visually illuminating, grounded in real neuroscience without sensationalist fluff.
-- **Audio Voiceover:** ElevenLabs voice actor Eric ("Conversational, Original"), measured duration: 38.191s.
-- **Key Reference:** Kent Berridge & Terry Robinson (Incentive-Sensitization Theory of Addiction, 1993, 2016).
+## Core Subject & Angle
+- **Topic**: Identifying Healthy vs. Unhealthy Relationships through the lens of psychological safety and conflict dynamics.
+- **Audience**: General audience, adults, daters, couples, young adults navigating interpersonal boundaries.
+- **Primary Learning Outcome**: Understand that the true differentiator between healthy and unhealthy relationships is not the emotional highs, but emotional safety during uncomfortable moments. Healthy relationships treat conflict collaboratively (team vs. problem) and meet boundaries with curiosity; unhealthy dynamics treat conflict as a battle for control and punish boundaries with guilt, stonewalling, or anger.
+- **Actionable Solution / Antidote**: The "Boundary Test"—observe how someone reacts when you express a simple limit or say "no."
+- **Tone & Style**: Direct, empowering, psychologically grounded, high-impact, and clear.
+- **Format**: Vertical Short (9:16, 1080 × 1920, 30 fps, 60.76s, 1,824 frames).
+- **Visual Design System**: Theme 09 (Punk Editorial & Risograph Collage).
+- **Safe Zone Rule**: Strict YouTube Shorts UI Safe Zones (Top ≥ 160px, Bottom ≥ 400px ending at y ≤ 1520px, Right Rail ≥ 140px, Content Max Width 850px).

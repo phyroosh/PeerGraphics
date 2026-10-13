@@ -14,7 +14,7 @@ export const Captions: React.FC = () => {
     return null;
   }
 
-  // Quick 3-frame fade in and out for crisp speech rhythm
+  // Fast 3-frame snap for calm, serene reading rhythm
   const cueProgress = frame - activeCue.from;
   const remainingFrames = activeCue.to - frame;
   const opacity = interpolate(
@@ -30,7 +30,7 @@ export const Captions: React.FC = () => {
     <div
       style={{
         position: 'absolute',
-        bottom: 240, // Positioned safely above YouTube Shorts bottom control shelf
+        bottom: 420, // Strictly >= 400px from bottom (clears YouTube Shorts bottom UI shelf)
         left: DESIGN_TOKENS.safeArea.left,
         right: DESIGN_TOKENS.safeArea.right,
         display: 'flex',
@@ -43,25 +43,24 @@ export const Captions: React.FC = () => {
     >
       <div
         style={{
-          backgroundColor: 'rgba(7, 11, 20, 0.88)',
-          border: '1px solid rgba(255, 255, 255, 0.12)',
-          borderRadius: 20,
-          padding: '16px 28px',
-          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.5)',
-          maxWidth: '92%',
+          backgroundColor: '#FFFFFF',
+          borderRadius: 8,
+          border: '4px solid #111111',
+          boxShadow: '8px 8px 0 #111111',
+          padding: '18px 30px',
+          maxWidth: 820,
           textAlign: 'center',
-          backdropFilter: 'blur(12px)',
         }}
       >
         <p
           style={{
             margin: 0,
-            color: DESIGN_TOKENS.colors.textPrimary,
-            fontSize: 42,
-            fontWeight: 700,
-            lineHeight: 1.35,
-            fontFamily: DESIGN_TOKENS.fonts.primary,
-            letterSpacing: '-0.01em',
+            color: '#111111',
+            fontSize: 36,
+            fontWeight: 800,
+            lineHeight: 1.3,
+            fontFamily: DESIGN_TOKENS.fonts.display,
+            letterSpacing: '-0.02em',
           }}
         >
           {words.map((word, index) => {
@@ -70,18 +69,32 @@ export const Captions: React.FC = () => {
               hw.toLowerCase().split(' ').includes(cleanWord)
             );
 
-            return (
+            const highlightBg = activeCue.color || '#FF0055';
+            const highlightTextColor = highlightBg === '#FFE600' || highlightBg === '#00E5FF' ? '#111111' : '#FFFFFF';
+
+            return isHighlighted ? (
               <span
                 key={index}
                 style={{
-                  color: isHighlighted
-                    ? activeCue.color || DESIGN_TOKENS.colors.accentSky
-                    : DESIGN_TOKENS.colors.textPrimary,
-                  textShadow: isHighlighted
-                    ? `0 0 16px ${activeCue.color || DESIGN_TOKENS.colors.accentSky}80`
-                    : 'none',
-                  marginRight: index < words.length - 1 ? '10px' : '0',
+                  backgroundColor: highlightBg,
+                  color: highlightTextColor,
+                  padding: '3px 12px',
+                  border: '2px solid #111111',
+                  boxShadow: '3px 3px 0 #111111',
+                  fontWeight: 900,
                   display: 'inline-block',
+                  marginRight: index < words.length - 1 ? '6px' : '0',
+                }}
+              >
+                {word}
+              </span>
+            ) : (
+              <span
+                key={index}
+                style={{
+                  color: '#111111',
+                  display: 'inline-block',
+                  marginRight: index < words.length - 1 ? '6px' : '0',
                 }}
               >
                 {word}

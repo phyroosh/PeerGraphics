@@ -1,11 +1,12 @@
 ---
 name: educational-explanation-video
-version: 1.1.0
+version: 1.2.0
 description: >-
   Produce research-grounded vertical educational short videos in a strict two-phase
-  workflow: first deliver a copy-ready 25–40 second explanation for the user to voice
-  in ElevenLabs, then wait for the supplied audio before planning, implementing, and
-  validating audio-driven visuals with Remotion and React.
+  workflow: first deliver a copy-ready explanation covering both the root mechanism
+  and the concrete actionable solution for the user to voice in ElevenLabs, then wait
+  for the supplied audio before planning, implementing, and validating audio-driven visuals
+  with Remotion and React.
 ---
 
 # Educational Explanation Video Production Skill
@@ -14,17 +15,17 @@ description: >-
 
 Turn one user-provided topic into a short video that helps a real audience understand, remember, and use one valuable idea. Work as an integrated subject researcher, educator, scriptwriter, visual designer, motion designer, editor, sound designer, and Remotion engineer.
 
-**This skill has two mandatory phases, with a user-controlled handoff between them.** In Phase 1, research the topic and return a complete, accurate, naturally spoken, copy-ready voiceover explanation as plain text. The user generates the voice with ElevenLabs. Then stop and wait for the user to supply that audio. In Phase 2, treat the supplied audio as the authoritative narration and timeline; plan and produce the visuals around its actual words, pauses, emphasis, and duration. Never begin visual production before the audio file is provided.
+**This skill has two mandatory phases, with a user-controlled handoff between them.** In Phase 1, research the topic and return a complete, accurate, naturally spoken, copy-ready voiceover explanation as plain text that includes both the underlying mechanism and the concrete solution/antidote at the end. The user generates the voice with ElevenLabs. Then stop and wait for the user to supply that audio. In Phase 2, treat the supplied audio as the authoritative narration and timeline; plan and produce the visuals around its actual words, pauses, emphasis, and duration. Never begin visual production before the audio file is provided.
 
-The default deliverable is a native vertical short for YouTube Shorts, Instagram Reels, or TikTok: **9:16, 1080 × 1920 pixels, 30 fps, and a target runtime of 25–40 seconds**. The video is not a narrated article with animated text. Narration, composition, diagrams, movement, examples, sound, and timing must reinforce one another. A visual must clarify a relationship, expose a mechanism, compare alternatives, make change observable, direct attention, evoke a useful feeling, or aid recall. If it does none of these, remove it.
+The default deliverable is a native vertical short for YouTube Shorts, Instagram Reels, or TikTok: **9:16, 1080 × 1920 pixels, 30 fps, naturally paced (typically 40–65 seconds, without any rigid 40-second cutoff)** to ensure both the root problem and its practical resolution are fully explained. The video is not a narrated article with animated text. Narration, composition, diagrams, movement, examples, sound, and timing must reinforce one another. A visual must clarify a relationship, expose a mechanism, compare alternatives, make change observable, direct attention, evoke a useful feeling, or aid recall. If it does none of these, remove it.
 
-**Definition of done:** Phase 1 delivers an accurate, engaging explanation and then waits. Phase 2 preserves the supplied voiceover, uses its measured duration and actual timing, designs native vertical visual storytelling for it, implements deterministic frame-accurate Remotion scenes, delivers a rendered video that has been inspected and corrected, and outputs complete YouTube upload metadata (title, description with hashtags, tags, categoryId, pinned comment) and a synchronized `.srt` caption file ready for YouTube upload.
+**Definition of done:** Phase 1 delivers an accurate, engaging explanation with a clear solution and then waits. Phase 2 preserves the supplied voiceover, uses its measured duration and actual timing, designs native vertical visual storytelling for it, implements deterministic frame-accurate Remotion scenes, delivers a rendered video that has been inspected and corrected, and outputs complete YouTube upload metadata (title, description with hashtags, tags, categoryId, pinned comment) and a synchronized `.srt` caption file ready for YouTube upload.
 
 ## Operating rules
 
 1. **Respect the phase gate.** A topic triggers research and copy-ready narration only. Do not inspect or modify a video project, storyboard, write visual code, generate assets, or render until the user supplies the ElevenLabs audio.
 2. **The voiceover is the source of truth.** After the audio arrives, do not independently rewrite, paraphrase, shorten, expand, reorder, or silently trim the approved narration. If it needs changing, ask the user to approve a script revision and supply or approve a replacement voiceover.
-3. **Understand before explaining.** Verify consequential claims, identify a common misconception when useful, and teach one central idea with only the supporting information needed to understand it.
+3. **Understand before explaining.** Verify consequential claims, identify a common misconception when useful, and teach one central idea with the supporting mechanism and actionable solution needed to resolve it.
 4. **Audio determines visual timing.** Measure the supplied file. Align scene boundaries, text, emphasis, animation, transitions, and captions to the actual narration, not estimated word timing.
 5. **Design native to vertical.** Compose directly for a 9:16 mobile screen. Never design a horizontal video and crop it into vertical; protect focal content from platform interface overlays.
 6. **Show relationships, not merely nouns.** When explaining a process, render the process. When explaining a distinction, compare the two things. When explaining causality, make the causal path visible.
@@ -35,7 +36,24 @@ The default deliverable is a native vertical short for YouTube Shorts, Instagram
 11. **Be honest about deliverables.** Distinguish a finished render from a preview, a storyboard, or an unrendered implementation. Report any review that could not be performed.
 12. **Do not silently discard user constraints.** Preserve requested language, audience, tone, branding, and supplied assets where feasible. If details are missing, use the defaults below rather than stalling on avoidable questions.
 13. **Mandatory YouTube metadata and captions.** Every rendered video in Phase 2 must be accompanied by complete YouTube publishing metadata (`production/metadata.json` and sync to `studio/metadata.json`) including high-CTR title with `#Shorts`, rich description with topic hashtags, searchable tags array, YouTube categoryId (27 = Education, 28 = Science & Tech), high-converting pinned discussion comment, and a synchronized `.srt` caption file (`production/captions.srt` or `out/<video>.srt`).
-14. **Default Visual Theme — Theme 3 (Swiss Bauhaus & Neo-Brutalist).** For every new video generation in PeerGraphics, all agents must use **Theme 3 (Swiss Bauhaus & Neo-Brutalist)** as the mandatory default design system unless the user explicitly requests a different theme. All scenes, diagrams, text cards, and layouts must follow the high-contrast modernist off-white canvas (`#F3EFE6`), heavy black brutalist borders (`#121212`, 4–8px), hard drop shadows (`8px 8px 0 #121212` to `12px 12px 0 #121212`), Vermilion red (`#E63946`) conflict/focal accents, deep navy/cobalt (`#1D3557`) structural elements, cadmium yellow (`#FFB703`) highlight badges, and ultra-bold grotesque typography (Helvetica Neue / Inter, 900 weight) with tight tracking. Reference implementation: `src/themes/Theme3_SwissBauhaus.tsx`.
+14. **Visual Style — Theme 09 (Punk Editorial & Risograph Collage) as a Dynamic Style, NOT a Fixed Template.** For every new video generation in PeerGraphics, all agents must use **Theme 09 (Punk Editorial & Risograph Collage)** as the aesthetic styling language, while operating as a **veteran motion designer with 20 years of experience creating animations for a university professor**:
+    - **NEVER Use Fixed Card Templates**: Absolutely DO NOT treat Theme 09 as a rigid 3-box wireframe (e.g. `<HeadlineBox> + <WhiteCardWithGraph> + <InsightBox>`). The entire 1080×1920 canvas is an active, open vector drawing surface. There are no mandatory card wrappers.
+    - **The "Mute Test" (Silent Comprehension Rule)**: The motion must explain the mechanism, conflict, and resolution so vividly that a student watching on mute with zero sound and no subtitles immediately understands what is happening.
+    - **Draw Shapes, Characters, Objects & Physical Mechanisms in React**: Use React, SVG primitives (`<path>`, `<circle>`, `<polygon>`, `<g>`, `<mask>`, clipPaths), and Remotion springs to draw the actual entities in the concept:
+      * **Characters**: Geometric SVG puppets with expressive postures, head angles, animatable eyes/gaze, and gestures.
+      * **Apparatuses & Physical Metaphors**: Balances, scales, tipping beams, pressure chambers, cracking surfaces, fluid pipes, valves, gears, shields, locks, and test rigs.
+      * **Animate What is Actually Happening**: Show cause-and-effect with physical weight, recoil, stress fractures, collisions, and progressive transformations.
+    - **Theme 09 Aesthetic Signature**: Apply the Risograph Punk Zine aesthetic dynamically to any drawn object: newsprint halftone canvas (`#EAE5DB`), bold risograph spot fills (`#FF0055`, `#FFE600`, `#00E5FF`, `#FFFFFF`), inky black outlines (`stroke="#111111" strokeWidth="4-6"`), offset drop shadows (`boxShadow: 10px 10px 0 #111111` or offset duplicate black SVG shapes), torn paper accents, and chunky sticker labels.
+    - **Zero Clutter & Single Focal Mechanism**:
+      * Absolutely NO decorative top telemetry bars, fake circuit codes (`CIRCUIT 02`), technical figure tags (`FIG. 4.0`), shape rows (`■ ● ▲`), or top dividing rules.
+      * NO badge soup or collections of meaningless capsule tags.
+      * Keep the composition focused: one primary animated mechanism or character interaction at a time with generous negative space.
+    - **Mobile Typography Standards (iPhone 15 Legible)**:
+      * Headlines / Hero phrases: **80px – 110px**
+      * Explanatory copy & callouts: **38px – 52px**
+      * Absolute minimum font size anywhere on screen: **32px** (NEVER use micro-text < 32px).
+    - **Mandatory Actionable Solution at the End**: Every explanation script must provide the concrete solution, actionable antidote, or resolution to the problem before concluding.
+    - **Strict YouTube Shorts UI Safe Zones**: Top padding ≥ 160px, Bottom padding ≥ 400px (all visual content terminates cleanly at $y \le 1520\text{ px}$ to clear channel avatar, subscribe button, captions, sound ticker, and progress scrubber), Right margin ≥ 140px (clears Like/Comment/Share action buttons), Left margin ≥ 90px.
 
 ---
 
@@ -50,14 +68,14 @@ Operate in the two phases below. The phase boundary is mandatory: the agent must
 | 0. Topic brief | Resolve reasonable audience, purpose, language, and constraints | One central question/idea is clear; avoid unnecessary clarification |
 | 1. Research and understand | Verify consequential claims, map the mechanism, identify caveats and misconceptions | Agent can explain the topic accurately in plain language |
 | 2. Learning design | Choose one primary learning outcome and a simple progression | Every sentence supports the same central idea |
-| 3. Voiceover explanation | Write and read aloud a copy-ready 25–40 second narration | Accurate, compelling, natural when spoken, typically 60–95 words |
+| 3. Voiceover explanation | Write a copy-ready narration covering hook, root mechanism, and concrete actionable solution | Accurate, compelling, natural when spoken (typically 40–65s, no rigid 40s cap) |
 | 4. User handoff and stop | Present the narration as plain text, separate from sources or commentary | Stop; wait for user-provided ElevenLabs audio; do no visual production |
 
-**Phase 1 output:** one complete voiceover text with no scene directions, visual descriptions, timestamps, production notes, sound cues, edit instructions, or Markdown inside the narration itself. Put any brief source notes or factual caveats outside the copyable text and only when useful. Clearly ask the user to generate the voiceover in ElevenLabs and upload the resulting audio file. Do not create a substitute voiceover, begin the Remotion timeline, or continue into Phase 2 in the same turn.
+**Phase 1 output:** one complete voiceover text with no scene directions, visual descriptions, timestamps, production notes, sound cues, edit instructions, or Markdown inside the narration itself. Put any brief source notes or factual caveats outside the copyable text and only when useful. The voiceover MUST follow the complete narrative arc: **Hook/Puzzle → Core Mechanism/Root Cause → Concrete Actionable Solution/Antidote**. Clearly ask the user to generate the voiceover in ElevenLabs and upload the resulting audio file. Do not create a substitute voiceover, begin the Remotion timeline, or continue into Phase 2 in the same turn.
 
 ### Stage 0 — Resolve the Phase 1 brief
 
-Use the topic and any context already provided. Do not ask the user to repeat information already in the conversation. When not specified, assume a general audience with beginner-to-intermediate prior knowledge, conversational English, a single valuable idea, and a 25–40 second vertical short. Ask one concise question only if a missing detail materially changes factual accuracy or the intended audience and cannot be safely defaulted.
+Use the topic and any context already provided. Do not ask the user to repeat information already in the conversation. When not specified, assume a general audience with beginner-to-intermediate prior knowledge, conversational English, a single valuable idea resolved with an actionable solution, and a naturally paced vertical short. Ask one concise question only if a missing detail materially changes factual accuracy or the intended audience and cannot be safely defaulted.
 
 Record a brief internally if useful: topic/question; target audience; primary learning outcome; tone/language; must-include or must-avoid requirements; and any sources or user-provided material. **Do not inspect the video repository or create visual assets during Phase 1.**
 
@@ -67,9 +85,10 @@ Only research, reason, and write the explanation. You may consult reliable exter
 
 ### Stage 0.2 — Default delivery format
 
-- **Target video format:** vertical 9:16, 1080 × 1920, 30 fps, 25–40 seconds.
-- **Default visual theme:** **Theme 3 (Swiss Bauhaus & Neo-Brutalist)** — Modernist off-white canvas `#F3EFE6`, 6px brutalist black borders `#121212`, hard drop shadows, high-contrast Vermilion red `#E63946`, deep navy `#1D3557`, and ultra-bold grotesque typography.
-- **Narration planning length:** approximately 60–95 words as an initial guideline; natural read speed, complexity, language, emphasis, and pauses take precedence over a rigid word count.
+- **Target video format:** vertical 9:16, 1080 × 1920, 30 fps, naturally paced (typically 40–65 seconds, without any rigid 40-second cutoff).
+- **Default visual theme:** **Theme 09 (Punk Editorial & Risograph Collage)** — Newsprint halftone canvas `#EAE5DB`, risograph hot pink `#FF0055`, high-voltage yellow `#FFE600`, pitch black `#111111` with bold drop shadows, zero top telemetry clutter, minimum font size 32px (iPhone 15 legible), single focal graphic at a time, and strict YouTube Shorts safe zones (Top ≥ 160px, Bottom ≥ 400px, Right margin ≥ 140px).
+- **Mandatory Content Requirement:** The explanation MUST conclude with a concrete, practical, and actionable solution or resolution to the stated problem/trap.
+- **Narration planning length:** approximately 90–140 words as a natural guideline; natural read speed, complexity, language, emphasis, and pauses take precedence over a rigid word count.
 - **Narration style:** concise, conversational, vivid but not sensational, accurate, and easy to speak aloud.
 - **Visual production input:** only the audio file supplied by the user after external ElevenLabs generation, plus relevant context already in the conversation.
 - **Research integrity:** retain source notes separately from the narration; never paste citations or stage directions inside the copy-ready voiceover.
@@ -89,7 +108,7 @@ Start only after the user provides the ElevenLabs-generated voiceover audio. The
 | 8. Render and inspect | Render proofs and final export; inspect frames and full playback | Visual, synchronization, factual, and technical checks pass |
 | 9. Evaluation and delivery | Score the result, fix faults, and package actual deliverables | 9:16 video is verified; any limitation is disclosed |
 
-If the supplied file is outside 25–40 seconds, determine its actual duration and tell the user before building the video. Ask whether the visual production should follow the audio's actual length or whether the user prefers to create and supply a revised voiceover. Do not silently accelerate, cut, stretch, rewrite, or distort the narration to force compliance with the target runtime.
+Determine the supplied file's actual duration and build the visual production to that exact length. Do not silently accelerate, cut, stretch, rewrite, or distort the narration to force compliance with an artificial time limit.
 
 ## Phase 2 gate — Audio must arrive first
 
@@ -105,7 +124,7 @@ Research and reason through the topic before writing the final script. Build a p
 
 1. What is the topic in one accurate sentence?
 2. What question, confusion, or real-world problem makes it matter?
-3. What is the single central idea, and which one or two supporting details are genuinely necessary to understand it within 25–40 seconds?
+3. What is the single central idea, mechanism, and actionable solution needed to fully resolve the problem naturally (typically 40–65 seconds)?
 4. How do these ideas relate: sequence, hierarchy, comparison, cause and effect, feedback, trade-off, probability, scale, or constraint?
 5. What prior knowledge does the explanation rely on?
 6. What do beginners commonly confuse with it?
@@ -182,7 +201,7 @@ Choose a progression that fits the subject. A useful default is:
 6. **Boundary or correction:** show where intuition fails or where the simplified model has limits.
 7. **Synthesis:** reconstruct the whole idea and state the takeaway in memorable language.
 
-For a 25–40 second short, default to a compact arc: **hook or puzzle → clear explanation with one relatable example/analogy if useful → satisfying conclusion or takeaway**. The seven steps above are a menu, not seven compulsory beats; compress and reorder them to suit the topic. Do not delay the answer merely to manufacture suspense.
+For an educational short, default to a complete, naturally paced narrative arc (typically 40–65s, no artificial 40s cutoff): **hook or paradox → root mechanism/cause → concrete, actionable solution & resolution**. Never leave the viewer hanging with only the diagnosis; always deliver the antidote or actionable principle at the end. The seven steps above are a menu, not seven compulsory beats; compress and reorder them to suit the topic. Do not delay the answer merely to manufacture suspense.
 
 ### 2.3 Manage cognitive load deliberately
 
@@ -256,13 +275,13 @@ Skip elaborate channel idents unless the user explicitly needs one; they consume
 
 ### 3.4 Script timing for a vertical short
 
-Write for a target spoken duration of **25–40 seconds**. Approximately **60–95 words** is a starting guideline, not a hard limit. Estimate with the actual language and voice in mind; a useful initial estimate for English may be 130–160 words per minute, but pauses, emotional emphasis, unfamiliar terms, and language-specific pacing can change the result.
+Write for a natural, unhurried spoken duration (typically **40–65 seconds**, without any rigid 40-second cutoff). Approximately **90–140 words** is a starting guideline, not a hard limit. Ensure the narrative completes the full arc: hook $\to$ root mechanism $\to$ concrete actionable solution. Estimate with the actual language and voice in mind; a useful initial estimate for English may be 130–160 words per minute, but pauses, emotional emphasis, unfamiliar terms, and language-specific pacing can change the result.
 
 - Read the complete explanation aloud and time it naturally. Keep the language comfortably speakable; do not solve a duration problem by forcing a breathless delivery.
-- Start with a specific hook that leads directly into one central idea. Use only the supporting detail needed for comprehension, then close with a satisfying insight or takeaway.
+- Start with a specific hook that leads directly into one central idea. Use only the supporting detail needed for comprehension, then close with a concrete, actionable solution or antidote.
 - Cut repetition, generic claims, unnecessary preambles, side facts, and any sentence that does not help the central learning objective.
 - Do not write estimated scene timestamps into the narration. Actual scene timing will be established later from the audio the user generates in ElevenLabs and supplies.
-- If a topic cannot responsibly be explained in 25–40 seconds, state that limitation concisely and narrow the scope to one defensible idea rather than cramming in details.
+- If a topic cannot responsibly be explained in 40–65 seconds, narrow the scope to one defensible mechanism and its direct solution rather than cramming in unrelated details.
 
 ### 3.5 Phase 1 narration deliverable
 
@@ -277,11 +296,12 @@ After presenting the explanation, give a brief handoff instruction to generate t
 Before sending the text, verify that:
 
 - The hook is compelling and honestly paid off.
-- The explanation teaches one central idea, not a list of loosely connected facts.
+- The explanation teaches one central idea and its underlying mechanism, not a list of loosely connected facts.
+- The ending provides a clear, actionable solution or resolution to the problem discussed.
 - Consequential claims are supported, qualified, or removed.
 - The language sounds natural when read aloud and is understandable to the intended audience.
-- It has a logical progression and a memorable, satisfying conclusion.
-- Its natural spoken duration is plausibly 25–40 seconds; approximately 60–95 words is a guideline only.
+- It has a logical progression and a memorable, actionable conclusion.
+- Its natural spoken duration is naturally paced (typically 40–65 seconds; approximately 90–140 words is a guideline only).
 - The copy-ready block contains narration only, with all source notes or commentary kept separate.
 - The agent is ready to stop and wait for the user-supplied ElevenLabs audio.
 
@@ -297,7 +317,7 @@ This stage is available only after the user has provided the ElevenLabs-generate
 
 1. **Identify and validate the file.** Confirm the actual path, file format, successful decoding, sample rate/channels where relevant, and whether the track contains only the intended narration. Preserve the original file unchanged; copy it into the project if needed rather than destructively editing the user's source.
 2. **Measure actual duration.** Use available media metadata tooling (for example, `ffprobe`) and confirm by listening or decoding. Treat the measured duration as the authoritative runtime for the composition.
-3. **Apply the runtime gate before visual production.** The target is 25–40 seconds. If the file is shorter or longer, tell the user its measured duration and ask whether to build to that actual length or wait for a revised voiceover. Do not proceed until this choice is clear. Never silently cut, speed up, stretch, reorder, regenerate, or otherwise distort the narration to force it into range.
+3. **Apply the runtime gate before visual production.** Pacing is natural (typically 40–65 seconds; there is no rigid 40-second cutoff). Inform the user of the exact measured runtime and build to that actual duration. Never silently cut, speed up, stretch, reorder, regenerate, or otherwise distort the narration to force it into an arbitrary range.
 4. **Transcribe or align as needed.** If an exact transcript has not been provided, transcribe the audio or use an available speech-alignment tool, then listen-check important terms, numbers, names, clause boundaries, and punctuation. A transcript is an alignment aid, not permission to edit the voiceover.
 5. **Create an audio map.** Record each utterance or meaningful phrase with start/end time (and frame once fps is confirmed), semantic purpose, stressed words, pauses, changes in tone, and any uncertainty in the alignment. Use waveform inspection as supporting evidence, not as a replacement for understanding the words.
 6. **Lock narration.** Store the supplied source file and a verified transcript/alignment reference. This exact audio is the source of truth. Do not paraphrase, shorten, expand, reorder, replace, or regenerate any spoken content. If there is a serious pronunciation or recording defect, surface it to the user and request approval/replacement audio rather than concealing it by changing the narration.
@@ -327,28 +347,86 @@ Create `production/art-direction.md` before producing a large set of assets. Spe
 
 The design system should make different scenes feel related without making them indistinguishable. Use the subject itself to inspire visual motifs: flows for processes, layers for hierarchies, fields for spatial relationships, timelines for change, or contrasting geometries for competing models.
 
-#### 4.1.1 Mandatory Default: Swiss Bauhaus & Neo-Brutalist (Theme 3)
-Unless explicitly instructed otherwise by the user, configure the production design system to match **Theme 3 (Swiss Bauhaus & Neo-Brutalist)**:
-- **Canvas Base**: `#F3EFE6` (warm architectural off-white).
-- **Cards & Surfaces**: `#FFFFFF` with heavy `border: '6px solid #121212'` and hard drop shadows (`boxShadow: '8px 8px 0 #121212'` or `'12px 12px 0 #121212'`).
-- **Semantic Colors**:
-  - `#E63946` (Vermilion Red): Core tension, defect, penalty, dominant trap, key focal takeaway.
-  - `#1D3557` (Deep Cobalt): Cooperation, baseline structure, mathematical framing.
-  - `#FFB703` (Cadmium Yellow): Stable equilibrium badges, accent chips, status callouts.
-  - `#121212` (Pitch Black): High-contrast brutalist borders, headers, and framing bands.
-- **Typography**: Ultra-bold grotesque typography (`'Helvetica Neue', Helvetica, Arial, sans-serif` or `Inter`, font-weight `900`). Display titles use tight tracking (`letterSpacing: -1` to `-2`), and section tags use wide uppercase tracking (`letterSpacing: 2` to `3`).
-- **Layout Patterns**: 2×2 payoff matrices, brutalist callout strips with offset shadows, geometric badge chips (circle, square, triangle), and stacked vertical comparison hierarchies.
-- **Component Blueprint**: Follow [`src/themes/Theme3_SwissBauhaus.tsx`](file:///home/phyroosh/PeerGraphics/src/themes/Theme3_SwissBauhaus.tsx) as the primary architectural template.
+#### 4.1.1 The 20-Year Veteran Motion Designer Doctrine (Theme 09 Dynamic Styling, NOT a Template)
+
+Never treat Theme 09 as a static 3-box card layout (e.g., headline container + white card with graph + insight box). That is a PowerPoint slide, not educational motion design. 
+
+Instead, act as a **master visualizer with 20 years of experience creating motion graphics for a university professor**. Use the full 1080×1920 vertical canvas to draw characters, physical objects, and active mechanisms in React and SVG that **explain the lesson even on mute**.
+
+##### 1. The Mute Test (Silent Comprehension Standard)
+If the video is played on mute without audio or captions, a student watching the motion alone must still understand:
+1. **Who the actors are** (the characters, molecules, forces, or entities).
+2. **Where the tension or conflict lies** (what is cracking, tipping, colliding, or getting stuck).
+3. **What the underlying mechanism is** (cause-and-effect relationship).
+4. **How the problem resolves** (the antidote, balance restored, or mechanism unlocked).
+
+If a scene relies solely on reading a text paragraph or looking at a static icon in a box, **it fails the Mute Test**.
+
+##### 2. Deconstructing the Concept into Physical Entities & Forces
+Before writing JSX, break down the core beat into physical metaphors:
+- **Actors / Characters**: Who experiences the phenomenon? Draw expressive geometric SVG characters (pupil eye movements, body posture, gestures, tool use).
+- **Physical Apparatus**: What real-world or mechanical apparatus illustrates the dynamic?
+  - *Balances & Scales*: Tipping beams, weights dropping, counterbalances, fulcrums shifting.
+  - *Pipes & Flow Circuits*: Fluids pumping, valves closing, blockages forming, leaks springing.
+  - *Stress & Fracture*: Surfaces cracking under pressure, shock absorbers dampening blows.
+  - *Testing Rigs*: Dials, meters, gauges sweeping into the red zone, needles vibrating.
+  - *Shields & Bridges*: Protective canopies forming, barriers dropping, bridges extending between islands.
+- **Dynamic Transformation**: Animate the transition between states. Show the crack propagating, the lever tilting, the characters uniting shoulder-to-shoulder, or the shield deflecting the incoming threat.
+
+##### 3. How to Draw Shapes, Characters & Objects in React / SVG
+In React, you have total creative freedom to render any vector geometry:
+- **Geometric SVG Characters**: Combine `<circle>`, `<ellipse>`, `<path>`, `<rect>`, `<polygon>` into expressive vector puppets.
+  - Animate pupil positions with `interpolate` or `spring` to make the character look at the danger, look at the partner, or look up in surprise.
+  - Animate arm angles and body tilt to convey confidence, exhaustion, tiptoeing, or determination.
+- **Physical Apparatuses**:
+  - Draw custom paths with animated `strokeDashoffset` for wires, ropes, and progress trajectories.
+  - Use SVG transforms (`transform={`rotate(${angle} ${pivotX} ${pivotY})`}`) to animate levers, see-saws, and pendulum swings.
+  - Use SVG `<clipPath>` or masks to create animated reveals, liquid filling, or cutaway x-ray views.
+- **Kinetic Physics**:
+  - Apply Remotion `spring()` with intentional mass, damping, and stiffness so objects feel like they have physical inertia, weight, and recoil.
+  - Show impact recoil: when an anvil drops, the ground compresses or shakes before settling.
+
+##### 4. Theme 09 Aesthetic Skin (Punk Editorial & Risograph Zine)
+Apply the Theme 09 visual world dynamically across the scene:
+- **Canvas Base**: Tactile newsprint paper (`#EAE5DB`) with halftone dot texture (`radial-gradient(#C4BCAD 2px, transparent 2px)`).
+- **Ink & Strokes**: Chunky, tactile pitch-black outlines (`stroke="#111111" strokeWidth="4-6" strokeLinecap="round" strokeLinejoin="round"`).
+- **Risograph Spot Palette**:
+  - `#FF0055` (Risograph Hot Pink): Energy spikes, alarms, active mechanisms, emotional intensity.
+  - `#FFE600` (High-Voltage Neon Yellow): Kinetic highlights, insight tape, curiosity sparks.
+  - `#00E5FF` (Electric Cyan): Calming counter-balance, safety fields, verified logic.
+  - `#111111` (Pitch Black): Heavy editorial ink, structural bones, solid drop shadows.
+  - `#FFFFFF` (Pure White): Crisp contrast cutouts, paper chips, teeth/eyes.
+- **Tactile Depth**: Solid offset drop shadows (`10px 10px 0 #111111`), ripped paper edges, and sticker labels.
+- **Zero Decorative Telemetry**: NO fake figure codes (`FIG. 4.0`), NO circuit telemetry headers, NO shape rows (`■ ● ▲`), NO badge soup.
+- **Mobile Readability Floor**: Minimum **32px** on all labels, numbers, and tags. Headlines **80–110px**.
+- **Safe Viewport**: Keep primary actors and mechanisms within YouTube Shorts safe bounds ($y = 160$px to $y = 1520$px, content max-width 850px). Elements can freely use the entire space without being boxed into identical cards.
+
+#### 4.1.2 Mandatory YouTube Shorts UI Safe Zones (Zero-Overlap Guarantee)
+Vertical video platforms (specifically YouTube Shorts) overlay heavy native interactive elements. All scenes and themes MUST enforce these exact boundary rules:
+- **Top Safe Zone (Padding Top ≥ 160px)**: The top 160px is reserved for phone status bars (time, battery), and the YouTube Shorts camera/search/menu icons. No headlines or tags may start above `y = 160px`.
+- **Bottom Safe Zone (Padding Bottom ≥ 400px / Content Ends at y ≤ 1520px)**: The bottom 400px of the screen (`y = 1520px` to `1920px`) is heavily occluded by native YouTube overlays:
+  1. Channel avatar, `@channelname`, and `Subscribe` button (`y ≈ 1540–1660`)
+  2. Video title and caption description lines (`y ≈ 1660–1780`)
+  3. Audio track sound ticker with rotating vinyl disc (`y ≈ 1780–1860`)
+  4. Video progress scrubber bar (`y ≈ 1880–1920`)
+  **Critical Rule**: All diagrams, callout cards, analytical meters, subtitles, and explanatory copy MUST terminate cleanly at or above `y = 1520px`. Never position essential text or focal graphics below `y = 1520px`.
+- **Right Action Rail Safe Zone (Right Margin ≥ 140px / Content Max-Width ≤ 850px)**: The right-hand column (`x = 930px` to `1080px`, from `y = 850px` to `1650px`) contains YouTube's vertical engagement stack (Like + count, Dislike, Comment + count, Share, Remix, Sound). Keep all text, diagram labels, and focal nodes strictly within `x ≤ 920px` (or centered with `maxWidth: 850px`).
+- **Left Safe Zone (Margin ≥ 90px)**: Maintain clean typographic breathing room.
 
 ### 4.2 Typography and layout standards
 
-For the default **1080 × 1920 vertical canvas**, use these as starting ranges and validate them at actual mobile playback size:
+For the default **1080 × 1920 vertical canvas**, enforce these strict readability rules validated for compact mobile screens (e.g. iPhone 15 base model):
 
-- Main headline or key phrase: typically 80–140 px, according to word count and composition.
-- Core explanatory text: typically 46–68 px.
-- Labels, annotations, and data marks: typically 30–44 px.
-- Avoid essential text below 28 px at 1080 × 1920 unless legibility has been proven at phone size.
-- Keep important text and key objects inside generous safe margins. As an initial layout guide, protect roughly 80–100 px at the left and top, and reserve additional space near the right edge and bottom for platform UI. These are design heuristics, not universal platform-safe-area guarantees; check the destination platform's current overlay behavior when known.
+- **Strict Font Size Floor**: **Minimum 32px everywhere on 1080×1920 canvas**. Never render text below 32px. Micro-text is invisible on mobile screens.
+- **Main headline or key phrase**: typically 80–110 px (bold, punchy, high-contrast).
+- **Subheads and prominent cards**: typically 44–56 px.
+- **Core explanatory text**: typically 36–48 px.
+- **Labels, annotations, and data marks**: strictly 32–38 px (never below 32px).
+- **Anti-Clutter Guarantee**:
+  - Eliminate top telemetry headers, decorative code bars (`FIG. 4.0`), and extra capsule pill badges.
+  - Maintain **one clear primary focal point per beat**; secondary elements must be cleanly subordinate.
+  - Use generous negative space. Do not cram multiple competing charts or widgets into one scene.
+- **Enforce YouTube Shorts Safe Area**: Always honor `DESIGN_TOKENS.safeArea` (`top: 160, bottom: 400, left: 90, right: 140`). Never position text or actionable diagrams outside this inner viewport (ends at $y \le 1520\text{px}$).
 - Prefer short lines and intentional line breaks. Stack related material in a clear vertical hierarchy, and avoid stretching short phrases across the full width without compositional reason.
 
 Scale type proportionally for other resolutions; do not blindly reuse 1080p pixel sizes on a different canvas. Prioritize readability at actual playback size, not only at 100% zoom on a large monitor.
@@ -555,27 +633,74 @@ Use Remotion's frame-based model as the source of truth:
 
 Do not introduce a new animation library merely for a simple opacity or position tween. If adding a library for Lottie, path manipulation, 3D, or complex motion, verify that it is compatible with the installed Remotion version and server-side renderer.
 
-A small frame-driven example:
+A masterclass vector motion example demonstrating a character interacting with a physical tipping balance apparatus:
 
 ```tsx
 import React from 'react';
-import {interpolate, useCurrentFrame} from 'remotion';
+import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 
-export const RevealLabel: React.FC<{text: string}> = ({text}) => {
+export const InteractiveBalanceApparatus: React.FC = () => {
   const frame = useCurrentFrame();
-  const opacity = interpolate(frame, [0, 10], [0, 1], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
+  const {fps} = useVideoConfig();
+
+  // 1. Weight drops with heavy inertia
+  const weightDrop = spring({
+    frame: frame - 15,
+    fps,
+    config: {damping: 10, stiffness: 180, mass: 1.2},
   });
-  const x = interpolate(frame, [0, 10], [18, 0], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
-  });
+  const weightY = interpolate(weightDrop, [0, 1], [-200, 340]);
+
+  // 2. Beam tilts in direct response to weight impact (Physical causality!)
+  const beamAngle = interpolate(weightDrop, [0, 1], [0, -18]);
+
+  // 3. Character reacts: shock posture, pupil eye tracking the falling weight
+  const pupilTrackingX = interpolate(weightDrop, [0, 0.7, 1], [-12, -4, 8]);
+  const characterArmAngle = interpolate(weightDrop, [0, 1], [0, -45]); // throws arms up
 
   return (
-    <div style={{opacity, transform: `translateX(${x}px)`}}>
-      {text}
-    </div>
+    <svg width="800" height="700" viewBox="0 0 800 700" style={{overflow: 'visible'}}>
+      {/* Heavy Triangular Fulcrum Pivot */}
+      <polygon points="400,460 360,540 440,540" fill="#111111" />
+      <circle cx="400" cy="460" r="14" fill="#FFE600" stroke="#111111" strokeWidth="5" />
+
+      {/* Dynamic Balancing Beam */}
+      <g transform={`rotate(${beamAngle} 400 460)`}>
+        {/* Main Timber Beam */}
+        <rect x="120" y="448" width="560" height="24" rx="6" fill="#111111" />
+        
+        {/* Left Pan: Carries the Character */}
+        <g transform="translate(180, 448)">
+          <line x1="0" y1="0" x2="0" y2="40" stroke="#111111" strokeWidth="6" />
+          {/* Geometric Expressive Puppet */}
+          <g transform="translate(0, -120)">
+            {/* Body */}
+            <rect x="-24" y="30" width="48" height="70" rx="14" fill="#FF0055" stroke="#111111" strokeWidth="6" />
+            {/* Head with Animatable Eye Tracking */}
+            <circle cx="0" cy="0" r="32" fill="#FFFFFF" stroke="#111111" strokeWidth="6" />
+            <circle cx={pupilTrackingX} cy="2" r="8" fill="#111111" />
+            {/* Expressive Arm throwing up in panic */}
+            <g transform={`rotate(${characterArmAngle} 24 40)`}>
+              <line x1="0" y1="0" x2="30" y2="-20" stroke="#111111" strokeWidth="8" strokeLinecap="round" />
+            </g>
+          </g>
+        </g>
+
+        {/* Right Pan: Receives Heavy Load */}
+        <g transform="translate(620, 448)">
+          <line x1="0" y1="0" x2="0" y2="40" stroke="#111111" strokeWidth="6" />
+          <rect x="-50" y="40" width="100" height="12" fill="#111111" />
+        </g>
+      </g>
+
+      {/* Heavy Dropping Block ("UNCHECKED DEMAND") */}
+      <g transform={`translate(620, ${weightY})`}>
+        <rect x="-45" y="-45" width="90" height="90" rx="8" fill="#FFE600" stroke="#111111" strokeWidth="6" />
+        <text x="0" y="8" fill="#111111" fontSize="32" fontWeight="900" textAnchor="middle">
+          DEMAND
+        </text>
+      </g>
+    </svg>
   );
 };
 ```
@@ -829,20 +954,23 @@ Target an overall score of **4 or higher** in every dimension. Any score below 4
 - A script written for silent reading, with long nested sentences and no spoken rhythm.
 - Excess detail that pushes the central learning outcome out of focus.
 - Artificial suspense, repetitive summaries, and empty motivational phrasing.
-- Delivering a long article, a bundle of unrelated facts, or a vague generality instead of one valuable idea in a natural 25–40 second narration.
+- Delivering a long article, a bundle of unrelated facts, or diagnosing a problem without delivering the actionable solution or resolution.
 - Embedding scene directions, timecodes, visual notes, source citations, or editing instructions inside the copy-ready voiceover text.
 - Starting storyboard, asset creation, Remotion implementation, or rendering before the user supplies the ElevenLabs audio.
 - Rewriting, reordering, shortening, expanding, or regenerating the approved narration during visual production.
 
 ## Visual failures
 
+- Treating the design system as a rigid 3-box card template (`<HeadlineBox> + <WhiteCard> + <InsightBox>`) instead of drawing custom shapes, characters, and animated physical mechanisms.
+- Failing the Mute Test: visuals that communicate nothing if the audio is on mute, forcing the viewer to rely on voiceover or read paragraphs of text to understand what is happening.
+- Static, inert vector shapes that lack physical causality (no recoil on impact, no stress cracks under load, no balance tilt, no kinetic reaction).
 - Endless text slides or paragraphs placed on moving backgrounds.
 - Generic stock imagery that does not explain the spoken concept.
 - Reusing the same layout for every scene regardless of information type.
 - Decorative blobs, floating icons, glows, particles, or gradients that have no semantic purpose.
 - Continuous parallax, pulsing, bouncing, or camera movement while the viewer is meant to study a diagram.
 - Diagram arrows with ambiguous direction, labels far from their elements, or colors that change meaning between scenes.
-- Tiny labels, poor contrast, overlong on-screen sentences, and text too close to the canvas edge.
+- Tiny labels or micro-text below 32px (unreadable on compact mobile screens like iPhone 15), poor contrast, overlong on-screen sentences, top telemetry clutter (e.g. FIG 4.0 or circuit codes), badge soup, and text too close to the canvas edge or inside YouTube Shorts UI overlay zones.
 - Designing a horizontal frame and cropping it to 9:16, or positioning essential content beneath likely platform controls.
 - Using every spoken word as oversized on-screen text instead of choosing selective emphasis and purposeful captions.
 - Visual scenes that are beautiful but semantically disconnected from the phrase currently being spoken.
@@ -859,7 +987,7 @@ Target an overall score of **4 or higher** in every dimension. Any score below 4
 - Building a monolithic scene component that is difficult to revise.
 - Adding dependencies without checking version compatibility and render behavior.
 - Making final timing decisions solely from word count when real narration is available.
-- Cutting or time-stretching the narration to force a 25–40 second duration without user approval.
+- Cutting or time-stretching the narration to force an arbitrary duration without user approval.
 - Rendering with a guessed timeline rather than measuring the supplied audio.
 - Rendering once and not watching the export.
 - Silently calling an unrendered project or a partial preview a finished video.

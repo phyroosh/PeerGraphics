@@ -20,20 +20,17 @@ export const BrainDiagram: React.FC<BrainDiagramProps> = ({
     config: DESIGN_TOKENS.spring.default,
   });
 
-  // Oscillating pulses for neural activity
+  // Snappy pulse for neural activity
   const pulseLiking = mode === 'divergence'
-    ? 0.15 // heavily attenuated in divergence
-    : 0.7 + 0.3 * Math.sin(frame * 0.18);
+    ? 0.2 // heavily attenuated in tolerance
+    : 0.8 + 0.2 * Math.sin(frame * 0.2);
 
   const pulseWanting = mode === 'divergence'
-    ? 0.9 + 0.4 * Math.sin(frame * 0.45) // hyper-reactive high-speed pulses
-    : 0.7 + 0.3 * Math.sin(frame * 0.22);
+    ? 0.9 + 0.3 * Math.sin(frame * 0.5) // hyper-reactive
+    : 0.8 + 0.2 * Math.sin(frame * 0.25);
 
-  // Colors based on mode
-  const likingColor = DESIGN_TOKENS.colors.likingEmerald;
-  const wantingColor = mode === 'divergence'
-    ? DESIGN_TOKENS.colors.dangerRed
-    : DESIGN_TOKENS.colors.wantingAmber;
+  const likingColor = '#1D3557'; // Deep Cobalt
+  const wantingColor = '#E63946'; // Vermilion Red
 
   return (
     <div
@@ -47,151 +44,146 @@ export const BrainDiagram: React.FC<BrainDiagramProps> = ({
       }}
     >
       <svg
-        width="680"
-        height="560"
-        viewBox="0 0 680 560"
+        width="760"
+        height="580"
+        viewBox="0 0 760 580"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         style={{
-          filter: 'drop-shadow(0 16px 32px rgba(0,0,0,0.6))',
           overflow: 'visible',
         }}
       >
-        <defs>
-          {/* Gradients */}
-          <linearGradient id="cortexGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#1E293B" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="#0F172A" stopOpacity="0.95" />
-          </linearGradient>
-
-          <filter id="glowEmerald" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="16" result="blur" />
-            <feComposite in="SourceGraphic" in2="blur" operator="over" />
-          </filter>
-
-          <filter id="glowAmber" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="18" result="blur" />
-            <feComposite in="SourceGraphic" in2="blur" operator="over" />
-          </filter>
-        </defs>
-
-        {/* Brain Cortex Silhouette (Lateral View) */}
+        {/* Background shadow layer for brutalist graphic feel */}
         <path
-          d="M 170 360 C 130 360 90 320 80 260 C 70 200 100 130 170 80 C 240 30 350 30 450 60 C 540 90 600 160 600 230 C 600 290 560 340 500 350 C 450 360 410 400 390 440 C 370 480 340 510 300 510 C 270 510 250 480 260 440 C 270 400 230 360 170 360 Z"
-          fill="url(#cortexGrad)"
-          stroke="rgba(255, 255, 255, 0.16)"
+          d="M 195 385 C 155 385 115 345 105 285 C 95 225 125 155 195 105 C 265 55 375 55 475 85 C 565 115 625 185 625 255 C 625 315 585 365 525 375 C 475 385 435 425 415 465 C 395 505 365 535 325 535 C 295 535 275 505 285 465 C 295 425 255 385 195 385 Z"
+          fill="#121212"
+          transform="translate(10, 10)"
+        />
+
+        {/* Brain Cortex Silhouette (Lateral View) — Crisp Bauhaus White Card */}
+        <path
+          d="M 195 385 C 155 385 115 345 105 285 C 95 225 125 155 195 105 C 265 55 375 55 475 85 C 565 115 625 185 625 255 C 625 315 585 365 525 375 C 475 385 435 425 415 465 C 395 505 365 535 325 535 C 295 535 275 505 285 465 C 295 425 255 385 195 385 Z"
+          fill="#FFFFFF"
+          stroke="#121212"
+          strokeWidth="6"
+        />
+
+        {/* Architectural Grid / Sulci Lines */}
+        <path
+          d="M 250 135 C 290 165 340 145 380 175 C 420 205 480 185 540 225"
+          stroke="#121212"
           strokeWidth="3.5"
+          strokeLinecap="round"
+          strokeDasharray="6 6"
+          fill="none"
         />
-
-        {/* Cortical Sulci / Folds */}
         <path
-          d="M 230 110 C 270 140 320 120 360 150 C 400 180 460 160 520 200"
-          stroke="rgba(255, 255, 255, 0.08)"
+          d="M 200 205 C 240 225 270 265 320 265 C 370 265 410 225 470 255"
+          stroke="#121212"
           strokeWidth="3"
           strokeLinecap="round"
           fill="none"
         />
         <path
-          d="M 180 180 C 220 200 250 240 300 240 C 350 240 390 200 450 230"
-          stroke="rgba(255, 255, 255, 0.07)"
+          d="M 260 315 C 310 335 350 305 390 335"
+          stroke="#121212"
           strokeWidth="3"
           strokeLinecap="round"
           fill="none"
         />
-        <path
-          d="M 240 290 C 290 310 330 280 370 310"
-          stroke="rgba(255, 255, 255, 0.06)"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          fill="none"
-        />
 
-        {/* Cerebellum Outline */}
+        {/* Cerebellum Outline with Bauhaus Hatching */}
         <path
-          d="M 470 350 C 530 360 560 410 540 460 C 510 500 450 490 410 460"
-          stroke="rgba(255, 255, 255, 0.12)"
-          strokeWidth="2.5"
-          fill="rgba(15, 23, 42, 0.5)"
+          d="M 490 375 C 550 385 580 435 560 485 C 530 525 470 515 430 485"
+          stroke="#121212"
+          strokeWidth="4"
+          fill="#F3EFE6"
         />
 
         {/* === CIRCUIT A: LIKING (Nucleus Accumbens & Ventral Pallidum) === */}
         {(mode === 'overview' || mode === 'liking' || mode === 'divergence') && (
           <g opacity={mode === 'divergence' ? 0.35 : 1}>
-            {/* Hotspot Outer Rings */}
+            {/* Hotspot Target Rings */}
             <circle
-              cx="290"
-              cy="285"
-              r={36 + 8 * pulseLiking}
+              cx="310"
+              cy="305"
+              r={36 + 6 * pulseLiking}
               fill="none"
               stroke={likingColor}
-              strokeWidth="2"
+              strokeWidth="3"
               strokeDasharray="4 4"
-              opacity={0.6 * pulseLiking}
             />
             {/* Hedonic Hotspot Core */}
             <circle
-              cx="290"
-              cy="285"
+              cx="310"
+              cy="305"
               r="24"
               fill={likingColor}
-              filter="url(#glowEmerald)"
-              opacity={0.9 * pulseLiking}
+              stroke="#121212"
+              strokeWidth="4"
             />
-            <circle cx="290" cy="285" r="10" fill="#FFFFFF" opacity={pulseLiking} />
+            <circle cx="310" cy="305" r="8" fill="#FFB703" />
 
             {/* Ventral Pallidum Hotspot */}
             <circle
-              cx="330"
-              cy="310"
+              cx="355"
+              cy="330"
               r="14"
               fill={likingColor}
-              filter="url(#glowEmerald)"
-              opacity={0.75 * pulseLiking}
+              stroke="#121212"
+              strokeWidth="3"
             />
 
-            {/* Liking Annotation Callout */}
+            {/* Bauhaus Leader Line & Callout Box */}
             <line
-              x1="290"
-              y1="285"
-              x2="200"
-              y2="420"
-              stroke={likingColor}
-              strokeWidth="2"
-              strokeDasharray="3 3"
-              opacity={0.8}
+              x1="310"
+              y1="305"
+              x2="180"
+              y2="440"
+              stroke="#121212"
+              strokeWidth="4"
             />
-            <circle cx="200" cy="420" r="4" fill={likingColor} />
             <rect
-              x="80"
-              y="425"
+              x="60"
+              y="445"
               width="240"
-              height="60"
-              rx="12"
-              fill="rgba(6, 78, 59, 0.85)"
-              stroke={likingColor}
-              strokeWidth="1.5"
+              height="75"
+              fill="#FFFFFF"
+              stroke="#121212"
+              strokeWidth="5"
+            />
+            {/* Hard drop shadow on callout */}
+            <rect
+              x="66"
+              y="451"
+              width="240"
+              height="75"
+              fill="none"
+              stroke="#121212"
+              strokeWidth="2"
             />
             <text
-              x="200"
-              y="450"
+              x="180"
+              y="475"
               textAnchor="middle"
-              fill="#A7F3D0"
-              fontSize="16"
-              fontWeight="bold"
+              fill={likingColor}
+              fontSize="17"
+              fontWeight="900"
               fontFamily={DESIGN_TOKENS.fonts.primary}
+              letterSpacing="1"
             >
               HEDONIC HOTSPOTS
             </text>
             <text
-              x="200"
-              y="472"
+              x="180"
+              y="500"
               textAnchor="middle"
-              fill="#FFFFFF"
-              fontSize="13"
-              fontWeight="600"
+              fill="#121212"
+              fontSize="14"
+              fontWeight="800"
               fontFamily={DESIGN_TOKENS.fonts.mono}
             >
-              Opioid / Liking System
+              {mode === 'divergence' ? 'TOLERANCE COLLAPSE (↓)' : 'Opioid System (~1 mm³)'}
             </text>
           </g>
         )}
@@ -199,101 +191,97 @@ export const BrainDiagram: React.FC<BrainDiagramProps> = ({
         {/* === CIRCUIT B: WANTING (Mesolimbic Dopamine Pathway) === */}
         {(mode === 'overview' || mode === 'wanting' || mode === 'divergence') && (
           <g>
-            {/* VTA Origin (Ventral Tegmental Area) */}
-            <circle
-              cx="360"
-              cy="380"
-              r="18"
-              fill={wantingColor}
-              filter="url(#glowAmber)"
-              opacity={0.85 * pulseWanting}
-            />
-            <circle cx="360" cy="380" r="7" fill="#FFFFFF" opacity={pulseWanting} />
-
-            {/* Axon Projection Path: VTA -> NAc -> Prefrontal Cortex */}
+            {/* Axon Projection Tract: VTA -> NAc -> Prefrontal Cortex */}
             <path
-              d="M 360 380 Q 320 320 290 285 Q 240 230 180 160"
+              d="M 380 400 Q 340 340 310 305 Q 260 250 200 180"
               stroke={wantingColor}
-              strokeWidth={mode === 'divergence' ? 7 : 5}
+              strokeWidth={mode === 'divergence' ? 10 : 7}
               strokeLinecap="round"
               fill="none"
-              filter="url(#glowAmber)"
-              opacity={pulseWanting}
             />
 
-            {/* Animated Dopamine Particle Packets along the pathway */}
+            {/* VTA Origin (Ventral Tegmental Area) */}
+            <circle
+              cx="380"
+              cy="400"
+              r="18"
+              fill={wantingColor}
+              stroke="#121212"
+              strokeWidth="4"
+            />
+            <circle cx="380" cy="400" r="7" fill="#FFFFFF" />
+
+            {/* Animated Dopamine Particle Packets along the tract */}
             {[0, 0.33, 0.66].map((offset, idx) => {
-              const t = (frame * 0.04 + offset) % 1;
-              // quadratic bezier interpolation: VTA(360,380) -> NAc(290,285) -> PFC(180,160)
-              const px = (1 - t) * (1 - t) * 360 + 2 * (1 - t) * t * 290 + t * t * 180;
-              const py = (1 - t) * (1 - t) * 380 + 2 * (1 - t) * t * 285 + t * t * 160;
+              const speed = mode === 'divergence' ? 0.08 : 0.04;
+              const t = (frame * speed + offset) % 1;
+              const px = (1 - t) * (1 - t) * 380 + 2 * (1 - t) * t * 310 + t * t * 200;
+              const py = (1 - t) * (1 - t) * 400 + 2 * (1 - t) * t * 305 + t * t * 180;
 
               return (
                 <circle
                   key={idx}
                   cx={px}
                   cy={py}
-                  r={mode === 'divergence' ? 8 : 6}
+                  r={mode === 'divergence' ? 9 : 7}
                   fill="#FFFFFF"
-                  filter="url(#glowAmber)"
+                  stroke="#121212"
+                  strokeWidth="3"
                 />
               );
             })}
 
-            {/* Prefrontal Cortex Terminal Node */}
+            {/* Terminal Prefrontal Cortex Node */}
             <circle
-              cx="180"
-              cy="160"
-              r="16"
+              cx="200"
+              cy="180"
+              r="18"
               fill={wantingColor}
-              filter="url(#glowAmber)"
-              opacity={0.9 * pulseWanting}
+              stroke="#121212"
+              strokeWidth="4"
             />
-            <circle cx="180" cy="160" r="6" fill="#FFFFFF" />
+            <circle cx="200" cy="180" r="6" fill="#FFFFFF" />
 
-            {/* Wanting Annotation Callout */}
+            {/* Bauhaus Leader Line & Callout Box */}
             <line
-              x1="360"
-              y1="380"
-              x2="460"
-              y2="420"
-              stroke={wantingColor}
-              strokeWidth="2"
-              strokeDasharray="3 3"
-              opacity={0.8}
+              x1="380"
+              y1="400"
+              x2="500"
+              y2="440"
+              stroke="#121212"
+              strokeWidth="4"
             />
-            <circle cx="460" cy="420" r="4" fill={wantingColor} />
             <rect
-              x="360"
-              y="425"
-              width="240"
-              height="60"
-              rx="12"
-              fill="rgba(124, 45, 18, 0.85)"
-              stroke={wantingColor}
-              strokeWidth="1.5"
+              x="420"
+              y="445"
+              width="250"
+              height="75"
+              fill={wantingColor}
+              stroke="#121212"
+              strokeWidth="5"
             />
             <text
-              x="480"
-              y="450"
+              x="545"
+              y="475"
               textAnchor="middle"
-              fill="#FED7AA"
-              fontSize="16"
-              fontWeight="bold"
+              fill="#FFFFFF"
+              fontSize="17"
+              fontWeight="900"
               fontFamily={DESIGN_TOKENS.fonts.primary}
+              letterSpacing="1"
             >
               DOPAMINE PROJECTIONS
             </text>
             <text
-              x="480"
-              y="472"
+              x="545"
+              y="500"
               textAnchor="middle"
-              fill="#FFFFFF"
-              fontSize="13"
-              fontWeight="600"
+              fill="#FFB703"
+              fontSize="14"
+              fontWeight="800"
               fontFamily={DESIGN_TOKENS.fonts.mono}
             >
-              VTA → Striatum / Wanting
+              {mode === 'divergence' ? 'HYPER-SENSITIZED (↑ 100%)' : 'VTA → Striatum (Urge)'}
             </text>
           </g>
         )}
@@ -301,3 +289,4 @@ export const BrainDiagram: React.FC<BrainDiagramProps> = ({
     </div>
   );
 };
+

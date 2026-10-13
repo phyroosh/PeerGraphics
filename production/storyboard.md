@@ -1,76 +1,94 @@
-# Storyboard & Visual Progression
+# Visual Storyboard: Identifying Healthy vs Unhealthy Relationships
 
-## S01 — The Cognitive Glitch (Hook)
-- **Time / Frame:** 0.00s – 3.80s (Frames 0 – 114)
-- **Spoken Audio:** *"Ever find yourself stuck doing something you actively hate?"*
-- **Visual Thesis:** Relatable mobile endless loop with contradictory internal state indicators.
-- **Composition:** Central glowing smartphone frame showing an infinite scrolling loop. Above the phone, an emotional contradiction meter displays: `ACTION: CONTINUOUS` vs `PLEASURE: NEGATIVE / HATE`.
-- **Motion:** Rapid scroll ticks, slight red glitch pulse on "hate".
-- **On-Screen Text:** "WHY CAN'T YOU STOP?"
+- **Design System**: Theme 09 (Punk Editorial & Risograph Collage)
+- **Resolution**: 1080 × 1920 (9:16 vertical)
+- **Total Frames**: 1,824 (60.76s @ 30 fps)
+- **Mobile Readability**: Minimum font size 32px everywhere on screen.
+- **Safe Zones**: Top $\ge 160$px, Bottom $\ge 400$px (terminates $y \le 1520$px), Right $\ge 140$px (maxWidth $\le 850$px).
 
 ---
 
-## S02 — The Dual Architecture
-- **Time / Frame:** 3.80s – 11.40s (Frames 114 – 342)
-- **Spoken Audio:** *"Here is why quitting feels impossible: in your brain, liking and wanting are two completely separate systems."*
-- **Visual Thesis:** The single brain model physically uncouples into two distinct neural pathways.
-- **Composition:** Isometric anatomical brain outline at center. The brain splits visually with a vertical dividing laser: Left side glows Emerald (`LIKING`), Right side glows Solar Orange (`WANTING`).
-- **Motion:** Central brain materializes, then a crisp divergence animation splits the circuits apart with labeled glowing nodes.
-- **On-Screen Text:** "2 SEPARATE CIRCUITS" / "LIKING ≠ WANTING"
+### Scene 1: The Chemistry Trap
+- **Frames**: 0 – 377 (0.00s – 12.57s)
+- **Spoken Audio**: "We often mistake intense chemistry for a healthy connection, but the real difference between a healthy and an unhealthy relationship isn't how good the highs feel. It's how safe you feel when things get uncomfortable."
+- **Cutout Headline**: `INTENSE CHEMISTRY ≠ HEALTHY BOND` (White & Risograph Pink `#FF0055`)
+- **Focal Visual**: High-contrast ripped graph card comparing two motion paths:
+  1. Jagged roller-coaster wave (`#FF0055`) spiking into "EUPHORIA" and plunging into "CRASH / PANIC".
+  2. Steady horizontal anchor line (`#00E5FF`) entering at frame 260: "STEADY SAFETY".
+- **Bottom Callout**: `THE REAL CRITERIA` — Not how high the highs feel, but how safe you are when uncomfortable.
 
 ---
 
-## S03 — The Liking Circuit (Pleasure)
-- **Time / Frame:** 11.40s – 16.60s (Frames 342 – 498)
-- **Spoken Audio:** *"Liking is the actual pleasure you feel, powered by fragile opioid hotspots."*
-- **Visual Thesis:** Microscopic zoom into the fragile hedonic hotspots.
-- **Composition:** Detailed visualization of the Nucleus Accumbens & Ventral Pallidum hedonic hotspots. Gentle, warm emerald rings radiating soft opioid receptor pulses.
-- **Motion:** Warm organic pulses breathing gently. A hedonic meter shows "HEDONIC IMPACT = GENUINE PLEASURE". Small label: "Fragile Opioid Hotspots (~1 cubic mm)".
-- **On-Screen Text:** "LIKING = OPIOID HOTSPOTS (Actual Pleasure)"
+### Scene 2: Battle For Control
+- **Frames**: 377 – 668 (12.57s – 22.27s)
+- **Spoken Audio**: "In an unhealthy dynamic, conflict is a battle for control. Boundaries are treated as threats, and disagreements are met with guilt, silence, or anger."
+- **Cutout Headline**: `CONFLICT IS A BATTLE FOR CONTROL` (Risograph Pink `#FF0055`)
+- **Focal Visual**:
+  - The Boundary Barrier: `YOU SET A BOUNDARY: "NO"` stamped with `TREATED AS THREAT!`.
+  - Three sequential heavy penalty stamps slam down:
+    1. `1. GUILT TRIPS [PUNISHMENT]`
+    2. `2. SILENT TREATMENT [WITHDRAWAL]`
+    3. `3. ANGER & VOLATILITY [INTIMIDATION]`
+- **Bottom Callout**: `THE MECHANISM` — Disagreements are not heard, they are penalized to force surrender.
 
 ---
 
-## S04 — The Wanting Circuit (Craving)
-- **Time / Frame:** 16.60s – 20.80s (Frames 498 – 624)
-- **Spoken Audio:** *"Wanting is the raw urge to pursue, driven by dopamine."*
-- **Visual Thesis:** Massive high-voltage dopamine pathways firing like an aggressive engine.
-- **Composition:** Wide mesolimbic dopamine tract surging from the Ventral Tegmental Area (VTA) into the striatum. Blazing orange electrical sparks.
-- **Motion:** High frequency pulses streaming along the neural axon paths. Urge meter surges to maximum: "INCENTIVE SALIENCE (The Urge to Chase)".
-- **On-Screen Text:** "WANTING = MESOLIMBIC DOPAMINE (The Urge)"
+### Scene 3: Walking On Eggshells
+- **Frames**: 668 – 800 (22.27s – 26.67s)
+- **Spoken Audio**: "You end up walking on eggshells, editing yourself just to keep the peace."
+- **Cutout Headline**: `WALKING ON EGGSHELLS // EDITING YOURSELF` (High-Voltage Neon Yellow `#FFE600`)
+- **Focal Visual**:
+  - Self-Censorship Card: Honest thought `"I FEEL HURT AND UNCOMFORTABLE"` gets slammed by black redaction tape `[CENSORED TO KEEP PEACE]`.
+  - Subordinated speech: `"It's totally fine, never mind..."`.
+  - Red alert stamp: `PEACE VIA SELF-DELETION IS NOT PEACE`.
+- **Bottom Callout**: `THE REALITY` — If keeping the peace requires losing your voice, the relationship is unsafe.
 
 ---
 
-## S05 — The Fatal Divergence (Tolerance vs Sensitization)
-- **Time / Frame:** 20.80s – 28.80s (Frames 624 – 864)
-- **Spoken Audio:** *"Over time, the pleasure hotspots shut down from tolerance. But dopamine pathways do the opposite—they become hyper-sensitized."*
-- **Visual Thesis:** The iconic dual-curve chart revealing the physiological trap.
-- **Composition:** Clean quantitative graph with X-axis ("REPEATED BEHAVIOR OVER TIME") and Y-axis ("NEURAL RESPONSE").
-  - Green Curve (Liking/Pleasure): Starts high, steadily crashes down to flatline zero (`TOLERANCE`).
-  - Orange Curve (Wanting/Dopamine): Starts moderate, aggressively climbs higher (`HYPER-SENSITIZATION`).
-- **Motion:** Curves draw synchronously across the graph as the narration explains the divergence.
-- **On-Screen Text:** "TOLERANCE (Pleasure Collapses)" vs "SENSITIZATION (Craving Explodes)"
+### Scene 4: Emotional Safety
+- **Frames**: 800 – 1078 (26.67s – 35.93s)
+- **Spoken Audio**: "A healthy relationship isn't the absence of conflict. It's the presence of emotional safety. Differences are met with curiosity instead of contempt."
+- **Cutout Headline**: `NOT ZERO CONFLICT // EMOTIONAL SAFETY` (Electric Cyan `#00E5FF`)
+- **Focal Visual**:
+  - Contrast comparison card: `MYTH: NEVER FIGHTING` (struck through) vs. `REALITY: YOU CAN BE HONEST & STILL BE SAFE`.
+  - Gottman scale:
+    - `UNHEALTHY: CONTEMPT` ("What is wrong with you?")
+    - `HEALTHY: CURIOSITY` ("Help me understand how you feel.")
+- **Bottom Callout**: `THE DISTINCTION` — Differences are met with open inquiry, never with ridicule or dismissal.
 
 ---
 
-## S06 — The Misery Trap
-- **Time / Frame:** 28.80s – 34.00s (Frames 864 – 1020)
-- **Spoken Audio:** *"Your brain screams that you need it, even while the experience gives you zero joy."*
-- **Visual Thesis:** Visualizing the agonizing mismatch: maximum urge colliding with complete emptiness.
-- **Composition:** Split diagnostic readout:
-  - Left: Massive vibrating Orange Urge Bar (100% MAXIMUM DRIVE - "BRAIN SCREAMING").
-  - Right: Empty gray/red zeroed Pleasure Bar (0% PLEASURE - "ZERO JOY").
-- **Motion:** Rapid neural alarm flashes around the urge bar, contrasting with the cold silent zero on the pleasure bar.
-- **On-Screen Text:** "MAXIMUM URGE + ZERO JOY"
+### Scene 5: Us Vs The Problem
+- **Frames**: 1078 – 1238 (35.93s – 41.27s)
+- **Spoken Audio**: "When tension rises, it's the two of you teaming up against the problem, not against each other."
+- **Cutout Headline**: `TEAMING UP AGAINST THE PROBLEM` (Neon Yellow `#FFE600`)
+- **Focal Visual**:
+  - Structural alignment diagram:
+    - Clash path: `YOU 💥 ATTACK 💥 PARTNER` (opposed arrows with red strike).
+    - Team path: `[YOU + PARTNER] ➔➔➔ [THE PROBLEM]` (united vectors facing obstacle).
+- **Bottom Callout**: `THE PRINCIPLE` — You are partners solving an obstacle together, never adversaries.
 
 ---
 
-## S07 — Synthesis & Takeaway
-- **Time / Frame:** 34.00s – 38.19s (Frames 1020 – 1146)
-- **Spoken Audio:** *"You are not chasing pleasure anymore. You are trapped in wanting."*
-- **Visual Thesis:** Memorable resolution card that frees the viewer from self-blame through biological understanding.
-- **Composition:** Centered sleek synthesis card:
-  - Bold punchline: "TRAPPED IN WANTING"
-  - Sub-insight: "Your dopamine system was hijacked. The pleasure left long ago."
-  - Call to action / discussion prompt for comments.
-- **Motion:** Dramatic settle with a glowing amber border pulse, fading into channel branding.
-- **On-Screen Text:** "TRAPPED IN WANTING"
+### Scene 6: The Boundary Test
+- **Frames**: 1238 – 1634 (41.27s – 54.47s)
+- **Spoken Audio**: "To see where your relationship stands, observe what happens when you set a simple boundary. A healthy partner responds with curiosity and respect. An unhealthy dynamic responds with guilt, withdrawal, or defensiveness."
+- **Cutout Headline**: `THE LITMUS TEST: SET A BOUNDARY` (Neon Yellow `#FFE600`)
+- **Focal Visual**:
+  - Diagnostic fork card:
+    - Step: `VOICE A "NO" OR A PERSONAL LIMIT`.
+    - Healthy branch: `HEALTHY: RESPECT [SAFETY]` — values your comfort over control.
+    - Unhealthy branch: `UNHEALTHY: RETALIATION [CONTROL]` — guilt trips, stonewalling, anger.
+- **Bottom Callout**: `KEY TAKEAWAY` — A boundary never harms a healthy bond. It only reveals an unsafe one.
+
+---
+
+### Scene 7: Antidote Synthesis
+- **Frames**: 1634 – 1824 (54.47s – 60.80s)
+- **Spoken Audio**: "That isn't passion, it's control. Always choose consistent safety over chaotic intensity."
+- **Cutout Headline**: `NOT PASSION. IT'S CONTROL.` (Risograph Pink `#FF0055`)
+- **Focal Visual**:
+  - Actionable antidote resolution:
+    - Warning banner: `STOP ROMANTICIZING CHAOS — Walking on eggshells is never proof of love.`
+    - Final golden directive: `CHOOSE CONSISTENT SAFETY OVER CHAOTIC INTENSITY.`
+- **Bottom Callout**: `DAILY PRACTICE` — Prioritize relationships where your nervous system can truly relax.

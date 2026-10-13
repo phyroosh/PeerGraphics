@@ -1,88 +1,126 @@
 /**
  * Design Tokens for PeerGraphics
- * Default Visual System: Theme 3 (Swiss Bauhaus & Neo-Brutalist)
+ * Default Visual System: Theme 9 (Editorial Collage & Risograph Punk Zine)
+ * 
+ * Mobile-First & YouTube Shorts Safe Rules:
+ * - Top Safe Zone: >= 160px (clears mobile system status & YouTube top bar)
+ * - Bottom Safe Zone: >= 400px (clears channel avatar, title, captions, sound ticker, scrubber)
+ * - Right Margin: >= 140px (clears Like, Dislike, Comment, Share, Remix, Sound buttons)
+ * - Left Margin: >= 90px
+ * - Strict Mobile Typography: Minimum font size 32px anywhere on canvas (tested on iPhone 15 base)
+ * - Anti-Clutter Rule: NO noisy top telemetry headers, NO fake figure labels (FIG. 4.0), NO extra capsule soup.
  */
 export const DESIGN_TOKENS = {
   canvas: {
     width: 1080,
     height: 1920,
     fps: 30,
-    durationInFrames: 1146,
+    durationInFrames: 1824,
   },
   safeArea: {
-    top: 140,
-    bottom: 280,
-    left: 80,
-    right: 80,
+    top: 160,              // Clears top navigation & camera/search UI
+    bottom: 400,           // Clears channel avatar, subscribe button, captions, sound title, seek bar
+    left: 90,              // Clean left margin
+    right: 140,            // Clears right action rail (Like, Comment, Share, Sound icon)
+    contentMaxWidth: 850,  // Active content max width
+    contentMaxHeight: 1360,// Total vertical safe height: y = 160 to y = 1520
   },
   // Default Visual System Identifier
-  defaultTheme: 'Theme3_SwissBauhaus',
+  defaultTheme: 'Theme9_EditorialCollage',
   
   colors: {
-    // Swiss Bauhaus & Neo-Brutalist Base Canvas & Cards
-    bg: '#F3EFE6',              // Modernist warm off-white canvas
-    surface: '#FFFFFF',         // Crisp white card surface
-    surfaceAlt: '#F9F8F5',      // Subordinate card background
-    border: '#121212',          // Heavy pitch-black brutalist borders
-    surfaceBorder: '#121212',   // Brutalist card border
-    bgGradientStart: '#F3EFE6',
-    bgGradientEnd: '#EBE5D8',
+    // Editorial Collage & Risograph Base Canvas & Surfaces
+    bg: '#EAE5DB',              // Newsprint halftone warm paper
+    surface: '#FFFFFF',         // Crisp white card cutout
+    surfaceAlt: '#F4EFE6',      // Layered newsprint card
+    border: '#111111',          // Heavy pitch black borders
+    surfaceBorder: '#111111',   // Bold black card border
+    bgGradientStart: '#EAE5DB',
+    bgGradientEnd: '#DFD8CC',
+    
+    // High-Voltage Risograph Accents
+    risographPink: '#FF0055',   // Primary energy, core tension, key callout
+    highVoltageYellow: '#FFE600',// Highlight badge, insight header, contrast pill
+    electricCyan: '#00E5FF',    // Secondary contrast, data node
+    pureBlack: '#111111',       // High-contrast brutalist text & heavy shadows
+    pureWhite: '#FFFFFF',       // Clean inverse text
     
     // Typography
-    textPrimary: '#121212',     // Stark brutalist black
-    textSecondary: '#333333',   // High-contrast secondary
-    textMuted: '#666666',       // Muted annotations
-    textInverse: '#FFFFFF',     // White on dark backgrounds
+    textPrimary: '#111111',     // Pitch black
+    textSecondary: '#222222',   // High-contrast secondary
+    textMuted: '#555555',       // Subordinate notes (still bold and legible)
+    textInverse: '#FFFFFF',     // Clean white
     
-    // Swiss Bauhaus Primary Semantic Palette
-    vermilionRed: '#E63946',    // Conflict, penalty, defect, focal point
-    deepNavy: '#1D3557',        // Structure, baseline, cooperation
-    cadmiumYellow: '#FFB703',   // Highlights, badges, equilibrium status
+    // Semantic mappings for scenes
+    accentPrimary: '#FF0055',   // Risograph pink
+    accentSecondary: '#FFE600', // Neon yellow
+    accentBadge: '#FFE600',
+    accentSky: '#00E5FF',
+    likingEmerald: '#00E5FF',
+    likingEmeraldGlow: 'rgba(0, 229, 255, 0.3)',
+    likingEmeraldDark: '#008599',
+    wantingAmber: '#FF0055',
+    wantingAmberGlow: 'rgba(255, 0, 85, 0.3)',
+    wantingAmberDark: '#B3003B',
+    dangerRed: '#FF0055',
+    dangerRedGlow: 'rgba(255, 0, 85, 0.35)',
     
-    // Legacy / Scene Semantic Compatibility Mappings
-    accentSky: '#1D3557',
-    likingEmerald: '#1D3557',
-    likingEmeraldGlow: 'rgba(29, 53, 87, 0.25)',
-    likingEmeraldDark: '#112238',
-    wantingAmber: '#E63946',
-    wantingAmberGlow: 'rgba(230, 57, 70, 0.25)',
-    wantingAmberDark: '#9E1C26',
-    dangerRed: '#E63946',
-    dangerRedGlow: 'rgba(230, 57, 70, 0.3)',
-    accentPrimary: '#E63946',
-    accentSecondary: '#1D3557',
-    accentBadge: '#FFB703',
+    // Compatibility Palette Tokens
+    matchaGreen: '#6E8B68',
+    terracotta: '#BD6B53',
+    slate: '#524E48',
+    sand: '#8E857B',
+    oatMilk: '#F9F6F0',
+    pebble: '#E8DFD1',
+  },
+  radii: {
+    card: 28,
+    pill: 40,
+    round: '50%',
+    sm: 12,
+    md: 20,
+    lg: 32,
+  },
+  typography: {
+    // Mobile legibility scales (calibrated for iPhone 15 base display)
+    headline: 88,              // Primary impact headline (80px - 110px)
+    subhead: 48,               // Secondary subtitle / take (42px - 54px)
+    body: 38,                  // Core explanatory text (36px - 44px)
+    minimum: 32,               // Absolute floor: NO text smaller than 32px anywhere
   },
   borders: {
-    brutalistStandard: '6px solid #121212',
-    brutalistHeavy: '8px solid #121212',
-    brutalistThin: '3px solid #121212',
+    editorialStandard: '5px solid #111111',
+    editorialHeavy: '8px solid #111111',
+    editorialThin: '4px solid #111111',
   },
   shadows: {
-    brutalist: '8px 8px 0 #121212',
-    brutalistLarge: '12px 12px 0 #121212',
-    brutalistDeep: '16px 16px 0 #121212',
+    editorial: '10px 10px 0 #111111',
+    editorialPink: '10px 10px 0 #FF0055',
+    editorialLarge: '14px 14px 0 #111111',
+    editorialYellow: '10px 10px 0 #FFE600',
+    ambient: '0 8px 30px rgba(43, 41, 39, 0.05)',
+    elevated: '0 16px 40px rgba(43, 41, 39, 0.08)',
   },
   fonts: {
-    primary: "'Helvetica Neue', Helvetica, -apple-system, Arial, sans-serif",
-    display: "'Helvetica Neue', Helvetica, -apple-system, Arial, sans-serif",
+    display: "'Arial Black', 'Impact', -apple-system, sans-serif",
+    primary: "system-ui, -apple-system, 'Inter', 'Helvetica Neue', sans-serif",
     mono: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
   },
   spring: {
     default: {
-      damping: 15,
-      mass: 0.8,
-      stiffness: 120,
+      damping: 14,
+      mass: 0.7,
+      stiffness: 150,
     },
     snappy: {
       damping: 12,
-      mass: 0.6,
-      stiffness: 160,
+      mass: 0.5,
+      stiffness: 180,
     },
     gentle: {
       damping: 20,
       mass: 1.0,
-      stiffness: 80,
+      stiffness: 90,
     },
   },
 };

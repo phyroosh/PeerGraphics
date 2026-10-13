@@ -13,8 +13,7 @@ export const S04_WantingCircuit: React.FC = () => {
     config: DESIGN_TOKENS.spring.default,
   });
 
-  // Surge on dopamine
-  const dopamineSurge = interpolate(frame, [0, 60], [30, 96], {
+  const dopamineSurge = interpolate(frame, [0, 50], [35, 96], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -24,116 +23,148 @@ export const S04_WantingCircuit: React.FC = () => {
       style={{
         width: '100%',
         height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        paddingTop: DESIGN_TOKENS.safeArea.top + 20,
+        position: 'relative',
+        padding: '110px 80px 40px 80px',
         opacity: entry,
+        boxSizing: 'border-box',
+        fontFamily: DESIGN_TOKENS.fonts.primary,
+        color: '#121212',
       }}
     >
-      {/* Circuit Badge */}
-      <div
-        style={{
-          backgroundColor: 'rgba(249, 115, 22, 0.15)',
-          border: '1px solid rgba(249, 115, 22, 0.4)',
-          borderRadius: 99,
-          padding: '8px 24px',
-          marginBottom: 24,
-          display: 'flex',
-          alignItems: 'center',
-          gap: 10,
-        }}
-      >
-        <span
+      {/* Top Header Banner */}
+      <div>
+        <div
           style={{
-            width: 12,
-            height: 12,
-            borderRadius: '50%',
-            backgroundColor: DESIGN_TOKENS.colors.wantingAmber,
-            boxShadow: `0 0 12px ${DESIGN_TOKENS.colors.wantingAmber}`,
-          }}
-        />
-        <span
-          style={{
-            color: '#FDBA74',
-            fontFamily: DESIGN_TOKENS.fonts.mono,
-            fontSize: 22,
-            fontWeight: 700,
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            borderBottom: '6px solid #121212',
+            paddingBottom: 20,
           }}
         >
-          Circuit B: Motivation Engine
-        </span>
-      </div>
-
-      {/* Headline */}
-      <h1
-        style={{
-          fontSize: 70,
-          fontWeight: 900,
-          color: DESIGN_TOKENS.colors.textPrimary,
-          textAlign: 'center',
-          lineHeight: 1.15,
-          letterSpacing: '-0.02em',
-          maxWidth: 920,
-          margin: '0 0 32px 0',
-        }}
-      >
-        <span style={{color: DESIGN_TOKENS.colors.wantingAmber}}>“Wanting”</span> = Raw Seeking Urge
-      </h1>
-
-      {/* Brain Diagram in Wanting Mode */}
-      <div style={{marginBottom: 36}}>
-        <BrainDiagram mode="wanting" scale={1.05} />
-      </div>
-
-      {/* Scientific Deep-Dive Card */}
-      <div
-        style={{
-          width: 900,
-          backgroundColor: 'rgba(15, 23, 42, 0.85)',
-          border: `2px solid ${DESIGN_TOKENS.colors.wantingAmber}`,
-          borderRadius: 28,
-          padding: '32px 36px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 24,
-          boxShadow: `0 16px 40px ${DESIGN_TOKENS.colors.wantingAmberGlow}`,
-        }}
-      >
-        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-          <span style={{fontSize: 28, fontWeight: 800, color: '#FED7AA'}}>
-            Mesolimbic Dopamine
-          </span>
+          <div style={{display: 'flex', gap: 12, alignItems: 'center'}}>
+            <div style={{width: 24, height: 24, backgroundColor: '#E63946'}} />
+            <div style={{width: 24, height: 24, borderRadius: '50%', backgroundColor: '#E63946'}} />
+            <div
+              style={{
+                width: 0,
+                height: 0,
+                borderLeft: '12px solid transparent',
+                borderRight: '12px solid transparent',
+                borderBottom: '24px solid #FFB703',
+              }}
+            />
+            <span
+              style={{
+                fontSize: 22,
+                fontWeight: 900,
+                letterSpacing: 2,
+                marginLeft: 8,
+                textTransform: 'uppercase',
+              }}
+            >
+              CIRCUIT 02 // MESOLIMBIC DOPAMINE
+            </span>
+          </div>
           <span
             style={{
-              fontFamily: DESIGN_TOKENS.fonts.mono,
               fontSize: 20,
-              color: '#FB923C',
-              backgroundColor: 'rgba(124, 45, 18, 0.6)',
-              padding: '6px 16px',
-              borderRadius: 12,
+              fontWeight: 800,
+              backgroundColor: '#121212',
+              color: '#F3EFE6',
+              padding: '6px 14px',
             }}
           >
-            VTA → Striatum Projection
+            FIG. 4.0
           </span>
         </div>
 
-        {/* Real Urge Meter */}
-        <div style={{display: 'flex', flexDirection: 'column', gap: 10}}>
-          <div style={{display: 'flex', justifyContent: 'space-between', fontSize: 22, color: '#94A3B8'}}>
-            <span>INCENTIVE SALIENCE (DRIVE TO CHASE)</span>
-            <span style={{color: DESIGN_TOKENS.colors.wantingAmber, fontWeight: 700}}>
-              {Math.round(dopamineSurge)}% PEAK SURGE
+        {/* Headline */}
+        <div style={{marginTop: 28}}>
+          <div
+            style={{
+              fontSize: 24,
+              fontWeight: 800,
+              color: '#E63946',
+              letterSpacing: 3,
+              textTransform: 'uppercase',
+            }}
+          >
+            PURSUIT ENGINE // INCENTIVE SALIENCE
+          </div>
+          <h1
+            style={{
+              fontSize: 70,
+              fontWeight: 900,
+              lineHeight: 1.05,
+              margin: '12px 0 0 0',
+              letterSpacing: -2,
+              textTransform: 'uppercase',
+            }}
+          >
+            WANTING IS THE RAW URGE{' '}
+            <span
+              style={{
+                backgroundColor: '#E63946',
+                color: '#FFFFFF',
+                padding: '2px 14px',
+                display: 'inline-block',
+                boxShadow: '6px 6px 0 #121212',
+              }}
+            >
+              DRIVEN BY DOPAMINE
             </span>
+          </h1>
+        </div>
+      </div>
+
+      {/* Center Brain Schematic */}
+      <div style={{margin: '14px auto 0 auto', display: 'flex', justifyContent: 'center'}}>
+        <BrainDiagram mode="wanting" scale={0.76} />
+      </div>
+
+      {/* Analytical Callout Card */}
+      <div
+        style={{
+          width: '100%',
+          maxWidth: 920,
+          margin: '20px auto 0 auto',
+          backgroundColor: '#FFFFFF',
+          border: '6px solid #121212',
+          boxShadow: '8px 8px 0 #E63946',
+          padding: '20px 24px',
+        }}
+      >
+        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10}}>
+          <span style={{fontSize: 20, fontWeight: 900, color: '#E63946', textTransform: 'uppercase', letterSpacing: 1}}>
+            AXON TRACT // VTA → STRIATUM → PFC
+          </span>
+          <span
+            style={{
+              backgroundColor: '#FFB703',
+              color: '#121212',
+              padding: '4px 12px',
+              fontSize: 15,
+              fontWeight: 900,
+              border: '2px solid #121212',
+            }}
+          >
+            PURSUIT MOTIVATION
+          </span>
+        </div>
+
+        {/* Meter */}
+        <div style={{marginBottom: 12}}>
+          <div style={{display: 'flex', justifyContent: 'space-between', fontSize: 17, fontWeight: 900, marginBottom: 6}}>
+            <span>INCENTIVE SALIENCE [CRAVING DRIVE]</span>
+            <span style={{color: '#E63946'}}>{Math.round(dopamineSurge)}% PEAK SURGE</span>
           </div>
           <div
             style={{
               width: '100%',
               height: 20,
-              backgroundColor: 'rgba(30, 41, 59, 0.8)',
-              borderRadius: 10,
+              backgroundColor: '#F3EFE6',
+              border: '4px solid #121212',
               overflow: 'hidden',
             }}
           >
@@ -141,25 +172,35 @@ export const S04_WantingCircuit: React.FC = () => {
               style={{
                 width: `${dopamineSurge}%`,
                 height: '100%',
-                backgroundColor: DESIGN_TOKENS.colors.wantingAmber,
-                boxShadow: `0 0 20px ${DESIGN_TOKENS.colors.wantingAmber}`,
-                borderRadius: 10,
+                backgroundColor: '#E63946',
               }}
             />
           </div>
         </div>
 
-        <p
-          style={{
-            margin: 0,
-            fontSize: 24,
-            color: '#CBD5E1',
-            lineHeight: 1.45,
-          }}
-        >
-          Dopamine doesn't make you enjoy the reward—it makes your attention snap toward the cue and compels your body to pursue it.
+        <p style={{margin: 0, fontSize: 19, fontWeight: 700, color: '#121212', lineHeight: 1.35}}>
+          Dopamine does not produce sensory joy—it commands attention, amplifies craving cues, and compels behavioral pursuit.
         </p>
+      </div>
+
+      {/* Pinned Bottom Footer Banner */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: 50,
+          left: 80,
+          right: 80,
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          borderTop: '4px solid #121212',
+          paddingTop: 16,
+        }}
+      >
+        <span style={{fontSize: 20, fontWeight: 900}}>PEERGRAPHICS // SWISS DESIGN SYSTEM</span>
+        <span style={{fontSize: 18, fontWeight: 700, color: '#1D3557'}}>ROBINSON & BERRIDGE (1993)</span>
       </div>
     </div>
   );
 };
+

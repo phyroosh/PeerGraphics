@@ -1,43 +1,36 @@
-# Art Direction & Visual Identity
+# Art Direction: Theme 09 (Punk Editorial & Risograph Collage)
 
-## 1. Visual Thesis
-**The Neural Conflict:** Clean scientific diagramming rendered with premium dark-mode aesthetics (deep slate obsidian background `#070B14`, glowing neural pathways, crisp vector geometry) visualizes the silent biological war between decaying pleasure hotspots and hyperactive dopamine circuits.
+- **Canvas Dimensions**: 1080 × 1920 (9:16 vertical ratio).
+- **Framerate**: 30 frames per second.
+- **Duration**: 1,824 frames (60.76 seconds).
 
-## 2. Canvas & Platform Safe Areas (1080 × 1920, 9:16)
-- **Dimensions:** 1080px width × 1920px height
-- **Framerate:** 30 fps
-- **Safe Margin Left/Right:** 80px (Main content width: 920px)
-- **Safe Margin Top:** 140px (Clear of header/channel badges)
-- **Safe Margin Bottom:** 280px (Clear of YouTube Shorts title/audio attribution overlay and seek bar)
-- **Captions Zone:** Y = 1420px to 1560px (Directly above the platform UI, centered, high readability pill backing)
+## Design System & Rules
 
-## 3. Color Logic & Semantic Mapping
-- **Background Core:** `#070B14` (Deep obsidian slate)
-- **Card / Surface Base:** `rgba(15, 23, 42, 0.75)` with subtle `rgba(255, 255, 255, 0.08)` border
-- **Semantic System A — "LIKING" (Hedonic Circuit):**
-  - Primary: `#10B981` (Emerald Green / Cyan-Mint)
-  - Glow: `rgba(16, 185, 129, 0.4)`
-  - Meaning: Actual pleasure, opioid hotspots, genuine joy, hedonic tone.
-- **Semantic System B — "WANTING" (Dopamine Craving):**
-  - Primary: `#F97316` / `#FB923C` (Solar Amber / Electric Orange)
-  - Glow: `rgba(249, 115, 22, 0.45)`
-  - Meaning: Raw urge, dopamine spikes, compulsion, seeking drive.
-- **Conflict / Trap State:**
-  - Alert: `#EF4444` (Crimson Red)
-  - Meaning: Friction, dissonance, hating the habit, zero joy.
-- **Text:**
-  - Primary: `#F8FAFC` (Pure soft white)
-  - Secondary: `#94A3B8` (Muted slate gray)
-  - Accent: `#38BDF8` (Sky blue for scientific terminology)
+### 1. Canvas & Textures
+- **Base Canvas**: `#EAE5DB` (warm tactile newsprint halftone paper).
+- **Halftone Pattern**: `radial-gradient(#C4BCAD 2px, transparent 2px)` with `28px 28px` grid repetition.
+- **Surface Panels**: Crisp white cutouts (`#FFFFFF`) with heavy black borders (`5px solid #111111`) and brutalist drop shadows (`12px 12px 0 #111111` or `14px 14px 0 #111111`).
 
-## 4. Typography Scale
-- **Hero Title / Hook:** 76px – 92px, ExtraBold / Black, tracking `-0.02em`
-- **Section Headers:** 56px – 68px, Bold
-- **Body & Mechanism Labels:** 36px – 44px, Medium / SemiBold
-- **Micro-Labels & Data Marks:** 26px – 32px, Bold Mono / Uppercase, tracking `+0.05em`
-- **Captions:** 42px – 48px, Bold with soft dark pill background (`rgba(0, 0, 0, 0.7)`)
+### 2. High-Voltage Palette
+- **Risograph Pink (`#FF0055`)**: Primary tension color, alert stamps, unhealthy dynamics, and dominant headline cutouts.
+- **High-Voltage Yellow (`#FFE600`)**: Key insight badges, highlight tapes, and actionable resolution stickers.
+- **Electric Cyan (`#00E5FF`)**: Healthy dynamic indicators, emotional safety bedrock, and collaborative vectors.
+- **Pitch Black (`#111111`)**: Heavy structural ink, high-contrast borders, solid shadows, and text backings.
+- **Pure White (`#FFFFFF`)**: High-contrast card surfaces and inverse text chips.
 
-## 5. Motion Grammar
-- **Spring Parameters:** Damped springs (`damping: 14`, `mass: 0.8`, `stiffness: 120`) for human, responsive reveals without unscientific cartoon bounce.
-- **Flow & Pulses:** Smooth deterministic mathematical waves (`Math.sin(frame / N)`) representing neural electrical firing.
-- **Chart Transitions:** Smooth vector path transitions with data-grounded curves.
+### 3. Typography & Mobile Readability Standards
+- **Headline Display**: Heavy condensed sans-serif (`'Arial Black', 'Impact', -apple-system, sans-serif`), uppercase, letter-spacing -1.5px, line-height 1.02. Size: **84px**.
+- **Card Subheads**: **34px – 38px** bold uppercase.
+- **Explanatory Copy**: **34px – 36px** high-contrast text.
+- **Minimum Font Size Floor**: **32px strictly enforced everywhere** on screen (guarantees readability on compact mobile screens such as iPhone 15 base display).
+
+### 4. YouTube Shorts Safe Area Enforcement
+- **Top Safe Margin**: $\ge 160$px (clears status bar and search icons; headlines begin at $y = 160$px).
+- **Bottom Safe Margin**: $\ge 400$px (all focal graphics finish by $y \le 1380$px; captions sit at $y \approx 1420$–$1500$px; bottom 400px $y > 1520$px is 100% clean for Shorts interactive controls).
+- **Right Rail Margin**: $\ge 140$px (content max width $\le 850$px; clears Like/Comment/Share buttons).
+- **Left Margin**: $\ge 90$px (consistent breathing room).
+
+### 5. Anti-Clutter Rules
+- **Zero Top Telemetry**: No decorative telemetry lines, fake figure markers (`FIG 1.0`), status icon shapes, or circuit codes.
+- **Zero Badge Soup**: No floating useless pill tags.
+- **Single Focal Focus**: Exactly one bold cutout headline and one high-clarity focal graphic per scene.

@@ -13,11 +13,11 @@ export const S01_Hook: React.FC = () => {
     config: DESIGN_TOKENS.spring.default,
   });
 
-  // Endless scroll offset
-  const scrollOffset = (frame * 12) % 400;
+  // Endless mechanical scroll offset
+  const scrollOffset = (frame * 10) % 260;
 
   // Conflict pulse on "actively hate" (around frame 60)
-  const hateGlitch = interpolate(frame, [50, 70, 95], [0, 1, 0], {
+  const hatePulse = interpolate(frame, [50, 70, 95], [0, 1, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -27,189 +27,242 @@ export const S01_Hook: React.FC = () => {
       style={{
         width: '100%',
         height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        paddingTop: DESIGN_TOKENS.safeArea.top + 40,
+        position: 'relative',
+        padding: '110px 80px 40px 80px',
         opacity: entry,
+        boxSizing: 'border-box',
+        fontFamily: DESIGN_TOKENS.fonts.primary,
+        color: '#121212',
       }}
     >
-      {/* Top Badge */}
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 12,
-          backgroundColor: 'rgba(239, 68, 68, 0.15)',
-          border: '1px solid rgba(239, 68, 68, 0.4)',
-          borderRadius: 99,
-          padding: '10px 24px',
-          marginBottom: 32,
-        }}
-      >
-        <span
-          style={{
-            width: 12,
-            height: 12,
-            borderRadius: '50%',
-            backgroundColor: DESIGN_TOKENS.colors.dangerRed,
-            boxShadow: `0 0 12px ${DESIGN_TOKENS.colors.dangerRed}`,
-          }}
-        />
-        <span
-          style={{
-            color: '#FCA5A5',
-            fontFamily: DESIGN_TOKENS.fonts.mono,
-            fontSize: 22,
-            fontWeight: 700,
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
-          }}
-        >
-          The Compulsion Paradox
-        </span>
-      </div>
-
-      {/* Main Headline */}
-      <h1
-        style={{
-          fontSize: 78,
-          fontWeight: 900,
-          color: DESIGN_TOKENS.colors.textPrimary,
-          textAlign: 'center',
-          lineHeight: 1.15,
-          letterSpacing: '-0.03em',
-          maxWidth: 900,
-          margin: '0 0 60px 0',
-        }}
-      >
-        Trapped in a Habit You{' '}
-        <span
-          style={{
-            color: DESIGN_TOKENS.colors.dangerRed,
-            textShadow: `0 0 ${20 + hateGlitch * 25}px ${DESIGN_TOKENS.colors.dangerRed}`,
-          }}
-        >
-          Actively Hate?
-        </span>
-      </h1>
-
-      {/* Central Phone Mockup with Endless Loop */}
-      <div
-        style={{
-          position: 'relative',
-          width: 440,
-          height: 640,
-          borderRadius: 48,
-          backgroundColor: '#0F172A',
-          border: '6px solid rgba(255, 255, 255, 0.15)',
-          boxShadow: '0 25px 60px rgba(0, 0, 0, 0.7)',
-          overflow: 'hidden',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      >
-        {/* Dynamic Notch */}
-        <div
-          style={{
-            width: 140,
-            height: 28,
-            backgroundColor: '#020617',
-            borderRadius: '0 0 16px 16px',
-            marginBottom: 20,
-            zIndex: 10,
-          }}
-        />
-
-        {/* Endless feed items scrolling */}
+      {/* Bauhaus Top Header Banner */}
+      <div>
         <div
           style={{
             display: 'flex',
-            flexDirection: 'column',
-            gap: 20,
-            transform: `translateY(-${scrollOffset}px)`,
-            width: '88%',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            borderBottom: '6px solid #121212',
+            paddingBottom: 20,
           }}
         >
-          {[0, 1, 2, 3, 4, 5].map((i) => (
+          <div style={{display: 'flex', gap: 12, alignItems: 'center'}}>
+            <div style={{width: 24, height: 24, backgroundColor: '#E63946'}} />
+            <div style={{width: 24, height: 24, borderRadius: '50%', backgroundColor: '#1D3557'}} />
             <div
-              key={i}
               style={{
-                backgroundColor: 'rgba(30, 41, 59, 0.7)',
-                borderRadius: 20,
-                padding: '24px 20px',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 12,
+                width: 0,
+                height: 0,
+                borderLeft: '12px solid transparent',
+                borderRight: '12px solid transparent',
+                borderBottom: '24px solid #FFB703',
+              }}
+            />
+            <span
+              style={{
+                fontSize: 22,
+                fontWeight: 900,
+                letterSpacing: 2,
+                marginLeft: 8,
+                textTransform: 'uppercase',
               }}
             >
-              <div style={{display: 'flex', alignItems: 'center', gap: 12}}>
-                <div
-                  style={{
-                    width: 32,
-                    height: 32,
-                    borderRadius: '50%',
-                    backgroundColor: 'rgba(255,255,255,0.2)',
-                  }}
-                />
-                <div
-                  style={{
-                    width: 120,
-                    height: 14,
-                    borderRadius: 6,
-                    backgroundColor: 'rgba(255,255,255,0.25)',
-                  }}
-                />
-              </div>
-              <div
-                style={{
-                  width: '100%',
-                  height: 90,
-                  borderRadius: 14,
-                  backgroundColor: 'rgba(51, 65, 85, 0.6)',
-                }}
-              />
-            </div>
-          ))}
+              BEHAVIORAL PARADOX // 01
+            </span>
+          </div>
+          <span
+            style={{
+              fontSize: 20,
+              fontWeight: 800,
+              backgroundColor: '#121212',
+              color: '#F3EFE6',
+              padding: '6px 14px',
+            }}
+          >
+            FIG. 1.0
+          </span>
         </div>
 
-        {/* Floating Dissonance Tag Overlay */}
+        {/* Headline */}
+        <div style={{marginTop: 32}}>
+          <div
+            style={{
+              fontSize: 24,
+              fontWeight: 800,
+              color: '#E63946',
+              letterSpacing: 3,
+              textTransform: 'uppercase',
+            }}
+          >
+            THE COMPULSION LOOP
+          </div>
+          <h1
+            style={{
+              fontSize: 74,
+              fontWeight: 900,
+              lineHeight: 1.05,
+              margin: '14px 0 0 0',
+              letterSpacing: -2,
+              textTransform: 'uppercase',
+            }}
+          >
+            EVER STUCK IN A HABIT YOU{' '}
+            <span
+              style={{
+                backgroundColor: hatePulse > 0.5 ? '#121212' : '#E63946',
+                color: '#FFFFFF',
+                padding: '4px 16px',
+                display: 'inline-block',
+                boxShadow: '6px 6px 0 #121212',
+              }}
+            >
+              ACTIVELY HATE?
+            </span>
+          </h1>
+        </div>
+      </div>
+
+      {/* Center Visual: Brutalist Device / Infinite Scroll Card */}
+      <div
+        style={{
+          width: '100%',
+          maxWidth: 920,
+          margin: '36px auto 0 auto',
+          display: 'flex',
+          gap: 28,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        {/* Device Viewport Card */}
         <div
           style={{
-            position: 'absolute',
-            bottom: 30,
-            backgroundColor: 'rgba(15, 23, 42, 0.95)',
-            border: '2px solid rgba(239, 68, 68, 0.6)',
-            borderRadius: 20,
-            padding: '16px 24px',
+            width: 440,
+            height: 520,
+            backgroundColor: '#FFFFFF',
+            border: '6px solid #121212',
+            boxShadow: '10px 10px 0 #121212',
+            overflow: 'hidden',
+            position: 'relative',
             display: 'flex',
             flexDirection: 'column',
-            gap: 8,
-            width: '82%',
-            boxShadow: '0 12px 30px rgba(0,0,0,0.8)',
-            zIndex: 20,
           }}
         >
-          <div style={{display: 'flex', justifyContent: 'space-between'}}>
-            <span style={{color: '#94A3B8', fontSize: 16, fontFamily: DESIGN_TOKENS.fonts.mono}}>
-              BEHAVIOR:
-            </span>
-            <span style={{color: DESIGN_TOKENS.colors.wantingAmber, fontSize: 16, fontWeight: 700}}>
-              CONTINUOUS (100%)
-            </span>
+          {/* Brutalist Phone Top Notch */}
+          <div
+            style={{
+              backgroundColor: '#121212',
+              color: '#F3EFE6',
+              padding: '8px 16px',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              fontSize: 16,
+              fontWeight: 800,
+              letterSpacing: 1,
+            }}
+          >
+            <span>LOOP_ENGINE.SYS</span>
+            <span style={{color: '#FFB703'}}>REC ●</span>
           </div>
-          <div style={{display: 'flex', justifyContent: 'space-between'}}>
-            <span style={{color: '#94A3B8', fontSize: 16, fontFamily: DESIGN_TOKENS.fonts.mono}}>
-              PLEASURE:
-            </span>
-            <span style={{color: DESIGN_TOKENS.colors.dangerRed, fontSize: 16, fontWeight: 700}}>
-              ZERO / DISGUST (0%)
-            </span>
+
+          {/* Endless Mechanical Feed */}
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 16,
+              padding: 20,
+              transform: `translateY(-${scrollOffset}px)`,
+            }}
+          >
+            {[0, 1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                style={{
+                  backgroundColor: i % 2 === 0 ? '#F3EFE6' : '#FFFFFF',
+                  border: '4px solid #121212',
+                  padding: '16px 14px',
+                  boxShadow: '4px 4px 0 #121212',
+                }}
+              >
+                <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: 8}}>
+                  <span style={{fontSize: 14, fontWeight: 900, color: '#1D3557'}}>ITEM // 0{i + 1}</span>
+                  <span style={{fontSize: 12, fontWeight: 800, backgroundColor: '#E63946', color: '#FFF', padding: '2px 6px'}}>
+                    DOOMSCROLL
+                  </span>
+                </div>
+                <div style={{height: 40, backgroundColor: '#121212', opacity: 0.08, marginBottom: 8}} />
+                <div style={{fontSize: 13, fontWeight: 800, color: '#444'}}>
+                  REPEAT CYCLE : AUTOMATED
+                </div>
+              </div>
+            ))}
           </div>
         </div>
+
+        {/* Side Analytical Callout Chips */}
+        <div style={{display: 'flex', flexDirection: 'column', gap: 20, flex: 1}}>
+          <div
+            style={{
+              backgroundColor: '#FFFFFF',
+              border: '6px solid #121212',
+              boxShadow: '8px 8px 0 #121212',
+              padding: '24px 20px',
+            }}
+          >
+            <div style={{fontSize: 16, fontWeight: 900, color: '#666', letterSpacing: 2}}>
+              PHYSIOLOGICAL STATE
+            </div>
+            <div style={{fontSize: 34, fontWeight: 900, color: '#E63946', marginTop: 8}}>
+              ACTION: 100%
+            </div>
+            <div style={{fontSize: 18, fontWeight: 700, color: '#121212', marginTop: 4}}>
+              Compulsive Pursuit
+            </div>
+          </div>
+
+          <div
+            style={{
+              backgroundColor: '#121212',
+              color: '#FFFFFF',
+              border: '6px solid #121212',
+              boxShadow: '8px 8px 0 #E63946',
+              padding: '24px 20px',
+            }}
+          >
+            <div style={{fontSize: 16, fontWeight: 900, color: '#FFB703', letterSpacing: 2}}>
+              SUBJECTIVE PLEASURE
+            </div>
+            <div style={{fontSize: 34, fontWeight: 900, color: '#FFFFFF', marginTop: 8}}>
+              JOY: 0% / HATE
+            </div>
+            <div style={{fontSize: 18, fontWeight: 700, color: '#CCC', marginTop: 4}}>
+              Hedonic Flatline
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Pinned Bottom Footer Banner */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: 50,
+          left: 80,
+          right: 80,
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          borderTop: '4px solid #121212',
+          paddingTop: 16,
+        }}
+      >
+        <span style={{fontSize: 20, fontWeight: 900}}>PEERGRAPHICS // SWISS DESIGN SYSTEM</span>
+        <span style={{fontSize: 18, fontWeight: 700, color: '#1D3557'}}>BERRIDGE LAB // INCENTIVE SALIENCE</span>
       </div>
     </div>
   );
 };
+
+

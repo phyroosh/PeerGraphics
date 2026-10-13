@@ -1,21 +1,17 @@
-# Verified Narration Transcript
+# Verified Voiceover Transcript & Alignment
 
-**Voice Actor:** Eric ("Conversational, Original", ElevenLabs)  
-**Measured Audio Duration:** 38.191 seconds  
-**Total Spoken Words:** 86  
+- **Audio File**: `production/voiceover.mp3`
+- **Voice**: Buster - Conversational, Original Eric (ElevenLabs)
+- **Duration**: 60.76s (1,824 frames @ 30 fps)
+
+## Full Spoken Narration
 
 ```text
-Ever find yourself stuck doing something you actively hate?
+We often mistake intense chemistry for a healthy connection, but the real difference between a healthy and an unhealthy relationship isn't how good the highs feel. It's how safe you feel when things get uncomfortable.
 
-Here is why quitting feels impossible: in your brain, liking and wanting are two completely separate systems.
+In an unhealthy dynamic, conflict is a battle for control. Boundaries are treated as threats, and disagreements are met with guilt, silence, or anger. You end up walking on eggshells, editing yourself just to keep the peace.
 
-Liking is the actual pleasure you feel, powered by fragile opioid hotspots.
+A healthy relationship isn't the absence of conflict. It's the presence of emotional safety. Differences are met with curiosity instead of contempt. When tension rises, it's the two of you teaming up against the problem, not against each other.
 
-Wanting is the raw urge to pursue, driven by dopamine.
-
-Over time, the pleasure hotspots shut down from tolerance. But dopamine pathways do the opposite—they become hyper-sensitized.
-
-Your brain screams that you need it, even while the experience gives you zero joy.
-
-You are not chasing pleasure anymore. You are trapped in wanting.
+To see where your relationship stands, observe what happens when you set a simple boundary. A healthy partner responds with curiosity and respect. An unhealthy dynamic responds with guilt, withdrawal, or defensiveness. That isn't passion, it's control. Always choose consistent safety over chaotic intensity.
 ```

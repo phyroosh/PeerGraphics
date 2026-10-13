@@ -13,7 +13,6 @@ export const S03_LikingCircuit: React.FC = () => {
     config: DESIGN_TOKENS.spring.default,
   });
 
-  // Soft hedonic pulse
   const pleasurePulse = 0.8 + 0.2 * Math.sin(frame * 0.15);
 
   return (
@@ -21,116 +20,148 @@ export const S03_LikingCircuit: React.FC = () => {
       style={{
         width: '100%',
         height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        paddingTop: DESIGN_TOKENS.safeArea.top + 20,
+        position: 'relative',
+        padding: '110px 80px 40px 80px',
         opacity: entry,
+        boxSizing: 'border-box',
+        fontFamily: DESIGN_TOKENS.fonts.primary,
+        color: '#121212',
       }}
     >
-      {/* Circuit Badge */}
-      <div
-        style={{
-          backgroundColor: 'rgba(16, 185, 129, 0.15)',
-          border: '1px solid rgba(16, 185, 129, 0.4)',
-          borderRadius: 99,
-          padding: '8px 24px',
-          marginBottom: 24,
-          display: 'flex',
-          alignItems: 'center',
-          gap: 10,
-        }}
-      >
-        <span
+      {/* Top Header Banner */}
+      <div>
+        <div
           style={{
-            width: 12,
-            height: 12,
-            borderRadius: '50%',
-            backgroundColor: DESIGN_TOKENS.colors.likingEmerald,
-            boxShadow: `0 0 10px ${DESIGN_TOKENS.colors.likingEmerald}`,
-          }}
-        />
-        <span
-          style={{
-            color: '#6EE7B7',
-            fontFamily: DESIGN_TOKENS.fonts.mono,
-            fontSize: 22,
-            fontWeight: 700,
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            borderBottom: '6px solid #121212',
+            paddingBottom: 20,
           }}
         >
-          Circuit A: Hedonic System
-        </span>
-      </div>
-
-      {/* Headline */}
-      <h1
-        style={{
-          fontSize: 70,
-          fontWeight: 900,
-          color: DESIGN_TOKENS.colors.textPrimary,
-          textAlign: 'center',
-          lineHeight: 1.15,
-          letterSpacing: '-0.02em',
-          maxWidth: 920,
-          margin: '0 0 32px 0',
-        }}
-      >
-        <span style={{color: DESIGN_TOKENS.colors.likingEmerald}}>“Liking”</span> = Actual Pleasure
-      </h1>
-
-      {/* Brain Diagram in Liking Mode */}
-      <div style={{marginBottom: 36}}>
-        <BrainDiagram mode="liking" scale={1.05} />
-      </div>
-
-      {/* Scientific Deep-Dive Card */}
-      <div
-        style={{
-          width: 900,
-          backgroundColor: 'rgba(15, 23, 42, 0.85)',
-          border: `2px solid ${DESIGN_TOKENS.colors.likingEmerald}`,
-          borderRadius: 28,
-          padding: '32px 36px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 24,
-          boxShadow: `0 16px 40px ${DESIGN_TOKENS.colors.likingEmeraldGlow}`,
-        }}
-      >
-        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-          <span style={{fontSize: 28, fontWeight: 800, color: '#A7F3D0'}}>
-            Fragile Opioid Hotspots
-          </span>
+          <div style={{display: 'flex', gap: 12, alignItems: 'center'}}>
+            <div style={{width: 24, height: 24, backgroundColor: '#1D3557'}} />
+            <div style={{width: 24, height: 24, borderRadius: '50%', backgroundColor: '#1D3557'}} />
+            <div
+              style={{
+                width: 0,
+                height: 0,
+                borderLeft: '12px solid transparent',
+                borderRight: '12px solid transparent',
+                borderBottom: '24px solid #FFB703',
+              }}
+            />
+            <span
+              style={{
+                fontSize: 22,
+                fontWeight: 900,
+                letterSpacing: 2,
+                marginLeft: 8,
+                textTransform: 'uppercase',
+              }}
+            >
+              CIRCUIT 01 // HEDONIC HOTSPOTS
+            </span>
+          </div>
           <span
             style={{
-              fontFamily: DESIGN_TOKENS.fonts.mono,
               fontSize: 20,
-              color: '#34D399',
-              backgroundColor: 'rgba(6, 78, 59, 0.6)',
-              padding: '6px 16px',
-              borderRadius: 12,
+              fontWeight: 800,
+              backgroundColor: '#121212',
+              color: '#F3EFE6',
+              padding: '6px 14px',
             }}
           >
-            NAc Shell & Ventral Pallidum
+            FIG. 3.0
           </span>
         </div>
 
-        {/* Real Hedonic Meter */}
-        <div style={{display: 'flex', flexDirection: 'column', gap: 10}}>
-          <div style={{display: 'flex', justifyContent: 'space-between', fontSize: 22, color: '#94A3B8'}}>
-            <span>HEDONIC IMPACT (JOY)</span>
-            <span style={{color: DESIGN_TOKENS.colors.likingEmerald, fontWeight: 700}}>
-              {Math.round(85 * pleasurePulse)}% ACTIVE
+        {/* Headline */}
+        <div style={{marginTop: 28}}>
+          <div
+            style={{
+              fontSize: 24,
+              fontWeight: 800,
+              color: '#1D3557',
+              letterSpacing: 3,
+              textTransform: 'uppercase',
+            }}
+          >
+            ANATOMICAL SUBSTRATE // OPIOIDS
+          </div>
+          <h1
+            style={{
+              fontSize: 70,
+              fontWeight: 900,
+              lineHeight: 1.05,
+              margin: '12px 0 0 0',
+              letterSpacing: -2,
+              textTransform: 'uppercase',
+            }}
+          >
+            LIKING IS DRIVEN BY{' '}
+            <span
+              style={{
+                backgroundColor: '#1D3557',
+                color: '#FFFFFF',
+                padding: '2px 14px',
+                display: 'inline-block',
+                boxShadow: '6px 6px 0 #121212',
+              }}
+            >
+              FRAGILE OPIOID HOTSPOTS
             </span>
+          </h1>
+        </div>
+      </div>
+
+      {/* Center Brain Schematic */}
+      <div style={{margin: '14px auto 0 auto', display: 'flex', justifyContent: 'center'}}>
+        <BrainDiagram mode="liking" scale={0.76} />
+      </div>
+
+      {/* Analytical Callout Card */}
+      <div
+        style={{
+          width: '100%',
+          maxWidth: 920,
+          margin: '20px auto 0 auto',
+          backgroundColor: '#FFFFFF',
+          border: '6px solid #121212',
+          boxShadow: '8px 8px 0 #121212',
+          padding: '20px 24px',
+        }}
+      >
+        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10}}>
+          <span style={{fontSize: 20, fontWeight: 900, color: '#1D3557', textTransform: 'uppercase', letterSpacing: 1}}>
+            HEDONIC ANATOMY // VOLUME: ~1 mm³
+          </span>
+          <span
+            style={{
+              backgroundColor: '#FFB703',
+              color: '#121212',
+              padding: '4px 12px',
+              fontSize: 15,
+              fontWeight: 900,
+              border: '2px solid #121212',
+            }}
+          >
+            NUCLEUS ACCUMBENS SHELL
+          </span>
+        </div>
+
+        {/* Meter */}
+        <div style={{marginBottom: 12}}>
+          <div style={{display: 'flex', justifyContent: 'space-between', fontSize: 17, fontWeight: 900, marginBottom: 6}}>
+            <span>HEDONIC CAPACITY [JOY LEVEL]</span>
+            <span style={{color: '#1D3557'}}>{Math.round(85 * pleasurePulse)}% ACTIVE</span>
           </div>
           <div
             style={{
               width: '100%',
               height: 20,
-              backgroundColor: 'rgba(30, 41, 59, 0.8)',
-              borderRadius: 10,
+              backgroundColor: '#F3EFE6',
+              border: '4px solid #121212',
               overflow: 'hidden',
             }}
           >
@@ -138,25 +169,35 @@ export const S03_LikingCircuit: React.FC = () => {
               style={{
                 width: `${85 * pleasurePulse}%`,
                 height: '100%',
-                backgroundColor: DESIGN_TOKENS.colors.likingEmerald,
-                boxShadow: `0 0 16px ${DESIGN_TOKENS.colors.likingEmerald}`,
-                borderRadius: 10,
+                backgroundColor: '#1D3557',
               }}
             />
           </div>
         </div>
 
-        <p
-          style={{
-            margin: 0,
-            fontSize: 24,
-            color: '#CBD5E1',
-            lineHeight: 1.45,
-          }}
-        >
-          Tiny cubic-millimeter islands in the brain that generate the sensation of genuine contentment and sensory satisfaction.
+        <p style={{margin: 0, fontSize: 19, fontWeight: 700, color: '#121212', lineHeight: 1.35}}>
+          Tiny cubic-millimeter islands in the ventral striatum that generate genuine contentment and sensory satisfaction.
         </p>
+      </div>
+
+      {/* Pinned Bottom Footer Banner */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: 50,
+          left: 80,
+          right: 80,
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          borderTop: '4px solid #121212',
+          paddingTop: 16,
+        }}
+      >
+        <span style={{fontSize: 20, fontWeight: 900}}>PEERGRAPHICS // SWISS DESIGN SYSTEM</span>
+        <span style={{fontSize: 18, fontWeight: 700, color: '#1D3557'}}>BERRIDGE & KRINGELBACH (2015)</span>
       </div>
     </div>
   );
 };
+
