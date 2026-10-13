@@ -1,6 +1,7 @@
 import React from 'react';
 import { Composition } from 'remotion';
 import { ExplanationVideo } from './compositions/ExplanationVideo';
+import { LanternKeeperPrototype } from './compositions/LanternKeeperPrototype';
 import { Theme3_SwissBauhaus } from './themes/Theme3_SwissBauhaus';
 import { Theme1_CyberHUD } from './themes/Theme1_CyberHUD';
 import { Theme2_VintageBlueprint } from './themes/Theme2_VintageBlueprint';
@@ -37,6 +38,16 @@ export const RemotionRoot: React.FC = () => {
         id="ExplanationVideo"
         component={ExplanationVideo}
         durationInFrames={1824}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+
+      {/* 2D Animated Storytelling Prototype: The Lantern Keeper */}
+      <Composition
+        id="LanternKeeperPrototype"
+        component={LanternKeeperPrototype}
+        durationInFrames={360}
         fps={30}
         width={1080}
         height={1920}

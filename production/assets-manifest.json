@@ -1,0 +1,72 @@
+{
+  "project": "The Lantern Keeper",
+  "version": "1.0.0",
+  "characters": {
+    "Leo": {
+      "componentPath": "src/characters/LeoPuppet.tsx",
+      "proportions": "1:4.5 stylized illustrated storybook",
+      "pivots": {
+        "head": "neck base (x: 210, y: 180)",
+        "shoulder_right": "collarbone junction (x: 245, y: 240)",
+        "elbow_right": "arm hinge (x: 247, y: 310)",
+        "wrist_right": "lantern handle mount (x: 248, y: 382)",
+        "hips": "body center (x: 145, y: 340)"
+      },
+      "colorTokens": {
+        "skin": "#FCEEE3",
+        "hair": "#2D1E18",
+        "coat": "#1E2A38",
+        "scarf": "#C0392B",
+        "spectacles": "#D4AF37",
+        "trousers": "#34495E",
+        "boots": "#4A3525"
+      },
+      "capabilities": [
+        "procedural_breathing",
+        "eye_gaze_tracking",
+        "eyelid_blink_cycle",
+        "articulated_lantern_raise",
+        "dynamic_flame_ignition",
+        "secondary_scarf_wind_physics",
+        "dynamic_warm_light_wash"
+      ]
+    }
+  },
+  "environments": {
+    "WhisperingWoods": {
+      "componentPath": "src/environments/WhisperingWoodsEnv.tsx",
+      "planes": [
+        {
+          "name": "Plane 0: Far Horizon",
+          "depthZ": 3.0,
+          "parallaxFactor": 0.12,
+          "elements": ["twilight_sky", "crescent_moon", "stars", "mountain_ridge", "distant_mist"]
+        },
+        {
+          "name": "Plane 1: Midground Forest",
+          "depthZ": 1.8,
+          "parallaxFactor": 0.45,
+          "elements": ["coniferous_pines", "rolling_knolls", "treeline_fog"]
+        },
+        {
+          "name": "Plane 2: Action Ground Terrain",
+          "depthZ": 1.0,
+          "parallaxFactor": 1.00,
+          "elements": ["mossy_knoll", "cobblestone_path", "ancient_boulder"]
+        },
+        {
+          "name": "Plane 3: Foreground Framing",
+          "depthZ": 0.5,
+          "parallaxFactor": 1.40,
+          "elements": ["overhanging_pine_branches", "silhouetted_ivy_vines", "depth_blur"]
+        }
+      ]
+    }
+  },
+  "fx": {
+    "AtmosphericEffects": {
+      "componentPath": "src/fx/AtmosphericEffects.tsx",
+      "features": ["floating_fireflies", "volumetric_light_cones", "rising_golden_embers"]
+    }
+  }
+}
