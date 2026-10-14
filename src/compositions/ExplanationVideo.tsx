@@ -3,13 +3,13 @@ import {Sequence} from 'remotion';
 import {AudioVoiceover} from '../components/AudioVoiceover';
 import {Captions} from '../components/Captions';
 import {DESIGN_TOKENS} from '../design/tokens';
-import {SCENES} from '../data/scenes';
-import {AnimatedBackground} from '../motion/AnimatedBackground';
-import {S01_TheRoteDrillTrap} from '../scenes/S01_TheRoteDrillTrap';
-import {S02_BernsteinAndBlacksmith} from '../scenes/S02_BernsteinAndBlacksmith';
-import {S03_NeuralPlasticityVsAutopilot} from '../scenes/S03_NeuralPlasticityVsAutopilot';
-import {S04_DynamicMastery} from '../scenes/S04_DynamicMastery';
-import {S05_ActionableAntidote} from '../scenes/S05_ActionableAntidote';
+import {AMCC_SCENES} from '../data/amcc';
+import {AMCCBackground} from '../motion/AMCCBackground';
+import {S01_AMCCHook} from '../scenes/S01_AMCCHook';
+import {S02_AMCCCostBenefit} from '../scenes/S02_AMCCCostBenefit';
+import {S03_AMCCNetwork} from '../scenes/S03_AMCCNetwork';
+import {S04_NextStep} from '../scenes/S04_NextStep';
+import {S05_FrictionLoop} from '../scenes/S05_FrictionLoop';
 
 export const ExplanationVideo: React.FC = () => {
   return (
@@ -25,30 +25,30 @@ export const ExplanationVideo: React.FC = () => {
       }}
     >
       {/* Living Animated Background Stack (Atmosphere, Kinetic Motifs, Particles, Grain Boil) */}
-      <AnimatedBackground />
+      <AMCCBackground />
 
       {/* Synchronized ElevenLabs Audio Voiceover */}
       <AudioVoiceover />
 
       {/* Synchronized Visual Scenes (Theme 09: Punk Editorial & Risograph Collage) */}
-      <Sequence from={SCENES[0].from} durationInFrames={SCENES[0].durationInFrames}>
-        <S01_TheRoteDrillTrap />
+      <Sequence from={AMCC_SCENES[0].from} durationInFrames={AMCC_SCENES[0].durationInFrames}>
+        <S01_AMCCHook />
       </Sequence>
 
-      <Sequence from={SCENES[1].from} durationInFrames={SCENES[1].durationInFrames}>
-        <S02_BernsteinAndBlacksmith />
+      <Sequence from={AMCC_SCENES[1].from} durationInFrames={AMCC_SCENES[1].durationInFrames}>
+        <S02_AMCCCostBenefit />
       </Sequence>
 
-      <Sequence from={SCENES[2].from} durationInFrames={SCENES[2].durationInFrames}>
-        <S03_NeuralPlasticityVsAutopilot />
+      <Sequence from={AMCC_SCENES[2].from} durationInFrames={AMCC_SCENES[2].durationInFrames}>
+        <S03_AMCCNetwork />
       </Sequence>
 
-      <Sequence from={SCENES[3].from} durationInFrames={SCENES[3].durationInFrames}>
-        <S04_DynamicMastery />
+      <Sequence from={AMCC_SCENES[3].from} durationInFrames={AMCC_SCENES[3].durationInFrames}>
+        <S04_NextStep />
       </Sequence>
 
-      <Sequence from={SCENES[4].from} durationInFrames={SCENES[4].durationInFrames}>
-        <S05_ActionableAntidote />
+      <Sequence from={AMCC_SCENES[4].from} durationInFrames={AMCC_SCENES[4].durationInFrames}>
+        <S05_FrictionLoop />
       </Sequence>
 
       {/* Synchronized Captions Overlay */}

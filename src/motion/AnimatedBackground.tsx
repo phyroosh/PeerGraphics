@@ -5,10 +5,10 @@ import {SCENES} from '../data/scenes';
 /**
  * AnimatedBackground: Living Environmental Storytelling Canvas.
  * 
- * Tailored for Brain Plasticity & Bernstein's Repetition Without Repetition:
+ * Tailored for Willpower, Neuroplasticity & aMCC Daily Renewal:
  * - Layer 0: Atmospheric color grading & emotional shifts across the 5 scenes
- * - Layer 1: Narrative kinetic motifs (S01 rigid track fractures, S02 blacksmith forge shockwaves & sparks,
- *            S03 neural web & autopilot split, S04 radial speed rays on mastery, S05 golden victory sunburst)
+ * - Layer 1: Narrative kinetic motifs (S01 neural grid pulses, S02 hydraulic shockwaves & friction sparks,
+ *            S03 cool atrophy fog & autopilot split, S04 radial 24h reset rays, S05 golden victory sunburst)
  * - Layer 2: Ambient depth micro-particles (floating sparks and motes)
  * - Layer 3: Tactile Risograph "boiling" paper grain & halftone dot grid at 12 fps
  */
@@ -35,25 +35,21 @@ export const AnimatedBackground: React.FC = () => {
   let vignetteColor = 'rgba(17, 17, 17, 0.08)';
 
   if (activeSceneIndex === 0) {
-    // S01: Rote Drill Trap (Begins warm beige, shifts to high-tension warning as mono-track breaks)
-    const tension = interpolate(sceneLocalFrame, [140, 220], [0, 1], {
-      extrapolateLeft: 'clamp',
-      extrapolateRight: 'clamp',
-    });
-    baseColor = tension > 0.5 ? '#E4DDD2' : '#EAE5DB';
-    vignetteColor = `rgba(255, 0, 85, ${0.05 + tension * 0.15})`;
+    // S01: Anatomy of Will (Warm curiosity beige with electric cyan neural tint)
+    baseColor = '#EAE5DB';
+    vignetteColor = 'rgba(0, 229, 255, 0.09)';
   } else if (activeSceneIndex === 1) {
-    // S02: Bernstein & Forge (Warm volcanic forge ambience, heavy energy)
+    // S02: Friction & Growth (High-tension kinetic warmth, friction heat)
     baseColor = '#E8DFD5';
     vignetteColor = 'rgba(255, 0, 85, 0.16)';
   } else if (activeSceneIndex === 2) {
-    // S03: Neuroplasticity vs Autopilot (Dual psychological atmosphere: cold fog vs active cyan)
+    // S03: Comfort Atrophy & Habit Trap (Cool desaturated graying fog)
     baseColor = '#E2E2DC';
-    vignetteColor = 'rgba(0, 229, 255, 0.14)';
+    vignetteColor = 'rgba(17, 17, 17, 0.18)';
   } else if (activeSceneIndex === 3) {
-    // S04: Dynamic Mastery (High-energy warm amber breakthrough)
+    // S04: 24h Reset Clock (High-alert amber/red pulse)
     baseColor = '#ECE5D5';
-    vignetteColor = 'rgba(255, 230, 0, 0.20)';
+    vignetteColor = 'rgba(255, 0, 85, 0.14)';
   } else if (activeSceneIndex === 4) {
     // S05: Actionable Antidote (Radiant golden dawn horizon)
     const dawn = interpolate(sceneLocalFrame, [30, 120], [0, 1], {
@@ -68,23 +64,13 @@ export const AnimatedBackground: React.FC = () => {
   // LAYER 1: NARRATIVE KINETIC MOTIFS
   // -------------------------------------------------------------
 
-  // S01: Monorail track lines + horizontal stress fractures
-  const s01Break = activeSceneIndex === 0 && sceneLocalFrame > 155;
-  const s01Tremor = s01Break ? Math.sin(frame * 2.5) * 4 : 0;
+  // S02: Seismic shockwaves from hydraulic friction press (local frames: 120, 240, 360)
+  const s02Shock1 = spring({frame: sceneLocalFrame - 120, fps, config: {damping: 10, stiffness: 120}});
+  const s02Shock2 = spring({frame: sceneLocalFrame - 240, fps, config: {damping: 10, stiffness: 120}});
+  const s02Shock3 = spring({frame: sceneLocalFrame - 360, fps, config: {damping: 10, stiffness: 120}});
 
-  // S02: Seismic shockwaves from hammer impacts (local frames: 170, 270, 390)
-  const s02Shock1 = spring({frame: sceneLocalFrame - 170, fps, config: {damping: 10, stiffness: 120}});
-  const s02Shock2 = spring({frame: sceneLocalFrame - 270, fps, config: {damping: 10, stiffness: 120}});
-  const s02Shock3 = spring({frame: sceneLocalFrame - 390, fps, config: {damping: 10, stiffness: 120}});
-
-  // S04: Radial speed rays burst on breakthrough
-  const s04Burst = spring({
-    frame: sceneLocalFrame - 20,
-    fps,
-    config: {damping: 12, stiffness: 150},
-  });
-  const s04BurstScale = interpolate(s04Burst, [0, 1], [0.3, 1.3]);
-  const s04BurstOpacity = interpolate(s04Burst, [0, 0.3, 1], [0, 0.5, 0.15]);
+  // S04: Radial sweep rays for 24h clock
+  const s04ClockSweep = (frame * 0.8) % 360;
 
   // S05: Golden dawn sunburst rotation
   const s05SunburstAngle = (frame * 0.35) % 360;
@@ -132,57 +118,49 @@ export const AnimatedBackground: React.FC = () => {
       {/* LAYER 1: SCENE-SPECIFIC NARRATIVE ENVIRONMENTAL MOTIFS     */}
       {/* ========================================================= */}
 
-      {/* SCENE 01: Rigid Track Lines & Fracture Warning */}
+      {/* SCENE 01: Neural Synaptic Network Grid */}
       {activeSceneIndex === 0 && (
         <svg
           width="1080"
           height="1920"
-          style={{position: 'absolute', top: 0, left: s01Tremor, opacity: 0.28}}
+          style={{position: 'absolute', top: 0, left: 0, opacity: 0.25}}
         >
-          {/* Rigid vertical mono-track rails */}
-          {[200, 360, 540, 720, 880].map((x, i) => (
-            <line
-              key={i}
-              x1={x}
-              y1={-100}
-              x2={x}
-              y2={2020}
-              stroke="#111111"
-              strokeWidth="3"
-              strokeDasharray={s01Break ? '20 30' : '40 60'}
-            />
+          <g stroke="#111111" strokeWidth="2" strokeDasharray="8 12" fill="none">
+            <path d="M 120 300 Q 300 500 540 450 T 960 700" />
+            <path d="M 960 300 Q 700 500 540 450 T 120 800" />
+            <path d="M 200 1200 Q 540 1000 880 1300" />
+          </g>
+          {/* Synaptic node dots */}
+          {[
+            {cx: 300, cy: 500},
+            {cx: 540, cy: 450},
+            {cx: 700, cy: 500},
+            {cx: 540, cy: 1000},
+          ].map((pt, i) => (
+            <circle key={i} cx={pt.cx} cy={pt.cy} r="6" fill="#00E5FF" stroke="#111111" strokeWidth="2" />
           ))}
-          {/* Fracture warning red flashes on break */}
-          {s01Break && frame % 12 < 4 && (
-            <rect
-              width="1080"
-              height="1920"
-              fill="rgba(255, 0, 85, 0.12)"
-              style={{mixBlendMode: 'multiply'}}
-            />
-          )}
         </svg>
       )}
 
-      {/* SCENE 02: Volcanic Blacksmith Forge Shockwaves */}
+      {/* SCENE 02: Hydraulic Friction Shockwaves */}
       {activeSceneIndex === 1 && (
         <svg
           width="1080"
           height="1920"
           style={{position: 'absolute', top: 0, left: 0}}
         >
-          <radialGradient id="forge-glow" cx="50%" cy="75%" r="65%">
+          <radialGradient id="friction-glow" cx="50%" cy="40%" r="65%">
             <stop offset="0%" stopColor="#FF0055" stopOpacity="0.18" />
             <stop offset="60%" stopColor="#FFE600" stopOpacity="0.06" />
             <stop offset="100%" stopColor="#FF0055" stopOpacity="0" />
           </radialGradient>
-          <rect width="1080" height="1920" fill="url(#forge-glow)" />
+          <rect width="1080" height="1920" fill="url(#friction-glow)" />
 
-          {/* Seismic Shockwave 1 (Strike 1) */}
+          {/* Shockwave 1 */}
           {s02Shock1 > 0.05 && s02Shock1 < 0.98 && (
             <circle
               cx="540"
-              cy="980"
+              cy="760"
               r={interpolate(s02Shock1, [0, 1], [40, 480])}
               fill="none"
               stroke="#FFE600"
@@ -191,27 +169,27 @@ export const AnimatedBackground: React.FC = () => {
             />
           )}
 
-          {/* Seismic Shockwave 2 (Strike 2) */}
+          {/* Shockwave 2 */}
           {s02Shock2 > 0.05 && s02Shock2 < 0.98 && (
             <circle
               cx="540"
-              cy="980"
+              cy="760"
               r={interpolate(s02Shock2, [0, 1], [40, 540])}
               fill="none"
-              stroke="#00E5FF"
+              stroke="#FF0055"
               strokeWidth={interpolate(s02Shock2, [0, 1], [14, 1])}
               opacity={interpolate(s02Shock2, [0, 1], [0.85, 0])}
             />
           )}
 
-          {/* Seismic Shockwave 3 (Strike 3) */}
+          {/* Shockwave 3 */}
           {s02Shock3 > 0.05 && s02Shock3 < 0.98 && (
             <circle
               cx="540"
-              cy="980"
+              cy="760"
               r={interpolate(s02Shock3, [0, 1], [50, 620])}
               fill="none"
-              stroke="#FF0055"
+              stroke="#00E5FF"
               strokeWidth={interpolate(s02Shock3, [0, 1], [16, 1])}
               opacity={interpolate(s02Shock3, [0, 1], [0.9, 0])}
             />
@@ -219,57 +197,55 @@ export const AnimatedBackground: React.FC = () => {
         </svg>
       )}
 
-      {/* SCENE 03: Neural Web & Autopilot Split Canvas */}
+      {/* SCENE 03: Cool Atrophy Fog & Habit Autopilot Lines */}
       {activeSceneIndex === 2 && (
         <svg
           width="1080"
           height="1920"
-          style={{position: 'absolute', top: 0, left: 0}}
+          style={{position: 'absolute', top: 0, left: 0, opacity: 0.3}}
         >
-          {/* Autopilot hazard glow on left half */}
-          <rect x="0" y="0" width="540" height="1920" fill="rgba(255, 0, 85, 0.05)" />
-          {/* Active cyan neuroplastic field on right half */}
-          <rect x="540" y="0" width="540" height="1920" fill="rgba(0, 229, 255, 0.06)" />
-          {/* Subtle neural network background strands */}
-          <g opacity={0.2} stroke="#111111" strokeWidth="2" strokeDasharray="10 15">
-            <path d="M 120 400 Q 300 650 540 800 T 960 1100" fill="none" />
-            <path d="M 960 400 Q 700 650 540 800 T 120 1200" fill="none" />
-          </g>
+          {/* Sluggish horizontal inertia tracks */}
+          {[400, 600, 800, 1000].map((y, i) => (
+            <line
+              key={i}
+              x1="0"
+              y1={y}
+              x2="1080"
+              y2={y}
+              stroke="#111111"
+              strokeWidth="3"
+              strokeDasharray="20 40"
+            />
+          ))}
         </svg>
       )}
 
-      {/* SCENE 04: Explosive Radial Speed Rays on Mastery */}
-      {activeSceneIndex === 3 && s04BurstOpacity > 0.05 && (
+      {/* SCENE 04: 24-Hour Reset Sweeping Lines */}
+      {activeSceneIndex === 3 && (
         <svg
           width="1080"
           height="1920"
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            opacity: s04BurstOpacity,
-            transform: `scale(${s04BurstScale})`,
-            transformOrigin: '540px 960px',
-          }}
+          style={{position: 'absolute', top: 0, left: 0, opacity: 0.18}}
         >
-          {Array.from({length: 24}).map((_, i) => {
-            const angle = (i * 360) / 24;
-            const rad = (angle * Math.PI) / 180;
-            const x2 = 540 + Math.cos(rad) * 900;
-            const y2 = 960 + Math.sin(rad) * 900;
-            return (
+          <g
+            style={{
+              transform: `rotate(${s04ClockSweep}deg)`,
+              transformOrigin: '540px 960px',
+            }}
+          >
+            {[0, 60, 120, 180, 240, 300].map((deg, i) => (
               <line
                 key={i}
-                x1={540 + Math.cos(rad) * 120}
-                y1={960 + Math.sin(rad) * 120}
-                x2={x2}
-                y2={y2}
-                stroke={i % 2 === 0 ? '#111111' : '#FFE600'}
-                strokeWidth={i % 2 === 0 ? '7' : '10'}
-                strokeLinecap="round"
+                x1="540"
+                y1="960"
+                x2={540 + Math.cos((deg * Math.PI) / 180) * 1200}
+                y2={960 + Math.sin((deg * Math.PI) / 180) * 1200}
+                stroke="#FF0055"
+                strokeWidth="6"
+                strokeDasharray="16 24"
               />
-            );
-          })}
+            ))}
+          </g>
         </svg>
       )}
 

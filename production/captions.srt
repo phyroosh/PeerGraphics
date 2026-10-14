@@ -1,63 +1,47 @@
 1
-00:00:00,000 --> 00:00:01,450
-When practicing a skill,
+00:00:00,000 --> 00:00:03,533
+Willpower isn't a tiny battery you either have or don't.
 
 2
-00:00:01,450 --> 00:00:05,100
-doing the exact same drill a hundred times feels productive.
+00:00:04,100 --> 00:00:08,900
+The aMCC helps weigh: is this goal worth the effort?
 
 3
-00:00:05,100 --> 00:00:10,370
-But your brain actually learns best when you never repeat the exact same movement.
+00:00:09,267 --> 00:00:13,667
+It integrates reward, discomfort, attention, and your body’s resources.
 
 4
-00:00:10,370 --> 00:00:15,650
-In the nineteen thirties, neurophysiologist Nikolai Bernstein studied master blacksmiths.
+00:00:13,800 --> 00:00:17,867
+Then it helps coordinate control with other brain systems.
 
 5
-00:00:15,650 --> 00:00:19,050
-The hammer hit the exact same millimeter every time,
+00:00:18,200 --> 00:00:23,033
+It is not a “willpower switch.”
 
 6
-00:00:19,050 --> 00:00:23,350
-yet the path of their arms and joints was different on every single strike.
+00:00:23,067 --> 00:00:27,000
+It helps choose: persist, change strategy, or quit.
 
 7
-00:00:23,350 --> 00:00:27,140
-He called this repetition without repetition.
+00:00:27,067 --> 00:00:32,167
+Don’t rely on motivation alone.
 
 8
-00:00:27,140 --> 00:00:30,250
-Your brain does not wire rigid, robotic tracks.
+00:00:33,067 --> 00:00:37,933
+Make the next action smaller and obvious.
 
 9
-00:00:30,250 --> 00:00:33,200
-Neuroplasticity works by solving problems.
+00:00:38,167 --> 00:00:43,500
+Open the document. Do one problem. Walk for five minutes.
 
 10
-00:00:33,200 --> 00:00:39,630
-When you mindlessly repeat an identical motion, your nervous system goes on autopilot and stops adapting.
+00:00:45,767 --> 00:00:50,600
+Remove friction. Make progress visible. Attach a meaningful reward.
 
 11
-00:00:39,630 --> 00:00:44,420
-True mastery is training your brain to find the solution through changing conditions.
+00:00:50,833 --> 00:00:56,400
+Manageable next steps teach your brain effort is worth it.
 
 12
-00:00:44,420 --> 00:00:46,400
-So stop doing identical reps.
-
-13
-00:00:46,400 --> 00:00:49,700
-Keep your target constant, but vary the execution:
-
-14
-00:00:49,700 --> 00:00:53,500
-shift your stance, change the tempo, adjust your angle.
-
-15
-00:00:53,500 --> 00:00:56,000
-Repeat the goal, never the movement.
-
-16
-00:00:56,000 --> 00:00:58,440
-That is how you build real skill.
+00:00:56,600 --> 00:01:00,033
+Make persistence the rational next move.

@@ -1,0 +1,4 @@
+{
+  "characters": {"Mira": {"componentPath": "src/characters/MiraPuppet.tsx", "defaultViewBox": "0 0 430 700", "supportedPoses": ["idle", "brace", "reach", "step"], "supportedExpressions": ["wary", "think", "determined", "relieved"]}},
+  "environments": {"ChoiceGarden": {"componentPath": "src/environments/ChoiceGardenEnv.tsx", "planes": ["far sky/weather", "mid pines", "trail ground", "foreground reeds"]}}
+}

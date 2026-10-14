@@ -13,9 +13,18 @@ description: >-
 
 > [!IMPORTANT]
 > **DISAMBIGUATION & ROUTING RULE:**
-> This skill is strictly for **academic, scientific, psychological, and conceptual educational explanations** (infographic motion graphics, mechanical metaphors, gauges, diagrams).
-> If the user request involves a **story, narrative, character animation, fictional tale, atmospheric world, or cinematic visual storytelling** (e.g. like *The Lantern Keeper*), **DO NOT USE THIS SKILL**.
-> Instead, activate the **2D Animated Storytelling Pipeline** (`2d-animation-storytelling` -> `director-animation-planning` -> `asset-rigging-preparation` -> `story-animation-production`).
+> Use this skill only when the user explicitly requests an **infographic**,
+> **diagram-led explainer**, **punk/risograph/editorial motion graphics**, or
+> the `ExplanationVideo` composition. A topic being academic, scientific,
+> psychological, conceptual, or educational does **not** select this skill by
+> itself.
+>
+> For every other 2D-animation request in PeerGraphics—including an
+> educational explanation—activate the **2D Animated Storytelling Pipeline**
+> (`2d-animation-storytelling` -> `director-animation-planning` ->
+> `asset-rigging-preparation` -> `story-animation-production`). The required
+> reference is *The Lantern Keeper*: a character-driven, atmospheric,
+> multi-plane story world, never a slide deck of labels and diagrams.
 
 ## Mission
 

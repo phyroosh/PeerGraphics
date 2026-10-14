@@ -8,6 +8,7 @@
     "studio": "node studio/server.js",
     "dev": "remotion preview src/index.ts",
     "build": "tsc --noEmit",
+    "verify:render": "bash scripts/verify-render.sh",
     "render": "remotion render src/index.ts AnimatedStory out/video.mp4",
     "render:story": "remotion render src/index.ts AnimatedStory out/story.mp4",
     "render:prototype": "remotion render src/index.ts LanternKeeperPrototype out/prototype_lantern_keeper.mp4",

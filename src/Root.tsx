@@ -3,6 +3,7 @@ import { Composition } from 'remotion';
 import { AnimatedStory } from './compositions/AnimatedStory';
 import { LanternKeeperPrototype } from './compositions/LanternKeeperPrototype';
 import { ExplanationVideo } from './compositions/ExplanationVideo';
+import { StressMindsetStory } from './compositions/StressMindsetStory';
 import { Theme3_SwissBauhaus } from './themes/Theme3_SwissBauhaus';
 import { Theme1_CyberHUD } from './themes/Theme1_CyberHUD';
 import { Theme2_VintageBlueprint } from './themes/Theme2_VintageBlueprint';
@@ -53,12 +54,13 @@ export const RemotionRoot: React.FC = () => {
         width={1080}
         height={1920}
       />
+      <Composition id="StressMindsetStory" component={StressMindsetStory} durationInFrames={1650} fps={30} width={1080} height={1920} />
 
       {/* Educational Explanation Video Composition */}
       <Composition
         id="ExplanationVideo"
         component={ExplanationVideo}
-        durationInFrames={1760}
+        durationInFrames={1801}
         fps={30}
         width={1080}
         height={1920}
@@ -91,4 +93,3 @@ export const RemotionRoot: React.FC = () => {
     </>
   );
 };
-

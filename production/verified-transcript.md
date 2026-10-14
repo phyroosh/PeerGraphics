@@ -1,22 +1,13 @@
-# Verified Voiceover Transcript & Alignment
+# Verified Narration Transcript
 
-- **Audio File**: `production/voiceover.mp3` (copied from user upload)
-- **Voice**: Buster - Conversational, Original Eric (ElevenLabs)
-- **Duration**: 58.44s (1,760 frames @ 30 fps)
-- **Sample Rate**: 44,100 Hz Mono MP3
+Source audio: `public/audio/voiceover.mp3`  
+Format: MP3, mono, 44.1 kHz  
+Measured duration: 60.029375 seconds
 
-## Full Spoken Narration
+Willpower isn’t a tiny battery you either have or don’t. A brain region called the anterior midcingulate cortex—or aMCC—helps weigh a question: is this goal worth the effort it will cost me?
 
-```text
-When practicing a skill, doing the exact same drill a hundred times feels productive. But your brain actually learns best when you never repeat the exact same movement.
+When work gets difficult, the aMCC integrates signals about reward, discomfort, attention, and the body’s available resources. Then it helps coordinate control with other brain systems. It is not a “willpower switch,” but part of the network that decides whether to persist, change strategy, or quit.
 
-In the nineteen thirties, neurophysiologist Nikolai Bernstein studied master blacksmiths. The hammer hit the exact same millimeter every time, yet the path of their arms and joints was different on every single strike.
+So don’t rely on motivation alone. Make the next action smaller and obvious: open the document, do one problem, walk for five minutes. Remove friction, make progress visible, and attach a meaningful reward to the effort. Repeatedly choosing a manageable next step gives your brain better evidence that effort is worth it.
 
-He called this repetition without repetition.
-
-Your brain does not wire rigid, robotic tracks. Neuroplasticity works by solving problems. When you mindlessly repeat an identical motion, your nervous system goes on autopilot and stops adapting.
-
-True mastery is training your brain to find the solution through changing conditions.
-
-So stop doing identical reps. Keep your target constant, but vary the execution: shift your stance, change the tempo, adjust your angle. Repeat the goal, never the movement. That is how you build real skill.
-```
+Willpower is less about forcing yourself—and more about making persistence the rational next move.

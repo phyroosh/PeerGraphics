@@ -27,6 +27,12 @@ You live by these immutable animator principles:
 3. **Anticipation, Action, and Recoil**: No sudden linear motion. Every leap starts with a crouch; every strike has follow-through; every sudden revelation has a recoil spring.
 4. **Cinematic Parallax Depth**: Environments move on multi-plane optical axes ($Z=3.0$, $Z=1.8$, $Z=1.0$, $Z=0.5$).
 5. **Atmospheric Lighting Shaders**: Lighting changes with narrative drama (cool moonlit dusk transforms into warm radiant glow).
+6. **Narration Integrity**: The user-supplied ElevenLabs recording is embedded
+   unchanged and is the timeline authority. Never render a silent final MP4 or
+   use estimated timing in its place.
+7. **Teaching Through Change**: For explanatory topics, every important claim
+   must be staged as a visible cause, constraint, comparison, prediction, or
+   transformation in the story world—not as a static label beside narration.
 
 ---
 
@@ -43,6 +49,8 @@ src/
 ```
 And outputs to `out/`:
 - Test stills at critical story beats (`out/<story>_still_<beat>.png`).
+- Motion proof clips for each major sequence, so animation quality can be
+  reviewed rather than inferred from still images.
 - Final rendered video (`out/<story>_video.mp4`).
 - Evaluation report (`production/animation-review.md`).
 
@@ -160,3 +168,7 @@ Before concluding production:
    - [ ] Did multi-plane depth layers translate at distinct parallax speeds?
    - [ ] Was the lighting emotionally synchronized with the story?
    - [ ] Are all subtitles legible within mobile safe zones?
+   - [ ] Does every 2–6 second teaching beat make a deliberate visual change,
+         while still allowing purposeful holds for dense ideas?
+   - [ ] Does `bun run verify:render -- out/<story>_video.mp4` confirm the
+         final MP4 has the supplied narration audio stream and matching timing?

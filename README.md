@@ -28,7 +28,11 @@ Transform any written narrative into a cohesive, living animated film across thr
   - **Glassmorphic Subtitles**: Safe-zone compliant narrative caption bars.
 
 ### 2. Educational Explanation Videos (`educational-explanation-video`)
-- Research-grounded conceptual explanations, mechanical metaphors, and motion graphics with YouTube Shorts UI safe zones.
+- Legacy, opt-in infographic production only. Use it only when the user explicitly requests a risograph/editorial infographic or the `ExplanationVideo` composition. An educational topic without that request uses the cinematic 2D storytelling pipeline above.
+
+### Default-generation contract
+
+The canonical reference is `out/prototype_lantern_keeper.mp4`. New animations, including educational ones, use character-driven story staging with articulated puppets, multi-plane environments, atmospheric lighting, parallax, and living idle motion. The older `ExplanationVideo` / risograph system is retained solely for explicit legacy infographic requests. The enforceable agent instructions live in `AGENTS.md`.
 
 ---
 

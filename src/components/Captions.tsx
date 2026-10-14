@@ -1,12 +1,12 @@
 import React from 'react';
 import {interpolate, useCurrentFrame} from 'remotion';
-import {CAPTIONS} from '../data/scenes';
+import {AMCC_CAPTIONS} from '../data/amcc';
 import {DESIGN_TOKENS} from '../design/tokens';
 
 export const Captions: React.FC = () => {
   const frame = useCurrentFrame();
 
-  const activeCue = CAPTIONS.find(
+  const activeCue = AMCC_CAPTIONS.find(
     (cue) => frame >= cue.from && frame < cue.to
   );
 
@@ -65,11 +65,9 @@ export const Captions: React.FC = () => {
         >
           {words.map((word, index) => {
             const cleanWord = word.replace(/[^a-zA-Z0-9-]/g, '').toLowerCase();
-            const isHighlighted = activeCue.highlightWords?.some((hw) =>
-              hw.toLowerCase().split(' ').includes(cleanWord)
-            );
+            const isHighlighted = index === words.length - 1 || index === 0;
 
-            const highlightBg = activeCue.color || '#FF0055';
+            const highlightBg = activeCue.accent;
             const highlightTextColor = highlightBg === '#FFE600' || highlightBg === '#00E5FF' ? '#111111' : '#FFFFFF';
 
             return isHighlighted ? (

@@ -1,30 +1,28 @@
-# Art Direction: Brain Plasticity & Repetition Without Repetition
+# Art Direction — aMCC and Willpower
 
-## Visual Thesis
-A dynamic, intellectual, tactile Risograph editorial world where biomechanical laboratory diagrams, articulated vector puppet animations, and vibrant neural pathways collide to illustrate that mastery is dynamic adaptability, not rigid mechanical repetition.
+## Visual thesis
 
-## Composition Grammar & Safe Zones
-- **Canvas**: Vertical 9:16 (1080 × 1920 px at 30 fps).
-- **Safe Area Standards**:
-  - Top padding: $\ge 160$ px (clears mobile status and YouTube UI).
-  - Bottom padding: $\ge 400$ px (content terminates at $y \le 1520$ px to clear YouTube Shorts shelf: avatar, channel, title, sound ticker, scrubber).
-  - Right margin: $\ge 140$ px (content width $\le 850$ px, clears like/comment action buttons).
-  - Left margin: $\ge 90$ px.
-- **Strict Anti-Clutter Rule**:
-  - NO meaningless telemetry bars, fake circuit codes (`CIRCUIT 02`), technical figure tags (`FIG. 4.0`), or shape rows (`■ ● ▲`).
-  - Single primary visual focal point per scene with generous negative space.
-  - Passes the **Mute Test**: Any viewer watching without sound or subtitles intuitively understands the mechanism and solution through physical motion alone.
+A living punk-risograph decision machine turns the abstract experience of willpower into a visible effort-versus-reward calculation, then transforms that calculation into an easier next action.
 
-## Color Logic (Theme 09: Punk Editorial & Risograph Collage)
-- **Canvas Base**: `#EAE5DB` (Warm Newsprint with tactile 12 fps grain boil).
-- **Ink Outlines**: `#111111` (Pitch Black, 4–6px chunky tactile stroke, solid 10px offset drop shadows).
-- **Spot Palette**:
-  - `#FF0055` (Risograph Hot Pink): Tension, rigid mono-track failure, alert warnings.
-  - `#FFE600` (High-Voltage Neon Yellow): Kinetic highlights, hammer sparks, insight tape.
-  - `#00E5FF` (Electric Cyan): Active neuroplastic pathways, target crosshair, adaptive stability.
-  - `#FFFFFF` (Pure White): High-contrast paper cutouts, labels, bone structures.
+## Composition and safe area
 
-## Typography Floor (Mobile iPhone 15 Legibility)
-- **Headline**: 80–100px, 900 weight, display font, uppercase, high contrast with risograph spot highlights.
-- **Explanatory Callouts**: 38–52px, bold, concise.
-- **Labels & Numbers**: 32–38px (Absolute minimum floor: **never below 32px** anywhere on canvas).
+- Native 1080 × 1920 / 9:16 / 30 fps.
+- Essential content stays inside `x: 90–920` and `y: 160–1520` for YouTube Shorts controls.
+- One focal apparatus per beat: crossed-out battery, balance, decision network, staircase, then friction-removal path.
+- Captions are an independent accessibility layer at the bottom-safe boundary, not a substitute for the diagrams.
+
+## Visual language
+
+- Newsprint base: `#EAE5DB`; inky structure: `#111111`.
+- Hot pink means effort/tension, yellow means reward/insight, cyan means coordination/clear path.
+- Chunky 5–8 px SVG ink outlines, offset shadows, halftone grain, and physical cause-and-effect motion.
+- Headline typography uses Arial Black/Impact fallback at 70–94 px; all labels are 30 px or larger.
+
+## Motion and sound
+
+- Animations are fully frame-driven and deterministic. Objects only move to reveal a relationship: balancing, branching, climbing, clearing barriers, or advancing progress.
+- The supplied ElevenLabs narration is the only audio track. No music or effects are added so the explanation stays unmistakably clear.
+
+## Assets and licensing
+
+All visuals are original React/SVG primitives. No external visual assets are used. The only media asset is the user-supplied ElevenLabs narration.
