@@ -109,19 +109,19 @@ export const S02_BernsteinAndBlacksmith: React.FC = () => {
           style={{overflow: 'visible'}}
         >
           {/* Floating Cyclography Legend Tags (Shadow FIRST, then foreground) */}
-          {frame >= 280 && (
-            <g transform="translate(480, 40)">
-              <rect x="8" y="8" width="330" height="90" rx="8" fill="#111111" />
-              <rect x="0" y="0" width="330" height="90" rx="8" fill="#FFFFFF" stroke="#111111" strokeWidth="5" />
+          {frame >= 280 && frame < 389 && (
+            <g transform="translate(430, 40)">
+              <rect x="8" y="8" width="380" height="90" rx="8" fill="#111111" />
+              <rect x="0" y="0" width="380" height="90" rx="8" fill="#FFFFFF" stroke="#111111" strokeWidth="5" />
               <text x="18" y="36" fill="#111111" fontSize="24" fontWeight="900">
                 SWING TRAJECTORIES:
               </text>
               <circle cx="28" cy="62" r="8" fill="#FFE600" stroke="#111111" strokeWidth="2" />
               <text x="44" y="68" fill="#111111" fontSize="20" fontWeight="900">#1 HIGH</text>
-              <circle cx="135" cy="62" r="8" fill="#00E5FF" stroke="#111111" strokeWidth="2" />
-              <text x="150" y="68" fill="#111111" fontSize="20" fontWeight="900">#2 DIRECT</text>
-              <circle cx="240" cy="62" r="8" fill="#FF0055" stroke="#111111" strokeWidth="2" />
-              <text x="256" y="68" fill="#111111" fontSize="20" fontWeight="900">#3 STEEP</text>
+              <circle cx="145" cy="62" r="8" fill="#00E5FF" stroke="#111111" strokeWidth="2" />
+              <text x="160" y="68" fill="#111111" fontSize="20" fontWeight="900">#2 DIRECT</text>
+              <circle cx="260" cy="62" r="8" fill="#FF0055" stroke="#111111" strokeWidth="2" />
+              <text x="276" y="68" fill="#111111" fontSize="20" fontWeight="900">#3 STEEP</text>
             </g>
           )}
 
@@ -324,7 +324,7 @@ export const S02_BernsteinAndBlacksmith: React.FC = () => {
           {/* Giant Heroic Risograph Stamp on Frame >= 389 */}
           {frame >= 389 && (
             <g
-              transform={`translate(90, 680) scale(${stampScale}) rotate(-1.5)`}
+              transform={`translate(90, 160) scale(${stampScale}) rotate(-1.5)`}
               style={{transformOrigin: '330px 50px'}}
             >
               <rect x="10" y="10" width="670" height="100" rx="10" fill="#111111" />

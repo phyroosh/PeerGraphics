@@ -30,12 +30,12 @@ export const S05_ActionableAntidote: React.FC = () => {
   });
 
   // Beat 2: Three levers activation (local frames 158 - 273)
-  // Lever 1: Stance shift (f158)
-  const lever1Spring = spring({frame: frame - 158, fps, config: {damping: 12, stiffness: 180}});
-  // Lever 2: Tempo metronome (f195)
-  const lever2Spring = spring({frame: frame - 195, fps, config: {damping: 12, stiffness: 180}});
-  // Lever 3: Angle shift (f230)
-  const lever3Spring = spring({frame: frame - 230, fps, config: {damping: 12, stiffness: 180}});
+  // Lever 1: Stance shift (f150)
+  const lever1Spring = spring({frame: frame - 150, fps, config: {damping: 12, stiffness: 180}});
+  // Lever 2: Tempo metronome (f178)
+  const lever2Spring = spring({frame: frame - 178, fps, config: {damping: 12, stiffness: 180}});
+  // Lever 3: Angle shift (f205)
+  const lever3Spring = spring({frame: frame - 205, fps, config: {damping: 12, stiffness: 180}});
 
   // Metronome needle swing
   const metronomeAngle = Math.sin(frame * 0.35) * 35;
@@ -115,24 +115,24 @@ export const S05_ActionableAntidote: React.FC = () => {
           {/* Phase 1 & 2: Before the Grand Stamp, display the 3 Practice Levers */}
           {frame < 273 ? (
             <g>
-              {/* Target Constant Anchor Card at Top */}
-              <g transform="translate(140, 50)">
-                <rect x="0" y="0" width="570" height="110" rx="12" fill="#FFFFFF" stroke="#111111" strokeWidth="6" />
-                <rect x="8" y="8" width="570" height="110" rx="12" fill="#111111" style={{zIndex: -1}} />
+              {/* Target Constant Anchor Card at Top (Shadow FIRST) */}
+              <g transform="translate(115, 50)">
+                <rect x="8" y="8" width="620" height="110" rx="12" fill="#111111" />
+                <rect x="0" y="0" width="620" height="110" rx="12" fill="#FFFFFF" stroke="#111111" strokeWidth="6" />
                 {/* Glowing Bullseye Target */}
                 <circle cx="70" cy="55" r="32" fill="none" stroke="#00E5FF" strokeWidth="6" />
                 <circle cx="70" cy="55" r="18" fill="#FF0055" />
                 <circle cx="70" cy="55" r="6" fill="#FFFFFF" />
-                <text x="130" y="50" fill="#111111" fontSize="32" fontWeight="900">
+                <text x="125" y="52" fill="#111111" fontSize="30" fontWeight="900">
                   TARGET: CONSTANT (LOCKED)
                 </text>
-                <text x="130" y="85" fill="#008599" fontSize="24" fontWeight="800">
+                <text x="125" y="86" fill="#008599" fontSize="24" fontWeight="800">
                   Keep the objective 100% fixed
                 </text>
               </g>
 
               {/* Red cancel slash over identical reps */}
-              <g transform="translate(180, 200)">
+              <g transform="translate(180, 190)">
                 <rect x="0" y="0" width="490" height="65" rx="8" fill="#EAE5DB" stroke="#111111" strokeWidth="4" />
                 <text x="245" y="44" fill="#555555" fontSize="28" fontWeight="800" textAnchor="middle">
                   IDENTICAL VACUUM REPETITIONS
@@ -149,14 +149,14 @@ export const S05_ActionableAntidote: React.FC = () => {
                 />
               </g>
 
-              {/* The 3 Levers Cards in a Row */}
+              {/* The 3 Levers Cards in a Row (Shadows FIRST) */}
               {/* Lever 1: Stance Shift */}
               <g
-                transform={`translate(60, 320) scale(${interpolate(lever1Spring, [0, 1], [0.8, 1])})`}
+                transform={`translate(60, 290) scale(${interpolate(lever1Spring, [0, 1], [0.8, 1])})`}
                 opacity={lever1Spring}
               >
+                <rect x="8" y="8" width="220" height="300" rx="10" fill="#111111" />
                 <rect x="0" y="0" width="220" height="300" rx="10" fill="#FFFFFF" stroke="#111111" strokeWidth="6" />
-                <rect x="8" y="8" width="220" height="300" rx="10" fill="#111111" style={{zIndex: -1}} />
                 <rect x="15" y="15" width="190" height="40" rx="6" fill="#FFE600" stroke="#111111" strokeWidth="3" />
                 <text x="110" y="42" fill="#111111" fontSize="22" fontWeight="900" textAnchor="middle">
                   #1 STANCE
@@ -174,11 +174,11 @@ export const S05_ActionableAntidote: React.FC = () => {
 
               {/* Lever 2: Tempo Shift */}
               <g
-                transform={`translate(315, 320) scale(${interpolate(lever2Spring, [0, 1], [0.8, 1])})`}
+                transform={`translate(315, 290) scale(${interpolate(lever2Spring, [0, 1], [0.8, 1])})`}
                 opacity={lever2Spring}
               >
+                <rect x="8" y="8" width="220" height="300" rx="10" fill="#111111" />
                 <rect x="0" y="0" width="220" height="300" rx="10" fill="#FFFFFF" stroke="#111111" strokeWidth="6" />
-                <rect x="8" y="8" width="220" height="300" rx="10" fill="#111111" style={{zIndex: -1}} />
                 <rect x="15" y="15" width="190" height="40" rx="6" fill="#00E5FF" stroke="#111111" strokeWidth="3" />
                 <text x="110" y="42" fill="#111111" fontSize="22" fontWeight="900" textAnchor="middle">
                   #2 TEMPO
@@ -198,11 +198,11 @@ export const S05_ActionableAntidote: React.FC = () => {
 
               {/* Lever 3: Angle Shift */}
               <g
-                transform={`translate(570, 320) scale(${interpolate(lever3Spring, [0, 1], [0.8, 1])})`}
+                transform={`translate(570, 290) scale(${interpolate(lever3Spring, [0, 1], [0.8, 1])})`}
                 opacity={lever3Spring}
               >
+                <rect x="8" y="8" width="220" height="300" rx="10" fill="#111111" />
                 <rect x="0" y="0" width="220" height="300" rx="10" fill="#FFFFFF" stroke="#111111" strokeWidth="6" />
-                <rect x="8" y="8" width="220" height="300" rx="10" fill="#111111" style={{zIndex: -1}} />
                 <rect x="15" y="15" width="190" height="40" rx="6" fill="#FF0055" stroke="#111111" strokeWidth="3" />
                 <text x="110" y="42" fill="#FFFFFF" fontSize="22" fontWeight="900" textAnchor="middle">
                   #3 ANGLE

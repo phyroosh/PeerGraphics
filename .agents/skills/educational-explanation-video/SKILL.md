@@ -11,6 +11,12 @@ description: >-
 
 # Educational Explanation Video Production Skill
 
+> [!IMPORTANT]
+> **DISAMBIGUATION & ROUTING RULE:**
+> This skill is strictly for **academic, scientific, psychological, and conceptual educational explanations** (infographic motion graphics, mechanical metaphors, gauges, diagrams).
+> If the user request involves a **story, narrative, character animation, fictional tale, atmospheric world, or cinematic visual storytelling** (e.g. like *The Lantern Keeper*), **DO NOT USE THIS SKILL**.
+> Instead, activate the **2D Animated Storytelling Pipeline** (`2d-animation-storytelling` -> `director-animation-planning` -> `asset-rigging-preparation` -> `story-animation-production`).
+
 ## Mission
 
 Turn one user-provided topic into a short video that helps a real audience understand, remember, and use one valuable idea. Work as an integrated subject researcher, educator, scriptwriter, visual designer, motion designer, editor, sound designer, and Remotion engineer.
@@ -36,7 +42,7 @@ The default deliverable is a native vertical short for YouTube Shorts, Instagram
 11. **Be honest about deliverables.** Distinguish a finished render from a preview, a storyboard, or an unrendered implementation. Report any review that could not be performed.
 12. **Do not silently discard user constraints.** Preserve requested language, audience, tone, branding, and supplied assets where feasible. If details are missing, use the defaults below rather than stalling on avoidable questions.
 13. **Mandatory YouTube metadata and captions.** Every rendered video in Phase 2 must be accompanied by complete YouTube publishing metadata (`production/metadata.json` and sync to `studio/metadata.json`) including high-CTR title with `#Shorts`, rich description with topic hashtags, searchable tags array, YouTube categoryId (27 = Education, 28 = Science & Tech), high-converting pinned discussion comment, and a synchronized `.srt` caption file (`production/captions.srt` or `out/<video>.srt`).
-14. **Visual Style — Theme 09 (Punk Editorial & Risograph Collage) as a Dynamic Style, NOT a Fixed Template.** For every new video generation in PeerGraphics, all agents must use **Theme 09 (Punk Editorial & Risograph Collage)** as the aesthetic styling language, while operating as a **veteran motion designer with 20 years of experience creating animations for a university professor**:
+14. **Visual Style for Educational Explanations — Theme 09 (Punk Editorial & Risograph Collage).** When producing educational explanation shorts under this skill (and NOT 2D animated stories), use **Theme 09 (Punk Editorial & Risograph Collage)** as the motion graphic styling language, while operating as a **veteran motion designer with 20 years of experience creating animations for a university professor**:
     - **NEVER Use Fixed Card Templates**: Absolutely DO NOT treat Theme 09 as a rigid 3-box wireframe (e.g. `<HeadlineBox> + <WhiteCardWithGraph> + <InsightBox>`). The entire 1080×1920 canvas is an active, open vector drawing surface. There are no mandatory card wrappers.
     - **The "Mute Test" (Silent Comprehension Rule)**: The motion must explain the mechanism, conflict, and resolution so vividly that a student watching on mute with zero sound and no subtitles immediately understands what is happening.
     - **Draw Shapes, Characters, Objects & Physical Mechanisms in React**: Use React, SVG primitives (`<path>`, `<circle>`, `<polygon>`, `<g>`, `<mask>`, clipPaths), and Remotion springs to draw the actual entities in the concept:
@@ -99,7 +105,7 @@ Only research, reason, and write the explanation. You may consult reliable exter
 ### Stage 0.2 — Default delivery format
 
 - **Target video format:** vertical 9:16, 1080 × 1920, 30 fps, naturally paced (typically 40–65 seconds, without any rigid 40-second cutoff).
-- **Default visual theme:** **Theme 09 (Punk Editorial & Risograph Collage)** — Newsprint halftone canvas `#EAE5DB`, risograph hot pink `#FF0055`, high-voltage yellow `#FFE600`, pitch black `#111111` with bold drop shadows, zero top telemetry clutter, minimum font size 32px (iPhone 15 legible), single focal graphic at a time, and strict YouTube Shorts safe zones (Top ≥ 160px, Bottom ≥ 400px, Right margin ≥ 140px).
+- **Default visual theme for Educational Explanations:** **Theme 09 (Punk Editorial & Risograph Collage)** — Newsprint halftone canvas `#EAE5DB`, risograph hot pink `#FF0055`, high-voltage yellow `#FFE600`, pitch black `#111111` with bold drop shadows, zero top telemetry clutter, minimum font size 32px (iPhone 15 legible), single focal graphic at a time, and strict YouTube Shorts safe zones (Top ≥ 160px, Bottom ≥ 400px, Right margin ≥ 140px). (Note: For 2D animated stories, use the multi-plane vector storytelling art direction defined in `moodboard.md`).
 - **Mandatory Content Requirement:** The explanation MUST conclude with a concrete, practical, and actionable solution or resolution to the stated problem/trap.
 - **Narration planning length:** approximately 90–140 words as a natural guideline; natural read speed, complexity, language, emphasis, and pauses take precedence over a rigid word count.
 - **Narration style:** concise, conversational, vivid but not sensational, accurate, and easy to speak aloud.

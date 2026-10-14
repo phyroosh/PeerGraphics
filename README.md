@@ -1,22 +1,34 @@
-# 🚀 PeerGraphics
+# 🎬 PeerGraphics
 
-> **Educational Explanation Video Engine & Autonomous YouTube Studio**  
-> Produce research-grounded, vertical educational short videos with Remotion and React, and publish them with full YouTube metadata (captions, descriptions with hashtags, tags, and pinned comments) in 1-click.
+> **2D Animated Storytelling Studio & Remotion Motion Graphics Engine**  
+> Create expressive, cinema-grade 2D animated stories with hierarchical vector puppets, procedural breathing/eye kinetics, multi-plane parallax depth environments, dynamic lighting, and synchronized audio narration using React and Remotion.
 
 ---
 
-## ✨ Features
+## ✨ Flagship Capabilities
 
-- **Strict Two-Phase Educational Workflow (`educational-explanation-video`)**:
-  - **Phase 1**: Topic research, learning design, and delivering a 25–40s copy-ready voiceover script for ElevenLabs.
-  - **Phase 2**: Audio-driven vertical (9:16, 1080×1920) visual production in Remotion + frame-accurate React animations.
-- **Automated YouTube Metadata & Captions Packaging**:
-  - Automatically generates click-worthy titles (`#Shorts`), rich descriptions with structured hashtags (`#Education #Science #Explained`), searchable tags, category codes (`27` Education), pinned creator discussion comments, and synchronized `.srt` caption tracks.
-- **Localhost YouTube Studio & Auto-Uploader (Port 4002)**:
-  - **Cosmic Glassmorphism UI**: High-end dark theme (`#070b14`) built with offline Tailwind CSS and Lucide Icons.
-  - **YouTube Shorts Mobile Simulator**: Real-time smartphone preview showing how the title, tags, description, channel avatar, and sound appear on mobile devices.
-  - **1-Click RightClips Sync**: Instant auto-discovery and import of Google Cloud credentials and authorized channels from `TopProducts/RightClips`.
-  - **Full YouTube Data API v3 Pipeline**: Resumable chunked video upload, custom thumbnail upload (`youtube.thumbnails.set`), caption track upload (`youtube.captions.insert`), scheduled release (`publishAt`), and auto-pinned discussion comment (`youtube.commentThreads.insert`).
+### 1. 2D Animated Storytelling Pipeline (`2d-animation-storytelling`)
+Transform any written narrative into a cohesive, living animated film across three strict phases:
+- **Phase 1: Directorial Planning (`director-animation-planning` / `DirectorSKILL.md`)**:
+  - Narrative tension mapping, frame-accurate shot breakdowns (`storyboard.md`).
+  - Character bibles with 1:4.5 proportions, pivot points, and color tokens (`character-bible.md`).
+  - Multi-plane depth blueprints and atmospheric lighting scripts (`moodboard.md`).
+  - Cross-scene spatial geography and prop continuity ledgers (`continuity.md`).
+- **Phase 2: Asset Creation & Vector Rigging (`asset-rigging-preparation` / `AssetsSKILL.md`)**:
+  - Hierarchical SVG vector puppets (`Hips -> Torso -> [Neck -> Head] + [Arms -> Props]`).
+  - Strict pivot origins (`transformOrigin`) preventing joint dislocations.
+  - Multi-plane background plates across 4 optical parallax planes (Far Sky $Z=3.0$, Midground Forest $Z=1.8$, Ground $Z=1.0$, Foreground $Z=0.5$).
+  - Atmospheric FX: procedural fireflies, volumetric light cones, and rising embers.
+  - Structured production catalog (`production/assets-manifest.json`).
+- **Phase 3: Animation & Staging in Remotion (`story-animation-production` / `AnimatorSKILL.md`)**:
+  - **The "Idle Alive" Rule**: Procedural chest breathing (`Math.sin(frame * 0.08)`), involuntary blinks (`spring()`), and pupil gaze tracking.
+  - **Anticipation & Recoil**: Spring kinematics on dramatic actions and focus changes.
+  - **Optical Parallax Camera**: Dynamic multi-plane translations and subtle handheld drift.
+  - **Atmospheric Lighting**: Dynamic warm/cool ambient color washes and volumetric light bloom.
+  - **Glassmorphic Subtitles**: Safe-zone compliant narrative caption bars.
+
+### 2. Educational Explanation Videos (`educational-explanation-video`)
+- Research-grounded conceptual explanations, mechanical metaphors, and motion graphics with YouTube Shorts UI safe zones.
 
 ---
 
@@ -45,20 +57,27 @@ Open **`http://localhost:4002`** in your browser.
 PeerGraphics/
 ├── .agents/
 │   └── skills/
-│       └── educational-explanation-video/
-│           └── SKILL.md            # Educational explanation production skill
-├── studio/
-│   ├── public/
-│   │   ├── index.html              # YouTube Studio UI & Mobile Shorts Simulator
-│   │   └── vendor/                 # Offline Tailwind CSS & Lucide Icons
-│   ├── youtube_manager.js          # Google OAuth2 client, RightClips sync, token manager
-│   ├── server.js                   # Express backend API & YouTube upload engine (Port 4002)
-│   ├── client_secrets.example.json # Example Google Cloud credentials template
-│   └── channels.example.json       # Example channels registry template
-├── out/                            # Rendered video outputs (.mp4) and thumbnails (.png)
-├── production/                     # Scripts, audio maps, metadata.json, and captions.srt
-├── start_studio.sh                 # Fast launcher script
-├── package.json                    # Project dependencies & scripts
+│       ├── 2d-animation-storytelling/      # Master 3-phase production skill
+│       ├── director-animation-planning/    # Phase 1: Directorial planning & blueprint
+│       ├── asset-rigging-preparation/      # Phase 2: Vector rigging & depth planes
+│       ├── story-animation-production/     # Phase 3: Remotion animation & camera
+│       └── educational-explanation-video/  # Educational infographic skill
+├── src/
+│   ├── animation/                          # Reusable kinematics, camera, and subtitles
+│   ├── characters/                         # Hierarchical React/SVG vector puppets (e.g. LeoPuppet)
+│   ├── environments/                       # Multi-plane depth environments (e.g. WhisperingWoodsEnv)
+│   ├── fx/                                 # Procedural particles, bloom, and volumetric lighting
+│   ├── compositions/
+│   │   ├── AnimatedStory.tsx               # Flagship 2D Story Engine
+│   │   ├── LanternKeeperPrototype.tsx      # The Lantern Keeper reference production
+│   │   └── ExplanationVideo.tsx            # Educational video composition
+│   └── Root.tsx                            # Registered Remotion compositions
+├── production/
+│   ├── assets-manifest.json                # Rig & asset registry
+│   └── prototype/                          # Directorial blueprints (storyboard, character-bible, etc.)
+├── studio/                                 # Localhost YouTube Studio & Auto-Uploader
+├── out/                                    # Rendered video outputs (.mp4) and stills (.png)
+├── package.json                            # Scripts (render, render:story, render:prototype)
 └── README.md
 ```
 

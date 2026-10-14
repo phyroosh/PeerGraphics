@@ -1,7 +1,8 @@
 import React from 'react';
 import { Composition } from 'remotion';
-import { ExplanationVideo } from './compositions/ExplanationVideo';
+import { AnimatedStory } from './compositions/AnimatedStory';
 import { LanternKeeperPrototype } from './compositions/LanternKeeperPrototype';
+import { ExplanationVideo } from './compositions/ExplanationVideo';
 import { Theme3_SwissBauhaus } from './themes/Theme3_SwissBauhaus';
 import { Theme1_CyberHUD } from './themes/Theme1_CyberHUD';
 import { Theme2_VintageBlueprint } from './themes/Theme2_VintageBlueprint';
@@ -33,11 +34,11 @@ export const RemotionRoot: React.FC = () => {
 
   return (
     <>
-      {/* Primary Production Video: Identifying Healthy vs Unhealthy Relationships (Theme 09: Punk Editorial & Risograph Collage) */}
+      {/* 2D Animated Storytelling Production Engine */}
       <Composition
-        id="ExplanationVideo"
-        component={ExplanationVideo}
-        durationInFrames={1760}
+        id="AnimatedStory"
+        component={AnimatedStory}
+        durationInFrames={360}
         fps={30}
         width={1080}
         height={1920}
@@ -48,6 +49,16 @@ export const RemotionRoot: React.FC = () => {
         id="LanternKeeperPrototype"
         component={LanternKeeperPrototype}
         durationInFrames={360}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+
+      {/* Educational Explanation Video Composition */}
+      <Composition
+        id="ExplanationVideo"
+        component={ExplanationVideo}
+        durationInFrames={1760}
         fps={30}
         width={1080}
         height={1920}
